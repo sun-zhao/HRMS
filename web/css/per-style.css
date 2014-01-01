@@ -1,0 +1,54 @@
+.PerMain{width:718px;min-height:600px;}
+.UserInfo-top{}
+.UserInfo-top .PerImg,.UserInfo-top .PerImg img{width:100px;height:100px;display:inline-block;}
+.UserInfo-top .PerImg{position:relative;}
+.UserTbale{margin-left:10px;}
+.UserTbale th{height:22px;vertical-align: top;}
+.UserTbale td{vertical-align: top;}
+.PerName{padding-bottom:10px;display:inline-block;line-height:20px;*padding-bottom:0;*margin-bottom:10px;}
+.Info{border-top:1px dotted;}
+.Info th,.Info td{padding:15px 0;height:10px;}
+.WorkStory th,.WorkStory td{padding:7px 0;color:#666;padding-left:5px;}
+.WorkStory thead th{font-size:13px;height:20px;line-height:20px;text-align: center;}
+.WorkStory tbody th{text-align:left;}
+.WorkStory tbody td{text-align:center;}
+.WorkStory td{padding:7px 5px;color:#999;}
+.mine th,.mine td{padding:10px 0;}
+.UserTbale.mine th{height:10px;}
+.UserInfo-top .UserTbale.mine th,.UserInfo-top .UserTbale.mine td{height:10px;padding:5px 0;}
+.UserInfo-top .UserTbale.mine .PerName{padding-bottom:3px;font-size:14px;}
+.mine-work th,.mine-work td{padding:5px 0;}
+.mine-work th{font-size:14px;}
+.mine-work td{color:#999;}
+.contract th,.contract td,.contract tbody th{padding:4px 0;text-align: center; vertical-align:inherit;}
+.ContractTab{width:500px;}
+.ContractTab th,.ContractTab td{padding:10px 10px;}
+.write th,.write td{text-align: left;padding:10px 0;}
+.write td{padding-left:15px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

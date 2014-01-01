@@ -56,7 +56,6 @@ public class AuthorizeAction extends BaseAction {
             OAuth2Object oAuth2Object = RequestOauth2.getAccessToken(code);
             if (oAuth2Object != null) {
                 userInfo.setAccessToken(oAuth2Object.getAccessToken());
-                System.out.println(userInfo.getAccessToken());
                 NetWork netWork = RequestCompany.getDetail(oAuth2Object.getAccessToken());
                 if (netWork != null) {
                     userInfo.setCompanyId(netWork.getId());
@@ -66,8 +65,6 @@ public class AuthorizeAction extends BaseAction {
                 }
                 User user = RequestPassport.detail(oAuth2Object.getAccessToken());
                 if (user != null) {
-                    userInfo.setInitApply(-1);
-                    userInfo.setApplyCount(-1);
                     userInfo.setUserId(user.getId());
                     userInfo.setCompanyName(user.getCompany());
                     userInfo.setWorkPhone(user.getWork_phone());
@@ -117,34 +114,6 @@ public class AuthorizeAction extends BaseAction {
                 }
             }
             userInfo.setAuthorize(true);
-            if (StringUtils.isNotBlank(state)) {
-                int flag = state.indexOf("_");
-                if (flag != -1) {
-                    String ps[] = state.split("_");
-                    if (ps != null && ps.length == 2) {
-                        String key = ps[0];
-                        String value = ps[1];
-                        if (StringUtils.isNotBlank(key) && StringUtils.isNotBlank(value)) {
-                            if (key.toUpperCase().equals("R")) {
-                                Long reqId = BeanUtils.convertValue(value, Long.class);
-                                if (reqId != null) {
-                                    userInfo.setViewReqId(reqId);
-                                }
-                            } else if (key.toUpperCase().equals("T")) {
-                                Long taskId = BeanUtils.convertValue(value, Long.class);
-                                if (taskId != null) {
-                                    userInfo.setViewTaskId(taskId);
-                                }
-                            } else if (key.toUpperCase().equals("E")) {
-                                Long executeId = BeanUtils.convertValue(value, Long.class);
-                                if (executeId != null) {
-                                    userInfo.setViewExecuteId(executeId);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
 
             String domHtml = "https://api.mingdao.com/md/all.aspx??jsoncallback=?&u_key=" + userInfo.getAccessToken();
             String allHtml = HttpUtils.sendRequest(domHtml, "utf-8");
@@ -186,11 +155,7 @@ public class AuthorizeAction extends BaseAction {
         }
     }
 
-    @PageFlow(result = {@Result(name = "success", path = "/wf/req!ingList.dhtml", type = Dispatcher.Redirect),
-            @Result(name = "mobile", path = "/mobile/applyMy.dhtml", type = Dispatcher.Redirect),
-            @Result(name = "viewReq", path = "/wf/req!view.dhtml?id=${id}", type = Dispatcher.Redirect),
-            @Result(name = "viewTask", path = "/wf/reqTask!process.dhtml?id=${id}", type = Dispatcher.Redirect),
-            @Result(name = "viewExecute", path = "/wf/reqExecute!process.dhtml?id=${id}", type = Dispatcher.Redirect)})
+    @PageFlow(result = {@Result(name = "success", path = "/hr/employee.dhtml", type = Dispatcher.Redirect)})
     public String index() throws Exception {
         String result = "success";
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());

@@ -30,6 +30,8 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     private String userId;
 
+    private String userFirstPy;
+
     private SysCode contryId;
 
     private SysCode nationalityId;
@@ -43,6 +45,8 @@ public class HrEmployee extends IdEntity implements Tracker {
     private String idCard;
 
     private String bankCard;
+
+    private Integer complete;
 
     private Date created;
 
@@ -195,5 +199,23 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     public void setBankCard(String bankCard) {
         this.bankCard = bankCard;
+    }
+
+    @Column(name = "USER_FIRST_PY")
+    public String getUserFirstPy() {
+        return userFirstPy;
+    }
+
+    public void setUserFirstPy(String userFirstPy) {
+        this.userFirstPy = userFirstPy;
+    }
+
+    @Column(name = "COMPLETE")
+    public Integer getComplete() {
+        return complete;
+    }
+
+    public void setComplete(Integer complete) {
+        this.complete = complete;
     }
 }

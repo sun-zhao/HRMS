@@ -5,8 +5,8 @@
         <hibernate>
             <packages>
                 <value>hrms.mingdao.sys.entity</value>
-                <value>hrms.mingdao.wf.entity</value>
-                <value>hrms.mingdao.common.entity</value>
+                <value>hrms.mingdao.hr.entity</value>
+                <!--<value>hrms.mingdao.common.entity</value>-->
             </packages>
         </hibernate>
     </persistence>
@@ -65,8 +65,7 @@
         <packages>
             <value>hrms.mingdao.sys.action</value>
             <value>hrms.mingdao.common.action</value>
-            <value>hrms.mingdao.wf.action</value>
-            <value>hrms.mingdao.mobile.action</value>
+            <value>hrms.mingdao.hr.action</value>
         </packages>
         <interceptor>
             <module>

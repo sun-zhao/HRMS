@@ -39,8 +39,6 @@ public class UserInfo implements Serializable {
 
     private String flag;
 
-    private Integer initApply;
-
     private String appSecret;
 
     private String redirectUri;
@@ -81,18 +79,6 @@ public class UserInfo implements Serializable {
     
     private String menuCss;
 
-    private Integer taskUnRead;
-
-    private Integer taskUnApprove;
-
-    private Integer executeUnRead;
-
-    private Integer executeUnState;
-
-    private Integer reqPassed;
-
-    private Integer reqRejected;
-
     private ResourceBundle zhCNResourceBundle;
 
 
@@ -102,14 +88,6 @@ public class UserInfo implements Serializable {
 
     private Locale locale;
 
-    private Long viewReqId;
-    
-    private Long viewTaskId;
-
-    private Long viewExecuteId;
-
-    private Integer applyCount;
-    
     private String themeType;
 
     private boolean admin;
@@ -327,53 +305,6 @@ public class UserInfo implements Serializable {
         this.enUSResourceBundle = enUSResourceBundle;
     }
 
-    public Integer getTaskUnRead() {
-        return taskUnRead;
-    }
-
-    public void setTaskUnRead(Integer taskUnRead) {
-        this.taskUnRead = taskUnRead;
-    }
-
-    public Integer getTaskUnApprove() {
-        return taskUnApprove;
-    }
-
-    public void setTaskUnApprove(Integer taskUnApprove) {
-        this.taskUnApprove = taskUnApprove;
-    }
-
-    public Integer getReqPassed() {
-        return reqPassed;
-    }
-
-    public void setReqPassed(Integer reqPassed) {
-        this.reqPassed = reqPassed;
-    }
-
-    public Integer getReqRejected() {
-        return reqRejected;
-    }
-
-    public void setReqRejected(Integer reqRejected) {
-        this.reqRejected = reqRejected;
-    }
-
-    public Long getViewReqId() {
-        return viewReqId;
-    }
-
-    public void setViewReqId(Long viewReqId) {
-        this.viewReqId = viewReqId;
-    }
-
-    public Long getViewTaskId() {
-        return viewTaskId;
-    }
-
-    public void setViewTaskId(Long viewTaskId) {
-        this.viewTaskId = viewTaskId;
-    }
 
 
     public boolean isAdmin() {
@@ -416,30 +347,6 @@ public class UserInfo implements Serializable {
         this.redirectUri = redirectUri;
     }
 
-    public Integer getExecuteUnRead() {
-        return executeUnRead;
-    }
-
-    public void setExecuteUnRead(Integer executeUnRead) {
-        this.executeUnRead = executeUnRead;
-    }
-
-    public Integer getExecuteUnState() {
-        return executeUnState;
-    }
-
-    public void setExecuteUnState(Integer executeUnState) {
-        this.executeUnState = executeUnState;
-    }
-
-    public Long getViewExecuteId() {
-        return viewExecuteId;
-    }
-
-    public void setViewExecuteId(Long viewExecuteId) {
-        this.viewExecuteId = viewExecuteId;
-    }
-
     public String getMobileTab() {
         return mobileTab;
     }
@@ -480,30 +387,6 @@ public class UserInfo implements Serializable {
         this.departmentList = departmentList;
     }
 
-    public Integer getInitApply() {
-        return initApply;
-    }
-
-    public void setInitApply(Integer initApply) {
-        this.initApply = initApply;
-    }
-
-    public Integer getApplyCount() {
-        if(applyCount>0){
-            int mu=applyCount/4;
-            int mo=applyCount%4;
-            if(mo>0){
-                mu+=1;
-            }
-            return mu;
-        }else{
-            return 1;
-        }
-    }
-
-    public void setApplyCount(Integer applyCount) {
-        this.applyCount = applyCount;
-    }
 
     public String getFlag() {
         return flag;

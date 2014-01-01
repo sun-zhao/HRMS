@@ -1,0 +1,27 @@
+/*字体颜色和边框*/
+.AppLayout,.AppTopBar,.AppNav,.AppNavT,.word-ser li a:hover,.PerList li:hover,.PopRight,.Info,.edit,.PopLeft ul li a:hover,.TabClander th,.TabClander td,.Pcard{border-color:#D4E5F6;}/*辅助色*/
+.word-ser li.current a,.button,.edit,.PopLeft ul li a.current,.ThemeInput:hover,.ThemeText:hover{border-color:#0066CC;}/*主色*/
+.PerList li,.ThemeSelect,.ThemeInput,.ThemeText,.PerList li p.alignright,.CardBt{border-color:#D4E5F6;}/*灰色边框*/
+.AppTopBar,.AppNavT ul li a:hover,.AppNavT ul li.current a,.PopTitle,.PerName,
+.a-link,.invite:hover,.invite,.Nav-ul li.AppSet a,.Nav-ul li.AppSet.current a,.SearchResults dd a em,.CardBt a,.Themetxt-color,.off,.a-make:hover{color:#0066CC!important;}
+{color:#004488;}/*颜色-深色*/
+.a-make{color:#a5c9ed!important;}
+.PerList li:hover p.alignright,.PerList li:hover,.PerList li:hover .CardBt{border-color:#b8d4f5;}
+/*背景色*/
+.AppTopBar,.word-ser li a:hover,.PerList li,.PopLeft ul li a:hover,.WorkStory tbody tr:hover,.WorkStory thead th,.BgColor,.Pcard thead,.PerListmini li .makeitem{background-color:#EDF4FB;}/*浅色*/
+.PerList li:hover,.PopLeft ul li a.current,.today{background-color:#D4E5F6;}/*辅助色*/
+.down-list li:hover,.word-ser li.current a,.button,.off:hover{background-color:#0066cc;}/*主色*/
+.button:hover{background-color:#004488;}/*深色*/
+.off:hover{color:#fff!important;}
+/*按钮*/
+.button{border-bottom-color:#004488;border-radius:3px;font-size:12px;}
+.icon{background-image:url("../images/theme1/theme-ico.png");position: relative;top:-1px;margin-right:2px;}
+.quit{background-color:#f3f2f0;color:#989899;border-color:#d3d3d3;text-shadow:0 -1px 0 #ccc;}
+.quit:hover{background-color:#f3f2f0;}
+
+
+
+
+
+
+
