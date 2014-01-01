@@ -5,6 +5,7 @@ import com.mingdao.api.billing.RequestBilling;
 import com.mingdao.api.entity.AppConfig;
 import com.mingdao.api.entity.Billing;
 import com.mingdao.api.entity.User;
+import com.mingdao.api.message.RequestMessage;
 import com.mingdao.api.user.RequestUser;
 import com.mingdao.api.utils.AppConfigUtil;
 import com.mingdao.api.utils.SignatureUtil;
@@ -46,6 +47,23 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     private List<HrEmployee> employeeList;
 
     @ReqSet
+    private List<String> pyList;
+
+    @ReqSet
+    @ReqGet
+    private Long id;
+
+    @ReqSet
+    @ReqGet
+    private String word;
+
+    @ReqSet
+    @ReqGet
+    private String userName;
+
+    @ReqSet
+    private User user;
+    @ReqSet
     private Map<String, User> userMapList = null;
 
     @PageFlow(result = {
@@ -63,6 +81,12 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
             String companyId = userInfo.getCompanyId();
             if (StringUtils.isNotBlank(companyId)) {
                 selectorList.add(SelectorUtils.$eq("companyId", companyId));
+                if (StringUtils.isNotBlank(word)) {
+                    selectorList.add(SelectorUtils.$eq("userFirstPy", word));
+                }
+                if (StringUtils.isNotBlank(userName)) {
+                    selectorList.add(SelectorUtils.$like("userName", userName));
+                }
                 selectorList.add(SelectorUtils.$eq("useYn", "Y"));
                 selectorList.add(SelectorUtils.$eq("complete", 1));
                 selectorList.add(SelectorUtils.$order("userFirstPy"));
@@ -76,26 +100,27 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
 
     @PageFlow(result = {
             @Result(name = "success", path = "/view/hr/employee/news.ftl", type = Dispatcher.FreeMarker)})
-    public String news() throws Exception {
-        UserInfo userInfo= UserSession.getUserInfo(getHttpServletRequest());
-        if(userInfo!=null){
-            List<HrEmployee> addEmployeeList=null;
-            List<User> userList=RequestUser.getUserAll(userInfo.getAccessToken());
-            if(userList!=null&&!userList.isEmpty()){
-               List<String> userIdList= hrEmployeeService.getUserIdByCompany(userInfo.getCompanyId());
-                addEmployeeList=new ArrayList<HrEmployee>();
-                for(User user:userList){
-                    if(userIdList!=null&&!userIdList.isEmpty()){
-                        if(userIdList.contains(user.getId())){
+    public synchronized  String news() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null) {
+            List<HrEmployee> addEmployeeList = null;
+            List<User> userList = RequestUser.getUserAll(userInfo.getAccessToken());
+            if (userList != null && !userList.isEmpty()) {
+                List<String> userIdList = hrEmployeeService.getUserIdByCompany(userInfo.getCompanyId());
+                addEmployeeList = new ArrayList<HrEmployee>();
+                for (User user : userList) {
+                    if (userIdList != null && !userIdList.isEmpty()) {
+                        if (userIdList.contains(user.getId())) {
                             continue;
                         }
                     }
-                    hrEmployee=new HrEmployee();
+                    hrEmployee = new HrEmployee();
                     hrEmployee.setCompanyId(userInfo.getCompanyId());
                     hrEmployee.setUserId(user.getId());
-                    if(StringUtils.isNotBlank(user.getName())){
-                        String pys[]=PinyinUtils.getHeadByString(user.getName());
-                        if(pys!=null&&pys.length>0){
+                    hrEmployee.setUserName(user.getName());
+                    if (StringUtils.isNotBlank(user.getName())) {
+                        String pys[] = PinyinUtils.getHeadByString(user.getName());
+                        if (pys != null && pys.length > 0) {
                             hrEmployee.setUserFirstPy(pys[0].toUpperCase());
                         }
                     }
@@ -106,19 +131,63 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 }
                 this.hrEmployeeService.save(addEmployeeList);
             }
-            pageObj = this.hrEmployeeService.getPageList(getStart(), 24, searchModeCallbackNews());
-            if(pageObj!=null){
-                employeeList=pageObj.getResultList();
-                if(employeeList!=null&&!employeeList.isEmpty()){
+            pageObj = this.hrEmployeeService.getPageList(getStart(), 20, searchModeCallbackNews());
+            if (pageObj != null) {
+                employeeList = pageObj.getResultList();
+                if (employeeList != null && !employeeList.isEmpty()) {
                     Set<String> userIdSet = new HashSet<String>();
-                    userMapList=new HashMap<String, User>();
-                    for(HrEmployee employee:employeeList){
+                    userMapList = new HashMap<String, User>();
+                    for (HrEmployee employee : employeeList) {
                         userIdSet.add(employee.getUserId());
                     }
                     if (userIdSet != null && !userIdSet.isEmpty()) {
                         userMapList = RequestUser.getMapUserList(userInfo.getAccessToken(), userIdSet);
                     }
+                    pyList = this.hrEmployeeService.getListPyByCompanyComplete(userInfo.getCompanyId(), 1);
                 }
+            }
+        }
+        return "success";
+    }
+
+    public String sendImprove() throws Exception {
+        JSONObject root = new JSONObject();
+        root.put("result", "-1");
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null && id != null) {
+            hrEmployee = this.hrEmployeeService.getById(id);
+            if (hrEmployee.getComplete().intValue() == 1) {
+                hrEmployee.setComplete(2);
+
+//                String msgContent = "#完善个人资料# " + userInfo.getUserName() + "邀请您完善个人资料，请您点击链接进行操作";
+//                msgContent += "<a target=\"_blank\" href=\"" + getMdURI() + "&action=improve\">完善个人资料</a>";
+//                String messageId = null;
+//                try {
+//                    messageId = RequestMessage.createSys(userInfo.getAccessToken(), hrEmployee.getUserId(), userInfo.getCompanyId(),
+//                            msgContent, userInfo.getAppKey(), userInfo.getAppSecret());
+//                    hrEmployee.setCompleteMessageId(messageId);
+//                } catch (Exception e) {
+//                    hrEmployee.setCompleteMessageId(messageId);
+//                }
+                bind(hrEmployee);
+                this.hrEmployeeService.save(hrEmployee);
+                root.put("userName", hrEmployee.getUserName());
+                root.put("result", "0");
+            }
+        }
+        writeJsonByAction(root.toString());
+        return null;
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/view/hr/employee/improve.ftl", type = Dispatcher.FreeMarker)})
+    public String improve() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null) {
+            userInfo.setTopMenuCss("myEmployee");
+            hrEmployee = this.hrEmployeeService.getByUserId(userInfo.getCompanyId(), userInfo.getUserId());
+            if (hrEmployee.getComplete().intValue() == 2) {
+                user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
             }
         }
         return "success";

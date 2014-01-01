@@ -19,7 +19,7 @@
 .Nav-ul li.current a,.Nav-ul li.current a:hover{background:#9E9E9E;color:#fff;}
 .Nav-ul li a:hover{background:#E5E5E5;}
 .Nav-ul li.AppSet.current a{background:none;}
-.AppNavT{padding:15px 10px 15px 15px;}
+.AppNavT{padding:15px 10px 15px 15px;position:relative;}
 .AppNavT ul li{float:left;margin:0 20px 0 0;}
 .AppNavT ul li a{color:#555;}
 /*图标*/
@@ -105,11 +105,15 @@ a:hover .icon-por,.icon-por:hover{background-position:-14px -280px;}/*档案袋*
 .word-ser li{display:block;margin-bottom:2px;}
 .word-ser li a{line-height:20px;border-right:2px solid #E7E7E7;height:20px;text-align:center;display: block;color:#737373;}
 .word-ser li.current a{color:#fff;}
+.word-ser li.noname a{color:#ccc!important;cursor: inherit;}
+.word-ser li.noname a:hover{background: none!important;}
+.gotop{position:absolute;top:-40px;right:12px;z-index:100;}
 /*增加一行*/
 .add-more{height:25px;line-height:25px;background:#F5F5F5;color:#666;border:1px solid #D5D5D5;}
 .add-more:hover{background:#fff;}
 /*用户名片*/
-.PerList li{float:left;display:block;width:158px;height:auto;border-width:1px;border-style:solid;cursor:pointer;margin:0 0 15px 9px;padding:5px;border-radius:3px;}
+.PerList li{float:left;display:block;width:158px;height:auto;border-width:1px;border-style:solid;cursor:pointer;margin:0 0 9.5px 9px;padding:5px;border-radius:3px;}
+.contract li{margin:0 0 13.5px 9px;}
 .PerList li .PerImg,.PerList li .PerImg img{display:block;width:60px;height:60px;border-radius:3px;}
 .PerList li .PerImg{padding:1px;border:1px solid #fff;backdground:#fff;}
 .PerList li .PerImg img{vertical-align:bottom;}
@@ -181,7 +185,12 @@ select.edit{padding-bottom:2px;height:auto;}
 .PerList li p.alignright,.CardBt{border-top:1px solid;padding:5px 0 2px 0;margin-top:5px;}
 
 
-
+.alertDialog,.warningDialog,.errorDialog{background-color:#CFFBC7;border:2px solid #FFFFFF;border-radius:6px;color:green;font-size:20px;padding:10px 40px 10px 20px;
+    box-shadow:0 0 40px #000000;position:fixed;text-align:left;z-index:9999;}
+a.close{background:#fff;display: block;font-size:20px;font-weight: 700;border-radius:10px;overflow: hidden;position: absolute;height:20px;right:10px;line-height: 16px;color:#119900;top:12px; text-align: center;width:20px;}
+a.close:hover{text-decoration: none;}
+.errorDialog{background-color:#ec8778;color:#a73524;}
+.errorDialog a.close{color:#c69385;}
 
 
 

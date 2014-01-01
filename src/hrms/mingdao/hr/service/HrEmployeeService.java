@@ -28,6 +28,11 @@ public class HrEmployeeService extends HQuery {
     }
 
     @Transactional(type = TransactionType.READ_ONLY)
+    public HrEmployee getByUserId(String companyId,String userId) {
+        return $($eq("companyId",companyId),$eq("userId",userId),$eq("useYn","Y")).get(HrEmployee.class);
+    }
+
+    @Transactional(type = TransactionType.READ_ONLY)
     public Page<HrEmployee> getPageList(int start,
                                    int limit, List<Selector> selectorList) {
         return $(selectorList).page(HrEmployee.class, start, limit);
@@ -37,6 +42,11 @@ public class HrEmployeeService extends HQuery {
     @Transactional(type = TransactionType.READ_ONLY)
     public List<HrEmployee> getListByCompany(String companyId) {
         return $($eq("companyId",companyId),$eq("useYn","Y")).list(HrEmployee.class);
+    }
+
+    @Transactional(type = TransactionType.READ_ONLY)
+    public List<String> getListPyByCompanyComplete(String companyId,Integer complete) {
+        return $($eq("companyId",companyId),$eq("useYn","Y"),$distinct("userFirstPy")).list(HrEmployee.class,String.class);
     }
 
 

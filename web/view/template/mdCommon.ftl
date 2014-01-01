@@ -1,7 +1,7 @@
 <#import "/view/template/common.ftl" as common>
 <#import "/view/common/core.ftl" as c>
-<#macro md_common title>
-    <@common.html title=title>
+<#macro md_common title module>
+    <@common.html title=title module=module>
     <script type="text/javascript" src="/js/importJS.js"></script>
     <script type="text/javascript">
         var timer;

@@ -1,6 +1,6 @@
 <#import "/view/template/mdCommon.ftl" as md_common>
 <#import "/view/common/core.ftl" as c>
-<#macro employee_common>
+<#macro common_common>
     <@md_common.md_common title="档案合同" module="HR">
     <script type="text/javascript">
         $(document).ready(function () {
@@ -9,9 +9,6 @@
                 <#if userInfo?exists>
                     $('li', '.AppNav').removeClass('current');
                     $('.${userInfo['topMenuCss']?if_exists}', '.AppNav').addClass('current');
-
-                    $('li', '.AppNavT').removeClass('current');
-                    $('.${userInfo['menuCss']?if_exists}', '.AppNavT').addClass('current');
                 </#if>
             </#if>
         });
@@ -31,20 +28,11 @@
                 <li class="employee"><a href="#">人事档案</a></li>
                 <li><a href="#">合同管理</a></li>
                 <li><a href="#">报表统计</a></li>
-                <li><a href="#">我的档案</a></li>
+                <li class="myEmployee"><a href="#">我的档案</a></li>
                 <li class="AppSet"><a href="#"><em class="icon icon-set"></em>应用设置</a></li>
             </ul>
         </div>
         <!--一级导航over-->
-        <!--二级导航begin-->
-        <div class="AppNavT border-solid border-bottom clearfix">
-            <ul class="font16 clearfix floatleft">
-                <li class="list"><a href="#">员工档案</a></li>
-                <li class="news"><a href="/hr/employee!news.dhtml">新增员工</a></li>
-                <li class="dm"><a href="#">离职员工</a></li>
-            </ul>
-        </div>
-        <!--二级导航over-->
         <div class="AppMain clearfix">
             <#nested />
         </div>

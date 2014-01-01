@@ -30,6 +30,28 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     private String userId;
 
+    private String userName;
+
+    private String deptName;
+
+    private Integer dutyLevel;
+
+    private String jobName;
+
+    private Integer userSex;
+
+    private String mobileTel;
+
+    private String officeTel;
+
+    private String userEmail;
+
+    private String officeAddress;
+
+    private Date entryDate;
+
+    private Date birthDay;
+
     private String userFirstPy;
 
     private SysCode contryId;
@@ -47,6 +69,8 @@ public class HrEmployee extends IdEntity implements Tracker {
     private String bankCard;
 
     private Integer complete;
+
+    private String completeMessageId;
 
     private Date created;
 
@@ -217,5 +241,113 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     public void setComplete(Integer complete) {
         this.complete = complete;
+    }
+
+    @Column(name = "USER_NAME")
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    @Column(name = "COMPLETE_MESSAGE_ID")
+    public String getCompleteMessageId() {
+        return completeMessageId;
+    }
+
+    public void setCompleteMessageId(String completeMessageId) {
+        this.completeMessageId = completeMessageId;
+    }
+
+    @Column(name = "DEPT_NAME")
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    @Column(name = "DUTY_LEVEL")
+    public Integer getDutyLevel() {
+        return dutyLevel;
+    }
+
+    public void setDutyLevel(Integer dutyLevel) {
+        this.dutyLevel = dutyLevel;
+    }
+
+    @Column(name = "JOB_NAME")
+    public String getJobName() {
+        return jobName;
+    }
+
+    public void setJobName(String jobName) {
+        this.jobName = jobName;
+    }
+
+    @Column(name = "USER_SEX")
+    public Integer getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(Integer userSex) {
+        this.userSex = userSex;
+    }
+
+    @Column(name = "MOBILE_TEL")
+    public String getMobileTel() {
+        return mobileTel;
+    }
+
+    public void setMobileTel(String mobileTel) {
+        this.mobileTel = mobileTel;
+    }
+
+    @Column(name = "OFFICE_TEL")
+    public String getOfficeTel() {
+        return officeTel;
+    }
+
+    public void setOfficeTel(String officeTel) {
+        this.officeTel = officeTel;
+    }
+
+    @Column(name = "USER_EMAIL")
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    @Column(name = "OFFICE_ADDRESS")
+    public String getOfficeAddress() {
+        return officeAddress;
+    }
+
+    public void setOfficeAddress(String officeAddress) {
+        this.officeAddress = officeAddress;
+    }
+
+    @Column(name = "ENTRY_DATE")
+    public Date getEntryDate() {
+        return entryDate;
+    }
+
+    public void setEntryDate(Date entryDate) {
+        this.entryDate = entryDate;
+    }
+
+    @Column(name = "BIRTHDAY")
+    public Date getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(Date birthDay) {
+        this.birthDay = birthDay;
     }
 }

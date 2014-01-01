@@ -1,4 +1,4 @@
-<#macro html title="" >
+<#macro html  module title="">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -11,6 +11,11 @@
     <link rel="shortcut icon" href="/view/favicon.ico"/>
     <link rel="stylesheet" href="/css/global.css" type="text/css">
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
+    <#if module?exists>
+    <#if module=="HR">
+        <link rel="stylesheet" href="/css/per-style.css" type="text/css">
+    </#if>
+    </#if>
     <link rel="stylesheet" href="/css/theme1.css" type="text/css">
     <script src="/js/jquery.js"></script>
     <script src="/js/support.js"></script>
