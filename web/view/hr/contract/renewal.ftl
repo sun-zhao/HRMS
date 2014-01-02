@@ -11,6 +11,13 @@
         WEBUTILS.validator.init({
             modes: [
                 {
+                    id: 'hrContract\\.contractNo',
+                    required: true,
+                    pattern: [
+                        {type: 'blank', exp: '!=', msg: '请输入合同编号'}
+                    ]
+                },
+                {
                     id: 'hrContract\\.endDate',
                     required: true,
                     pattern: [
@@ -136,7 +143,10 @@
                 <tr>
                     <th width="75">合同编号：</th>
                     <td width="130">
-                        ${hrContract.contractNo?if_exists}
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrContract.contractNo" name="hrContract.contractNo">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                     <th width="60">合同类别：</th>
                     <td>

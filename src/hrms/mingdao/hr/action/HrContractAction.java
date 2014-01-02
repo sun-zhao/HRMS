@@ -309,7 +309,7 @@ public class HrContractAction extends ActionSupport<HrContract> {
             HrContract renewalContract=new HrContract();
             renewalContract.setCompanyId(userInfo.getCompanyId());
             renewalContract.setEmpId(old.getEmpId());
-            renewalContract.setContractNo(old.getContractNo());
+            renewalContract.setContractNo(hrContract.getContractNo());
             renewalContract.setContractState(1);
             renewalContract.setRenewalFlag(0);
             renewalContract.setStartDate(renewalDate);
