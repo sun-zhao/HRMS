@@ -27,7 +27,7 @@ public class SysCity extends IdEntity implements Tracker {
 
     private String cityName;
 
-    private String cityPy;
+    private Integer displayOrder;
 
     private Date created;
 
@@ -115,12 +115,12 @@ public class SysCity extends IdEntity implements Tracker {
         this.cityName = cityName;
     }
 
-    @Column(name = "CITY_PY")
-    public String getCityPy() {
-        return cityPy;
+    @Column(name = "DISPLAY_ORDER")
+    public Integer getDisplayOrder() {
+        return displayOrder;
     }
 
-    public void setCityPy(String cityPy) {
-        this.cityPy = cityPy;
+    public void setDisplayOrder(Integer displayOrder) {
+        this.displayOrder = displayOrder;
     }
 }

@@ -14,6 +14,8 @@ import hrms.mingdao.common.UserInfo;
 import hrms.mingdao.common.UserSession;
 import hrms.mingdao.common.entity.TempAtt;
 import hrms.mingdao.common.service.TempAttService;
+import hrms.mingdao.sys.entity.SysCity;
+import hrms.mingdao.sys.service.SysCityService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import ognl.NoSuchPropertyException;
@@ -50,6 +52,9 @@ public class CommonAction extends BaseAction {
     @Inject
     private TempAttService tempAttService;
 
+    @Inject
+    private SysCityService sysCityService;
+
     @ReqGet
     private String keywords;
 
@@ -79,6 +84,11 @@ public class CommonAction extends BaseAction {
 
     @ReqGet
     private String fileNames;
+
+
+    @ReqGet
+    @ReqSet
+    private Long  provinceId;
 
 
     public String searchUser() throws Exception {
@@ -135,6 +145,28 @@ public class CommonAction extends BaseAction {
 
     @Override
     public String execute() throws Exception {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public String cityList() throws Exception {
+        JSONObject root = new JSONObject();
+        root.put("result", "-1");
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&provinceId!=null) {
+            List<SysCity> cityList=this.sysCityService.getListByProvince(provinceId);
+            if(cityList!=null&&!cityList.isEmpty()){
+                JSONArray cityArray=new JSONArray();
+                for(SysCity city:cityList){
+                    JSONObject object=new JSONObject();
+                    object.put("id",city.getId());
+                    object.put("name",city.getCityName());
+                    cityArray.add(object);
+                }
+                root.put("cityList", cityArray);
+            }
+            root.put("result", "0");
+        }
+        writeJsonByAction(root.toString());
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 

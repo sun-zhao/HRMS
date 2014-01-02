@@ -1,8 +1,9 @@
-package hrms.mingdao.hr.service;
+package hrms.mingdao.sys.service;
 
 import com.google.inject.Singleton;
-import hrms.mingdao.hr.entity.HrEmployee;
-import hrms.mingdao.hr.entity.HrEmployeeJob;
+import hrms.mingdao.sys.entity.SysCity;
+import hrms.mingdao.sys.entity.SysCode;
+import hrms.mingdao.sys.entity.SysProvince;
 import org.guiceside.persistence.TransactionType;
 import org.guiceside.persistence.Transactional;
 import org.guiceside.persistence.hibernate.dao.hquery.HQuery;
@@ -15,41 +16,41 @@ import java.util.List;
  * @since JDK1.5
  */
 @Singleton
-public class HrEmployeeJobService extends HQuery {
+public class SysCityService extends HQuery {
 
     /**
      * @param id
      * @return 根据Id获取代码
      */
     @Transactional(type = TransactionType.READ_ONLY)
-    public HrEmployeeJob getById(Long id) {
-        return $(id).get(HrEmployeeJob.class);
+    public SysCity getById(Long id) {
+        return $(id).get(SysCity.class);
     }
 
     @Transactional(type = TransactionType.READ_ONLY)
-    public List<HrEmployeeJob> getListByEmpId(String companyId, Long empId) {
-        return $($eq("companyId", companyId), $eq("empId.id", empId), $eq("useYn", "Y")).list(HrEmployeeJob.class);
+    public List<SysCity> getListByProvince(Long provinceId) {
+        return $($eq("provinceId.id",provinceId), $eq("useYn", "Y"), $order("displayOrder")).list(SysCity.class);
     }
 
     /**
      * 保存对象
      */
     @Transactional(type = TransactionType.READ_WRITE)
-    public void save(HrEmployeeJob hrEmployeeJob) {
-        $(hrEmployeeJob).save();
+    public void save(SysCity sysCity) {
+        $(sysCity).save();
     }
 
     @Transactional(type = TransactionType.READ_WRITE)
-    public void save(List<HrEmployeeJob> employeeJobList) {
-        $(employeeJobList).save();
+    public void save(List<SysCity> sysCityList) {
+        $(sysCityList).save();
     }
 
     /**
      * 删除对象
      */
     @Transactional(type = TransactionType.READ_WRITE)
-    public void delete(HrEmployeeJob hrEmployeeJob) {
-        $(hrEmployeeJob).delete();
+    public void delete(SysCity sysCity) {
+        $(sysCity).delete();
     }
 
 
@@ -60,6 +61,6 @@ public class HrEmployeeJobService extends HQuery {
      */
     @Transactional(type = TransactionType.READ_WRITE)
     public void deleteById(Long id) {
-        $(id).delete(HrEmployeeJob.class);
+        $(id).delete(SysCity.class);
     }
 }

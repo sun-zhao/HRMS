@@ -39,6 +39,8 @@ public class HrEmployeeFamily extends IdEntity implements Tracker {
 
     private Integer residenceBookletType;
 
+    private Integer marry;
+
     private Date created;
 
     private String createdBy;
@@ -179,5 +181,14 @@ public class HrEmployeeFamily extends IdEntity implements Tracker {
 
     public void setResidenceBookletType(Integer residenceBookletType) {
         this.residenceBookletType = residenceBookletType;
+    }
+
+    @Column(name = "MARRY")
+    public Integer getMarry() {
+        return marry;
+    }
+
+    public void setMarry(Integer marry) {
+        this.marry = marry;
     }
 }

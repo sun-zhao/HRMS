@@ -28,6 +28,7 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     private String companyId;
 
+
     private String userId;
 
     private String userName;
@@ -56,19 +57,25 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     private SysCode contryId;
 
+    private SysCode eduLevel;
+
     private SysCode nationalityId;
 
     private SysProvince provinceId;
 
     private SysCity cityId;
 
-    private SysCode  politicsLevelId;
+    private SysCode  politicsLevel;
 
     private String idCard;
 
     private String bankCard;
 
     private Integer complete;
+
+    private Integer workState;
+
+    private Integer empType;
 
     private String completeMessageId;
 
@@ -198,13 +205,13 @@ public class HrEmployee extends IdEntity implements Tracker {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "POLITICS_LEVEL_ID")
-    public SysCode getPoliticsLevelId() {
-        return politicsLevelId;
+    @JoinColumn(name = "POLITICS_LEVEL")
+    public SysCode getPoliticsLevel() {
+        return politicsLevel;
     }
 
-    public void setPoliticsLevelId(SysCode politicsLevelId) {
-        this.politicsLevelId = politicsLevelId;
+    public void setPoliticsLevel(SysCode politicsLevel) {
+        this.politicsLevel = politicsLevel;
     }
 
     @Column(name = "ID_CARD")
@@ -349,5 +356,33 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     public void setBirthDay(Date birthDay) {
         this.birthDay = birthDay;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EDU_LEVEL")
+    public SysCode getEduLevel() {
+        return eduLevel;
+    }
+
+    public void setEduLevel(SysCode eduLevel) {
+        this.eduLevel = eduLevel;
+    }
+
+    @Column(name = "WORK_STATE")
+    public Integer getWorkState() {
+        return workState;
+    }
+
+    public void setWorkState(Integer workState) {
+        this.workState = workState;
+    }
+
+    @Column(name = "EMP_TYPE")
+    public Integer getEmpType() {
+        return empType;
+    }
+
+    public void setEmpType(Integer empType) {
+        this.empType = empType;
     }
 }

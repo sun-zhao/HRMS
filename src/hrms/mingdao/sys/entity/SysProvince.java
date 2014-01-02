@@ -25,7 +25,9 @@ public class SysProvince extends IdEntity implements Tracker {
 
     private String provinceName;
 
-    private String provincePy;
+    private Integer displayOrder;
+
+    private String note;
 
     private Date created;
 
@@ -102,12 +104,21 @@ public class SysProvince extends IdEntity implements Tracker {
         this.provinceName = provinceName;
     }
 
-    @Column(name = "PROVINCE_PY")
-    public String getProvincePy() {
-        return provincePy;
+    @Column(name = "DISPLAY_ORDER")
+    public Integer getDisplayOrder() {
+        return displayOrder;
     }
 
-    public void setProvincePy(String provincePy) {
-        this.provincePy = provincePy;
+    public void setDisplayOrder(Integer displayOrder) {
+        this.displayOrder = displayOrder;
+    }
+
+    @Column(name = "NOTE")
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

@@ -48,6 +48,7 @@
             }
         });
         $('.sendImprove').off('click').on('click',function(){
+            var li=$(this).parent().parent();
             var uid=$(this).attr('uid');
             if(uid){
                 $.ajax({
@@ -58,7 +59,8 @@
                     success:function (jsonData) {
                         if (jsonData) {
                             if (jsonData['result'] == '0') {
-                                WEBUTILS.msg.alertSuccess('已向'+jsonData['userName']+'发送完善信息邀请!',2000,function(){
+                                $(li).fadeOut();
+                                WEBUTILS.msg.alertSuccess('已向'+jsonData['userName']+'发送完善信息邀请!',1500,function(){
                                     document.location.reload();
                                 });
                             }
@@ -70,11 +72,34 @@
                 });
             }
         });
+        $('#allImprove').off('click').on('click',function(){
+            var r=confirm("此操作将邀请该列表下${pageObj.totalRecord?c}名员工完善人事档案,是否继续");
+            if(r==true){
+                WEBUTILS.popMask.show();
+                document.location.href='/hr/employee!sendImproveAll.dhtml';
+            }
+        });
     });
 </script>
 
 <!--排序搜索begin-->
 <div class="clearfix gotop">
+    <#if employeeList?exists&&employeeList?size gt 0>
+        <div class="floatleft marr10"><!--加current下拉框显示-->
+            <a class="button" id="allImprove">一键邀请</a>
+        </div>
+    </#if>
+    <div class="AppSequence floatleft marr10"><!--加current下拉框显示-->
+        <a href="#">按时间排序</a>
+        <em class="app-icon ico-toogle"></em>
+        <div class="down-list">
+            <ul>
+                <li>按时间排序</li>
+                <li>按类别排序</li>
+                <li>按紧急排序</li>
+            </ul>
+        </div>
+    </div>
     <!--搜索框begin-->
     <div class="search-area floatleft">
         <input type="text" id="userName" name="userName" class="search-int" placeholder="请输入员工姓名"

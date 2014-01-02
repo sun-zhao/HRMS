@@ -42,16 +42,19 @@ var ddmoveControlSpan = '<li uid="{id}">' +
     '</span>' +
     '</li>';
 
-var popMdPlus = ' <div style="width:{width}px;top:50%;left:50%;display:none;margin:{margin}" class="md-plus-pop" id="{winID}">' +
-    '<div class="md-plus-pop-inner">' +
-    '<a class="md-delect"></a>' +
-    '<p class="font18 md-title clearfix">{title}</p>' +
-    '<div>' +
-    '<iframe width="100%" scrolling="{scrolling}" height="{height}px" frameborder="0" src="{url}" style="overflow-x:hidden;overflow-y: auto;" id="pop-md-plus-iframe">' +
-    '</iframe>' +
-    '</div>' +
-    '</div>' +
-    '</div>';
+
+var popMdPlus = '<div style="left:50%;top:50%;margin:{margin};width:{width}px;" class="AppPop" id="{winID}">' +
+'<div class="PopInner">' +
+'<div class="PopTitle">' +
+'<span>{title}</span>' +
+'<span class="off">×</span>' +
+'</div>' +
+'<div class="PopMain clearfix">' +
+'<iframe width="100%" scrolling="{scrolling}" height="{height}px" frameborder="0" src="{url}" style="overflow-x:hidden;overflow-y: auto;" id="pop-md-plus-iframe">' +
+'</iframe>' +
+'</div>' +
+'</div>' +
+'</div>';
 
 var popMdDiv = ' <div style="width:{width}px;top:50%;left:50%;display:none;margin:{margin}" class="md-plus-pop">' +
     '<div class="md-plus-pop-inner">' +
