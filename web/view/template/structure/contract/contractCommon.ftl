@@ -1,6 +1,6 @@
 <#import "/view/template/mdCommon.ftl" as md_common>
 <#import "/view/common/core.ftl" as c>
-<#macro employee_common>
+<#macro contract_common>
     <@md_common.md_common title="档案合同" module="HR">
     <script type="text/javascript">
         $(document).ready(function () {
@@ -39,10 +39,8 @@
         <!--二级导航begin-->
         <div class="AppNavT border-solid border-bottom clearfix">
             <ul class="font16 clearfix floatleft">
-                <li class="list"><a href="/hr/employee.dhtml">员工档案</a></li>
-                <li class="entry"><a href="/hr/employee!entry.dhtml">入职员工</a></li>
-                <li class="positive"><a href="/hr/employee!positive.dhtml">转正员工</a></li>
-                <li class="dimission"><a  href="/hr/employee!dimission.dhtml">离职员工</a></li>
+                <li class="signing"><a href="/hr/contract!signing.dhtml">签订合同</a></li>
+                <li class="due"><a href="/hr/contract!due.dhtml">到期合同</a></li>
             </ul>
         </div>
         <!--二级导航over-->

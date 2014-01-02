@@ -12,9 +12,9 @@
     <ul>
         <li><a href="/hr/employee!viewInfo.dhtml?id=${hrEmployee.id?c}">个人信息</a></li>
         <li><a href="/hr/employee!viewFamily.dhtml?id=${hrEmployee.id?c}">家庭信息</a></li>
-        <li><a class="current" href="##">工作经历</a></li>
+        <li><a href="/hr/employeeJob!viewJob.dhtml?id=${hrEmployee.id?c}">工作经历</a></li>
         <li><a href="/hr/employeeEdu!viewEdu.dhtml?id=${hrEmployee.id?c}">教育经历</a></li>
-        <li <#if hrEmployee.contractFlag==0> class="noname" </#if>><a href="/hr/contract!view.dhtml?empId=${hrEmployee.id?c}">合同信息</a></li>
+        <li <#if hrEmployee.contractFlag==0> class="noname" </#if>><a href="##" class="current">合同信息</a></li>
         <li class="noname"><a href="##">考勤信息</a></li>
         <li class="noname"><a href="##">保险信息</a></li>
         <li class="noname"><a href="##">薪资体系</a></li>
@@ -77,20 +77,36 @@
             <table width="100%" class="UserTbale nomar Info WorkStory">
                 <thead>
                 <tr>
-                    <th width="70" class="alignleft">公司名称</th>
-                    <th width="60">担任职务</th>
-                    <th width="60">入职日期</th>
-                    <th width="60">离职日期</th>
+                    <th width="70" class="alignleft">合同编号</th>
+                    <th >合同类别</th>
+                    <th width="60">签订日期</th>
+                    <th width="60">截止日期</th>
+                    <th width="60">状态</th>
                 </tr>
                 </thead>
                 <tbody>
-                <#if employeeJobList?exists&&employeeJobList?size gt 0>
-                    <#list employeeJobList as job>
-                    <tr title="${job.description?if_exists}">
-                        <td style="text-align: left;">${job.name?if_exists}</td>
-                        <td>${job.title?if_exists}</td>
-                        <td>${job.startDate?string("yyyy-MM-dd")}</td>
-                        <td>${job.endDate?string("yyyy-MM-dd")}</td>
+                <#if contractList?exists&&contractList?size gt 0>
+                    <#list contractList as contract>
+                    <tr title="${contract.remarks?if_exists}">
+                        <td style="text-align: left;">${contract.contractNo?if_exists}</td>
+                        <td>
+                            <#if contract.contractType==0>
+                                无固定期劳动合同
+                            <#elseif contract.contractType==1>
+                                固定期劳动合同
+                            </#if>
+                        </td>
+                        <td>${contract.startDate?string("yyyy-MM-dd")}</td>
+                        <td>${contract.endDate?string("yyyy-MM-dd")}</td>
+                        <td>
+                            <#if contract.contractState==0>
+                                新签
+                            <#elseif contract.contractState==1>
+                                续签
+                            <#elseif contract.contractState==2>
+                                终止
+                            </#if>
+                        </td>
                     </tr>
                     </#list>
                 </#if>

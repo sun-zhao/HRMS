@@ -13,7 +13,11 @@
         <li><a href="/hr/employee!viewInfo.dhtml?id=${hrEmployee.id?c}">个人信息</a></li>
         <li><a href="/hr/employee!viewFamily.dhtml?id=${hrEmployee.id?c}">家庭信息</a></li>
         <li><a href="/hr/employeeJob!viewJob.dhtml?id=${hrEmployee.id?c}">工作经历</a></li>
-        <li><a class="current" href="#">教育经历</a></li>
+        <li><a class="current" href="##">教育经历</a></li>
+        <li <#if hrEmployee.contractFlag==0> class="noname" </#if>><a href="/hr/contract!view.dhtml?empId=${hrEmployee.id?c}">合同信息</a></li>
+        <li class="noname"><a href="##">考勤信息</a></li>
+        <li class="noname"><a href="##">保险信息</a></li>
+        <li class="noname"><a href="##">薪资体系</a></li>
     </ul>
 </div>
 <!--左侧类目over-->

@@ -28,15 +28,17 @@ public class HrContract extends IdEntity implements Tracker {
 
     private String companyId;
 
-    private String userId;
+    private HrEmployee empId;
 
-    private HrContractType typeId;
+    private Integer contractType;
 
     private String contractNo;
 
     private Date startDate;
 
     private Date endDate;
+
+    private Integer renewalFlag;
 
     private Integer contractState;
 
@@ -118,23 +120,23 @@ public class HrContract extends IdEntity implements Tracker {
         this.companyId = companyId;
     }
 
-    @Column(name = "USER_ID")
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TYPE_ID")
-    public HrContractType getTypeId() {
-        return typeId;
+    @JoinColumn(name = "EMP_ID")
+    public HrEmployee getEmpId() {
+        return empId;
     }
 
-    public void setTypeId(HrContractType typeId) {
-        this.typeId = typeId;
+    public void setEmpId(HrEmployee empId) {
+        this.empId = empId;
+    }
+
+    @Column(name = "CONTRACT_TYPE")
+    public Integer getContractType() {
+        return contractType;
+    }
+
+    public void setContractType(Integer contractType) {
+        this.contractType = contractType;
     }
 
     @Column(name = "CONTRACT_NO")
@@ -180,5 +182,14 @@ public class HrContract extends IdEntity implements Tracker {
 
     public void setRemarks(String remarks) {
         this.remarks = remarks;
+    }
+
+    @Column(name = "RENEWAL_FLAG")
+    public Integer getRenewalFlag() {
+        return renewalFlag;
+    }
+
+    public void setRenewalFlag(Integer renewalFlag) {
+        this.renewalFlag = renewalFlag;
     }
 }

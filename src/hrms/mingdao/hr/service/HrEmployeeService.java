@@ -11,6 +11,7 @@ import org.guiceside.persistence.Transactional;
 import org.guiceside.persistence.hibernate.dao.hquery.HQuery;
 import org.guiceside.persistence.hibernate.dao.hquery.Selector;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -56,6 +57,17 @@ public class HrEmployeeService extends HQuery {
     public List<HrEmployee> getListByCompany(String companyId) {
         return $($eq("companyId", companyId), $eq("useYn", "Y")).list(HrEmployee.class);
     }
+
+    @Transactional(type = TransactionType.READ_ONLY)
+    public List<String> getListPyByCompanyEqContractFlag(String companyId, Integer contractFlag) {
+        return $($eq("companyId", companyId),$eq("complete",0),$eq("contractFlag",contractFlag), $eq("useYn", "Y"), $distinct("userFirstPy")).list(HrEmployee.class, String.class);
+    }
+
+    @Transactional(type = TransactionType.READ_ONLY)
+    public List<String> getListPyByCompanyEqContractFlag(String companyId, Integer contractFlag,Date dueDate) {
+        return $($eq("companyId", companyId),$eq("complete",0),$eq("contractFlag",contractFlag), $le("endDate",dueDate),$eq("useYn", "Y"), $distinct("userFirstPy")).list(HrEmployee.class, String.class);
+    }
+
 
     @Transactional(type = TransactionType.READ_ONLY)
     public List<String> getListPyByCompanyEqComplete(String companyId, Integer complete) {

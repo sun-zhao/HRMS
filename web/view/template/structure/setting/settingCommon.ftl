@@ -1,74 +1,52 @@
 <#import "/view/template/mdCommon.ftl" as md_common>
 <#import "/view/common/core.ftl" as c>
 <#macro setting_common>
-    <@md_common.md_common title="快捷审批">
+    <@md_common.md_common title="档案合同" module="HR">
     <script type="text/javascript">
         $(document).ready(function () {
             <#if Session["userSession"]?exists>
                 <#assign userInfo=Session["userSession"]?if_exists>
                 <#if userInfo?exists>
-                    $('li', '.md-p-nav').removeClass('current');
-                    $('.${userInfo['topMenuCss']?if_exists}', '.md-p-nav').addClass('current');
+                    $('li', '.AppNav').removeClass('current');
+                    $('.${userInfo['topMenuCss']?if_exists}', '.AppNav').addClass('current');
 
-                    $('li', '.md-p-nav2').removeClass('current');
-                    $('.${userInfo['menuCss']?if_exists}', '.md-p-nav2').addClass('current');
-
-                    <#if userInfo.reqPassed gt 0 ||userInfo.reqRejected gt 0>
-                        $('.myApply','.md-p-nav').find('a').append('<em class="md-plus-news"></em>');
-                    </#if>
-
-                    <#if userInfo.taskUnRead gt 0 ||userInfo.taskUnApprove gt 0>
-                        $('.task','.md-p-nav').find('a').append('<em class="md-plus-news"></em>');
-                    </#if>
-                    <#if userInfo.executeUnRead gt 0 ||userInfo.executeUnState gt 0>
-                        $('.execute','.md-p-nav').find('a').append('<em class="md-plus-news"></em>');
-                    </#if>
+                    $('li', '.AppNavT').removeClass('current');
+                    $('.${userInfo['menuCss']?if_exists}', '.AppNavT').addClass('current');
                 </#if>
             </#if>
-
-            var lv1MenuText=$('.current','.md-p-nav').find('a').text();
-            var lv2MenuText=$('.current','.md-p-nav2').find('a').text();
-            if(lv1MenuText&&lv2MenuText){
-                setLaTitle(lv1MenuText+'-'+lv2MenuText+' ${userInfo.companyName?if_exists}');
-            }
-            $('a','.md-p-nav2').poshytip({
-                className: 'tip-darkgray',
-                bgImageFrameSize: 9
-            });
         });
     </script>
-    <div class="md-plus">
-        <!--知识门户begin-->
-        <div class="md-plus-top clearfix">
-            <div class="floatleft md-plus-l"><span class="md-ico floatleft md-ico-logo"></span>快捷审批</div>
+    <div class="AppLayout border-solid">
+        <!--app title begin-->
+        <div class="AppTopBar border-solid border-bottom clearfix">
+            <div class="TopBarl floatleft">
+                <span class="AppLogo"><img src="../images/ico-8.png"></span>
+                <em class="font18">人力资源</em>
+            </div>
         </div>
-        <!--知识门户over-->
-        <div class="md-plus-inner mart30">
-            <div class="md-p-nav">
-                <ul class="clearfix">
-                    <li class="apply"><a class="m-first-a" href="/wf/applyMy.dhtml"><@c.textI18n value="req"/></a></li>
-                    <li class="myApply"><a href="/wf/req!ingList.dhtml"><@c.textI18n value="mine"/></a></li>
-                    <li class="task"><a href="/wf/reqTask!approveList.dhtml"><@c.textI18n value="approvals"/></a></li>
-                    <li class="execute"><a href="/wf/reqExecute!workList.dhtml"><@c.textI18n value="execution"/></a></li>
-                    <#if userInfo?exists>
-                        <#if userInfo.admin?exists&&userInfo.admin>
-                            <li class="admin last-li"><a class="m-last-a"
-                                                 href="/wf/apply.dhtml"><@c.textI18n value="environment"/></a>
-                            </li>
-                        </#if>
-                    </#if>
-                    <li class="setting last-li"><a href="/wf/remind.dhtml"><@c.textI18n value="personal"/></a></li>
-                </ul>
-            </div>
-            <div class="md-plus-main">
-                <!--二级导航 begin-->
-                <div class="md-p-nav2">
-                    <ul class="clearfix font16">
-                        <li class="current remind"><a href="/wf/remind.dhtml"><@c.textI18n value="personalReminders"/></a></li>
-                    </ul>
-                </div>
-                <#nested />
-            </div>
+        <!--app title over-->
+        <!--一级导航begin-->
+        <div class="AppNav border-solid border-bottom clearfix">
+            <ul class="Nav-ul font14 clearfix">
+                <li class="employee"><a href="/hr/employee.dhtml">人事档案</a></li>
+                <li class="contract"><a href="/hr/contract!signing.dhtml">合同管理</a></li>
+                <li><a href="#">报表统计</a></li>
+                <li class="myEmployee"><a href="#">我的档案</a></li>
+                <li class="AppSet"><a href="/hr/contractType.dhtml"><em class="icon icon-set"></em>应用设置</a></li>
+            </ul>
+        </div>
+        <!--一级导航over-->
+        <!--二级导航begin-->
+        <div class="AppNavT border-solid border-bottom clearfix">
+            <ul class="font16 clearfix floatleft">
+                <li class="type"><a href="/hr/contractType.dhtml">合同设置</a></li>
+                <li class="signing"><a href="/hr/contract!signing.dhtml">职级设置</a></li>
+                <li class="dm"><a href="#">岗位设置</a></li>
+            </ul>
+        </div>
+        <!--二级导航over-->
+        <div class="AppMain clearfix">
+            <#nested />
         </div>
     </div>
     </@md_common.md_common>

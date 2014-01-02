@@ -26,7 +26,7 @@
         <div class="AppNav border-solid border-bottom clearfix">
             <ul class="Nav-ul font14 clearfix">
                 <li class="employee"><a href="#">人事档案</a></li>
-                <li><a href="#">合同管理</a></li>
+                <li class="contract"><a href="#">合同管理</a></li>
                 <li><a href="#">报表统计</a></li>
                 <li class="myEmployee"><a href="#">我的档案</a></li>
                 <li class="AppSet"><a href="#"><em class="icon icon-set"></em>应用设置</a></li>

@@ -77,6 +77,8 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     private Integer empType;
 
+    private Integer contractFlag;
+
     private String completeMessageId;
 
     private Date created;
@@ -384,5 +386,14 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     public void setEmpType(Integer empType) {
         this.empType = empType;
+    }
+
+    @Column(name = "CONTRACT_FLAG")
+    public Integer getContractFlag() {
+        return contractFlag;
+    }
+
+    public void setContractFlag(Integer contractFlag) {
+        this.contractFlag = contractFlag;
     }
 }

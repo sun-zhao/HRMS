@@ -25,7 +25,14 @@ public class HrContractType extends IdEntity implements Tracker {
 
     private String companyId;
 
-    private String contractType;
+    private Integer staticRemindDay;
+
+    private Integer staticValidMonth;
+
+    private Integer staticProbation;
+
+
+    private Integer probation;
 
     private Integer remindDay;
 
@@ -107,14 +114,6 @@ public class HrContractType extends IdEntity implements Tracker {
         this.companyId = companyId;
     }
 
-    @Column(name = "CONTRACT_TYPE")
-    public String getContractType() {
-        return contractType;
-    }
-
-    public void setContractType(String contractType) {
-        this.contractType = contractType;
-    }
 
     @Column(name = "REMIND_DAY")
     public Integer getRemindDay() {
@@ -132,5 +131,41 @@ public class HrContractType extends IdEntity implements Tracker {
 
     public void setValidMonth(Integer validMonth) {
         this.validMonth = validMonth;
+    }
+
+    @Column(name = "STATIC_REMIND_DAY")
+    public Integer getStaticRemindDay() {
+        return staticRemindDay;
+    }
+
+    public void setStaticRemindDay(Integer staticRemindDay) {
+        this.staticRemindDay = staticRemindDay;
+    }
+
+    @Column(name = "STATIC_VALID_MONTH")
+    public Integer getStaticValidMonth() {
+        return staticValidMonth;
+    }
+
+    public void setStaticValidMonth(Integer staticValidMonth) {
+        this.staticValidMonth = staticValidMonth;
+    }
+
+    @Column(name = "STATIC_PROBATION")
+    public Integer getStaticProbation() {
+        return staticProbation;
+    }
+
+    public void setStaticProbation(Integer staticProbation) {
+        this.staticProbation = staticProbation;
+    }
+
+    @Column(name = "PROBATION")
+    public Integer getProbation() {
+        return probation;
+    }
+
+    public void setProbation(Integer probation) {
+        this.probation = probation;
     }
 }

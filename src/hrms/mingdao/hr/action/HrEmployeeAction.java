@@ -141,6 +141,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
             String companyId = userInfo.getCompanyId();
             if (StringUtils.isNotBlank(companyId)) {
                 selectorList.add(SelectorUtils.$eq("companyId", companyId));
+                selectorList.add(SelectorUtils.$eq("complete", 0));
                 if (StringUtils.isNotBlank(word)) {
                     selectorList.add(SelectorUtils.$eq("userFirstPy", word));
                 }
@@ -148,7 +149,6 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                     selectorList.add(SelectorUtils.$like("userName", userName));
                 }
                 selectorList.add(SelectorUtils.$eq("useYn", "Y"));
-                selectorList.add(SelectorUtils.$eq("complete", 0));
                 selectorList.add(SelectorUtils.$order("userFirstPy"));
             } else {
                 selectorList.add(SelectorUtils.$eq("id", 0l));
@@ -182,15 +182,16 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     }
 
 
-    private List<Selector> searchModeCallbackNews() throws Exception {
+    private List<Selector> searchModeCallbackEntry() throws Exception {
         List<Selector> selectorList = new ArrayList<Selector>();
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null) {
             userInfo.setTopMenuCss("employee");
-            userInfo.setMenuCss("news");
+            userInfo.setMenuCss("entry");
             String companyId = userInfo.getCompanyId();
             if (StringUtils.isNotBlank(companyId)) {
                 selectorList.add(SelectorUtils.$eq("companyId", companyId));
+                selectorList.add(SelectorUtils.$gt("complete", 0));
                 if (StringUtils.isNotBlank(word)) {
                     selectorList.add(SelectorUtils.$eq("userFirstPy", word));
                 }
@@ -198,7 +199,6 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                     selectorList.add(SelectorUtils.$like("userName", userName));
                 }
                 selectorList.add(SelectorUtils.$eq("useYn", "Y"));
-                selectorList.add(SelectorUtils.$gt("complete", 0));
                 selectorList.add(SelectorUtils.$order("userFirstPy"));
             } else {
                 selectorList.add(SelectorUtils.$eq("id", 0l));
@@ -209,8 +209,8 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     }
 
     @PageFlow(result = {
-            @Result(name = "success", path = "/view/hr/employee/news.ftl", type = Dispatcher.FreeMarker)})
-    public synchronized String news() throws Exception {
+            @Result(name = "success", path = "/view/hr/employee/entry.ftl", type = Dispatcher.FreeMarker)})
+    public synchronized String entry() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null) {
             List<HrEmployee> addEmployeeList = null;
@@ -227,6 +227,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                     hrEmployee = new HrEmployee();
                     hrEmployee.setCompanyId(userInfo.getCompanyId());
                     hrEmployee.setUserId(user.getId());
+                    hrEmployee.setContractFlag(0);
                     hrEmployee.setUserName(user.getName());
                     hrEmployee.setDeptName(user.getDepartment());
                     hrEmployee.setJobName(user.getJob());
@@ -243,7 +244,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 }
                 this.hrEmployeeService.save(addEmployeeList);
             }
-            pageObj = this.hrEmployeeService.getPageList(getStart(), 20, searchModeCallbackNews());
+            pageObj = this.hrEmployeeService.getPageList(getStart(), 20, searchModeCallbackEntry());
             if (pageObj != null) {
                 employeeList = pageObj.getResultList();
                 if (employeeList != null && !employeeList.isEmpty()) {
