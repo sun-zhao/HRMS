@@ -98,6 +98,33 @@
                     }
                 }
         });
+        $('.icon-edit').off('click').on('click',function(){
+            var uid=$(this).attr('uid');
+            if(uid){
+                $.ajax({
+                    type:'POST',
+                    url:'/hr/employeeJob!getJob.dhtml',
+                    data:{id:uid},
+                    dataType:'json',
+                    success:function (jsonData) {
+                        if (jsonData) {
+                            if (jsonData['result'] == '0') {
+                                $('#hrEmployeeJob\\.name').val(jsonData['name']);
+                                $('#hrEmployeeJob\\.title').val(jsonData['title']);
+                                $('#hrEmployeeJob\\.startDate').val(jsonData['startDate']);
+                                $('#hrEmployeeJob\\.endDate').val(jsonData['endDate']);
+                                $('#hrEmployeeJob\\.description').val(jsonData['description']);
+                                $('#hrEmployeeJob\\.id').val(jsonData['id']);
+                                $('span','#addJob').text('修改工作经历');
+                            }
+                        }
+                    },
+                    error:function (jsonData) {
+
+                    }
+                });
+            }
+        });
     });
 </script>
 <!--左侧类目begin-->
@@ -161,7 +188,7 @@
                 <tbody>
                 <#if employeeJobList?exists&&employeeJobList?size gt 0>
                     <#list employeeJobList as job>
-                    <tr>
+                    <tr title="${job.description?if_exists}">
                         <td style="text-align: left;">${job.name?if_exists}</td>
                         <td>${job.title?if_exists}</td>
                         <td>${job.startDate?string("yyyy-MM-dd")}</td>
@@ -222,8 +249,9 @@
                 </tr>
                 </tbody>
             </table>
+                <input type="hidden" name="hrEmployeeJob.id" id="hrEmployeeJob.id">
             </form>
-            <a class="add-more block aligncenter" href="##" id="addJob"><em class="icon icon-add"></em> 新增工作经历</a>
+            <a class="add-more block aligncenter" href="##" id="addJob"><em class="icon icon-add"></em><span>新增工作经历</span></a>
         </div>
 
 <p class="alignright mart5">

@@ -99,6 +99,34 @@
                 }
         });
 
+        $('.icon-edit').off('click').on('click',function(){
+            var uid=$(this).attr('uid');
+            if(uid){
+                $.ajax({
+                    type:'POST',
+                    url:'/hr/employeeEdu!getEdu.dhtml',
+                    data:{id:uid},
+                    dataType:'json',
+                    success:function (jsonData) {
+                        if (jsonData) {
+                            if (jsonData['result'] == '0') {
+                                $('#hrEmployeeEdu\\.name').val(jsonData['name']);
+                                $('#hrEmployeeEdu\\.title').val(jsonData['title']);
+                                $('#hrEmployeeEdu\\.startDate').val(jsonData['startDate']);
+                                $('#hrEmployeeEdu\\.endDate').val(jsonData['endDate']);
+                                $('#hrEmployeeEdu\\.description').val(jsonData['description']);
+                                $('#hrEmployeeEdu\\.id').val(jsonData['id']);
+                                $('span','#addEdu').text('修改教育经历');
+                            }
+                        }
+                    },
+                    error:function (jsonData) {
+
+                    }
+                });
+            }
+        });
+
     });
 </script>
 <!--左侧类目begin-->
@@ -162,7 +190,7 @@
                 <tbody>
                 <#if employeeEduList?exists&&employeeEduList?size gt 0>
                     <#list employeeEduList as edu>
-                    <tr>
+                    <tr title="${edu.description?if_exists}">
                         <td style="text-align: left;">${edu.name?if_exists}</td>
                         <td>${edu.title?if_exists}</td>
                         <td>${edu.startDate?string("yyyy-MM-dd")}</td>
@@ -223,6 +251,7 @@
                 </tr>
                 </tbody>
             </table>
+                <input type="hidden" name="hrEmployeeEdu.id" id="hrEmployeeEdu.id">
             </form>
             <a class="add-more block aligncenter" href="##" id="addEdu"><em class="icon icon-add"></em> 新增教育经历</a>
         </div>

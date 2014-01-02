@@ -12,6 +12,8 @@ import hrms.mingdao.hr.service.HrEmployeeEduService;
 import hrms.mingdao.hr.service.HrEmployeeJobService;
 import hrms.mingdao.hr.service.HrEmployeeService;
 import hrms.mingdao.web.support.ActionSupport;
+import net.sf.json.JSONObject;
+import org.guiceside.commons.lang.DateFormatUtil;
 import org.guiceside.web.annotation.*;
 
 import java.util.List;
@@ -93,6 +95,26 @@ public class HrEmployeeEduAction extends ActionSupport<HrEmployeeEdu> {
         return "success";
     }
 
+    public String getEdu() throws Exception {
+        JSONObject root=new JSONObject();
+        root.put("result","-1");
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null) {
+            hrEmployeeEdu=this.hrEmployeeEduService.getById(id);
+            if(hrEmployeeEdu!=null){
+                root.put("id",hrEmployeeEdu.getId());
+                root.put("name",hrEmployeeEdu.getName());
+                root.put("title",hrEmployeeEdu.getTitle());
+                root.put("startDate", DateFormatUtil.format(hrEmployeeEdu.getStartDate(), DateFormatUtil.YEAR_MONTH_DAY_PATTERN));
+                root.put("endDate",DateFormatUtil.format(hrEmployeeEdu.getEndDate(),DateFormatUtil.YEAR_MONTH_DAY_PATTERN));
+                root.put("description",hrEmployeeEdu.getDescription());
+                root.put("result","0");
+            }
+        }
+        writeJsonByAction(root.toString());
+        return null;
+    }
+
     @PageFlow(result = {
             @Result(name = "success", path = "/hr/employeeEdu!improveEditEdu.dhtml", type = Dispatcher.Redirect)})
     public String improveSaveEdu() throws Exception {
@@ -101,11 +123,22 @@ public class HrEmployeeEduAction extends ActionSupport<HrEmployeeEdu> {
             hrEmployee = this.hrEmployeeService.getByUserId(userInfo.getCompanyId(), userInfo.getUserId());
             if (hrEmployee.getComplete().intValue() == 3) {
                 user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
-                hrEmployeeEdu.setEmpId(hrEmployee);
-                hrEmployeeEdu.setCompanyId(userInfo.getCompanyId());
-                hrEmployeeEdu.setUseYn("Y");
-                bind(hrEmployeeEdu);
-                this.hrEmployeeEduService.save(hrEmployeeEdu);
+                if(hrEmployeeEdu.getId()!=null){
+                    HrEmployeeEdu old=this.hrEmployeeEduService.getById(hrEmployeeEdu.getId());
+                    old.setName(hrEmployeeEdu.getName());
+                    old.setTitle(hrEmployeeEdu.getTitle());
+                    old.setStartDate(hrEmployeeEdu.getStartDate());
+                    old.setEndDate(hrEmployeeEdu.getEndDate());
+                    old.setDescription(hrEmployeeEdu.getDescription());
+                    bind(old);
+                    this.hrEmployeeEduService.save(old);
+                }else{
+                    hrEmployeeEdu.setEmpId(hrEmployee);
+                    hrEmployeeEdu.setCompanyId(userInfo.getCompanyId());
+                    hrEmployeeEdu.setUseYn("Y");
+                    bind(hrEmployeeEdu);
+                    this.hrEmployeeEduService.save(hrEmployeeEdu);
+                }
             }
         }
         return "success";

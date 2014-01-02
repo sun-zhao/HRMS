@@ -110,6 +110,26 @@ public class HrEmployeeJobAction extends ActionSupport<HrEmployeeJob> {
         }
         return "success";
     }
+
+    public String getJob() throws Exception {
+        JSONObject root=new JSONObject();
+        root.put("result","-1");
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null) {
+            hrEmployeeJob=this.hrEmployeeJobService.getById(id);
+            if(hrEmployeeJob!=null){
+                root.put("id",hrEmployeeJob.getId());
+                root.put("name",hrEmployeeJob.getName());
+                root.put("title",hrEmployeeJob.getTitle());
+                root.put("startDate",DateFormatUtil.format(hrEmployeeJob.getStartDate(),DateFormatUtil.YEAR_MONTH_DAY_PATTERN));
+                root.put("endDate",DateFormatUtil.format(hrEmployeeJob.getEndDate(),DateFormatUtil.YEAR_MONTH_DAY_PATTERN));
+                root.put("description",hrEmployeeJob.getDescription());
+                root.put("result","0");
+            }
+        }
+        writeJsonByAction(root.toString());
+        return null;
+    }
     @PageFlow(result = {
             @Result(name = "success", path = "/hr/employeeJob!improveEditJob.dhtml", type = Dispatcher.Redirect)})
     public String improveSaveJob() throws Exception {
@@ -118,11 +138,22 @@ public class HrEmployeeJobAction extends ActionSupport<HrEmployeeJob> {
             hrEmployee = this.hrEmployeeService.getByUserId(userInfo.getCompanyId(), userInfo.getUserId());
             if (hrEmployee.getComplete().intValue() == 3) {
                 user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
-                hrEmployeeJob.setEmpId(hrEmployee);
-                hrEmployeeJob.setCompanyId(userInfo.getCompanyId());
-                hrEmployeeJob.setUseYn("Y");
-                bind(hrEmployeeJob);
-                this.hrEmployeeJobService.save(hrEmployeeJob);
+                if(hrEmployeeJob.getId()!=null){
+                    HrEmployeeJob old=this.hrEmployeeJobService.getById(hrEmployeeJob.getId());
+                    old.setName(hrEmployeeJob.getName());
+                    old.setTitle(hrEmployeeJob.getTitle());
+                    old.setStartDate(hrEmployeeJob.getStartDate());
+                    old.setEndDate(hrEmployeeJob.getEndDate());
+                    old.setDescription(hrEmployeeJob.getDescription());
+                    bind(old);
+                    this.hrEmployeeJobService.save(old);
+                }else{
+                    hrEmployeeJob.setEmpId(hrEmployee);
+                    hrEmployeeJob.setCompanyId(userInfo.getCompanyId());
+                    hrEmployeeJob.setUseYn("Y");
+                    bind(hrEmployeeJob);
+                    this.hrEmployeeJobService.save(hrEmployeeJob);
+                }
             }
         }
         return "success";
