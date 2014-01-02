@@ -130,12 +130,57 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     private List<SysCity> cityList;
 
 
+    @ReqSet
+    private Integer improveCount;
+    private List<Selector> searchModeCallback() throws Exception {
+        List<Selector> selectorList = new ArrayList<Selector>();
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null) {
+            userInfo.setTopMenuCss("employee");
+            userInfo.setMenuCss("list");
+            String companyId = userInfo.getCompanyId();
+            if (StringUtils.isNotBlank(companyId)) {
+                selectorList.add(SelectorUtils.$eq("companyId", companyId));
+                if (StringUtils.isNotBlank(word)) {
+                    selectorList.add(SelectorUtils.$eq("userFirstPy", word));
+                }
+                if (StringUtils.isNotBlank(userName)) {
+                    selectorList.add(SelectorUtils.$like("userName", userName));
+                }
+                selectorList.add(SelectorUtils.$eq("useYn", "Y"));
+                selectorList.add(SelectorUtils.$eq("complete", 0));
+                selectorList.add(SelectorUtils.$order("userFirstPy"));
+            } else {
+                selectorList.add(SelectorUtils.$eq("id", 0l));
+            }
 
+        }
+        return selectorList;
+    }
     @PageFlow(result = {
-            @Result(name = "success", path = "/view/hr/employee/index.ftl", type = Dispatcher.FreeMarker)})
+            @Result(name = "success", path = "/view/hr/employee/list.ftl", type = Dispatcher.FreeMarker)})
     public String execute() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null) {
+            pageObj = this.hrEmployeeService.getPageList(getStart(), 20, searchModeCallback());
+            if (pageObj != null) {
+                employeeList = pageObj.getResultList();
+                if (employeeList != null && !employeeList.isEmpty()) {
+                    Set<String> userIdSet = new HashSet<String>();
+                    userMapList = new HashMap<String, User>();
+                    for (HrEmployee employee : employeeList) {
+                        userIdSet.add(employee.getUserId());
+                    }
+                    if (userIdSet != null && !userIdSet.isEmpty()) {
+                        userMapList = RequestUser.getMapUserList(userInfo.getAccessToken(), userIdSet);
+                    }
+                    pyList = this.hrEmployeeService.getListPyByCompanyEqComplete(userInfo.getCompanyId(), 0);
+                }
+            }
+        }
         return "success";
     }
+
 
     private List<Selector> searchModeCallbackNews() throws Exception {
         List<Selector> selectorList = new ArrayList<Selector>();
@@ -153,7 +198,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                     selectorList.add(SelectorUtils.$like("userName", userName));
                 }
                 selectorList.add(SelectorUtils.$eq("useYn", "Y"));
-                selectorList.add(SelectorUtils.$eq("complete", 1));
+                selectorList.add(SelectorUtils.$gt("complete", 0));
                 selectorList.add(SelectorUtils.$order("userFirstPy"));
             } else {
                 selectorList.add(SelectorUtils.$eq("id", 0l));
@@ -210,8 +255,9 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                     if (userIdSet != null && !userIdSet.isEmpty()) {
                         userMapList = RequestUser.getMapUserList(userInfo.getAccessToken(), userIdSet);
                     }
-                    pyList = this.hrEmployeeService.getListPyByCompanyComplete(userInfo.getCompanyId(), 1);
+                    pyList = this.hrEmployeeService.getListPyByCompanyNotEqComplete(userInfo.getCompanyId(), 0);
                 }
+                improveCount=hrEmployeeService.getCountByCompanyEqComplete(userInfo.getCompanyId(),1);
             }
         }
         return "success";
@@ -364,7 +410,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
         return "success";
     }
     @PageFlow(result = {
-            @Result(name = "success", path = "/view/hr/employee/improveEdit.ftl", type = Dispatcher.FreeMarker)})
+            @Result(name = "success", path = "/view/hr/employee/improve/edit.ftl", type = Dispatcher.FreeMarker)})
     public String improveEdit() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null ) {
@@ -430,7 +476,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     }
 
     @PageFlow(result = {
-            @Result(name = "success", path = "/view/hr/employee/improveEditFamily.ftl", type = Dispatcher.FreeMarker)})
+            @Result(name = "success", path = "/view/hr/employee/improve/editFamily.ftl", type = Dispatcher.FreeMarker)})
     public String improveEditFamily() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null ) {
@@ -478,7 +524,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
         if (userInfo != null) {
             hrEmployee = this.hrEmployeeService.getByUserId(userInfo.getCompanyId(), userInfo.getUserId());
             if (hrEmployee.getComplete().intValue() == 3) {
-                hrEmployee.setComplete(4);
+                hrEmployee.setComplete(0);
                 bind(hrEmployee);
                 this.hrEmployeeService.save(hrEmployee);
             }
@@ -498,6 +544,150 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
                 employeeEduList=this.hrEmployeeEduService.getListByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
                 employeeJobList=this.hrEmployeeJobService.getListByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
+            }
+        }
+        return "success";
+    }
+
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/view/hr/employee/view/info.ftl", type = Dispatcher.FreeMarker)})
+    public String viewInfo() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null ) {
+            hrEmployee = this.hrEmployeeService.getById(id);
+            if(hrEmployee!=null){
+                user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
+            }
+        }
+        return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/view/hr/employee/edit/info.ftl", type = Dispatcher.FreeMarker)})
+    public String editInfo() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null ) {
+            hrEmployee = this.hrEmployeeService.getById(id);
+            if(hrEmployee!=null){
+                user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
+                eduLevelList=this.sysCodeService.getListByParentId("EDU_LEVEL");
+                contryList=this.sysCodeService.getListByParentId("CONTRY");
+                nationalityList=this.sysCodeService.getListByParentId("NATIONALITY");
+                politicsLevelList=this.sysCodeService.getListByParentId("POLITICS_LEVEL");
+                provinceList=this.sysProvinceService.getList();
+                departmentList=userInfo.getDepartmentList();
+                if(provinceList!=null&&!provinceList.isEmpty()){
+                    SysProvince province=provinceList.get(0);
+                    if(province!=null){
+                        cityList=this.sysCityService.getListByProvince(province.getId());
+                    }
+                }
+            }
+        }
+        return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/hr/employee!viewInfo.dhtml?id=${hrEmployee.id}", type = Dispatcher.Redirect)})
+    public String saveInfo() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&hrEmployee!=null) {
+            HrEmployee old=this.hrEmployeeService.getById(hrEmployee.getId());
+            if(old!=null){
+                old.setDeptName(hrEmployee.getDeptName());
+                old.setDutyLevel(hrEmployee.getDutyLevel());
+                old.setJobName(hrEmployee.getJobName());
+                old.setWorkState(hrEmployee.getWorkState());
+                old.setEmpType(hrEmployee.getEmpType());
+
+                old.setEntryDate(hrEmployee.getEntryDate());
+                old.setMobileTel(hrEmployee.getMobileTel());
+                old.setOfficeTel(hrEmployee.getOfficeTel());
+                old.setUserEmail(hrEmployee.getUserEmail());
+                old.setOfficeAddress(hrEmployee.getOfficeAddress());
+                old.setBirthDay(hrEmployee.getBirthDay());
+                old.setUserSex(hrEmployee.getUserSex());
+                if(hrEmployee.getEduLevel()!=null&&hrEmployee.getEduLevel().getId()!=null){
+                    old.setEduLevel(hrEmployee.getEduLevel());
+                }
+                if(hrEmployee.getNationalityId()!=null&&hrEmployee.getNationalityId().getId()!=null){
+                    old.setNationalityId(hrEmployee.getNationalityId());
+                }
+                if(hrEmployee.getContryId()!=null&&hrEmployee.getContryId().getId()!=null){
+                    old.setContryId(hrEmployee.getContryId());
+                }
+                if(hrEmployee.getProvinceId()!=null&&hrEmployee.getProvinceId().getId()!=null){
+                    old.setProvinceId(hrEmployee.getProvinceId());
+                }
+                if(hrEmployee.getCityId()!=null&&hrEmployee.getCityId().getId()!=null){
+                    old.setCityId(hrEmployee.getCityId());
+                }
+                if(hrEmployee.getPoliticsLevel()!=null&&hrEmployee.getPoliticsLevel().getId()!=null){
+                    old.setPoliticsLevel(hrEmployee.getPoliticsLevel());
+                }
+                old.setIdCard(hrEmployee.getIdCard());
+                old.setBankCard(hrEmployee.getBankCard());
+                bind(old);
+                this.hrEmployeeService.save(old);
+            }
+        }
+        return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/view/hr/employee/view/family.ftl", type = Dispatcher.FreeMarker)})
+    public String viewFamily() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null ) {
+            hrEmployee = this.hrEmployeeService.getById(id);
+            if(hrEmployee!=null){
+                hrEmployeeFamily=this.hrEmployeeFamilyService.getByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
+                user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
+            }
+        }
+        return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/view/hr/employee/edit/family.ftl", type = Dispatcher.FreeMarker)})
+    public String editFamily() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null ) {
+            hrEmployee = this.hrEmployeeService.getById(id);
+            if(hrEmployee!=null){
+                user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
+                hrEmployeeFamily=this.hrEmployeeFamilyService.getByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
+            }
+        }
+        return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/hr/employee!viewFamily.dhtml?id=${hrEmployee.id}", type = Dispatcher.Redirect)})
+    public String saveFamily() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&hrEmployeeFamily!=null&id!=null) {
+            hrEmployee = this.hrEmployeeService.getById(id);
+            if(hrEmployee!=null){
+                HrEmployeeFamily old=this.hrEmployeeFamilyService.getByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
+                if(old==null){
+                    old=new HrEmployeeFamily();
+                    old.setCompanyId(userInfo.getCompanyId());
+                    old.setEmpId(hrEmployee);
+                }
+                if(old!=null){
+                    old.setFamilyName(hrEmployeeFamily.getFamilyName());
+                    old.setFamilyTel(hrEmployeeFamily.getFamilyTel());
+                    old.setFamilyAddress(hrEmployeeFamily.getFamilyAddress());
+                    old.setFamilyRelation(hrEmployeeFamily.getFamilyRelation());
+                    old.setMarry(hrEmployeeFamily.getMarry());
+                    old.setResidenceBooklet(hrEmployeeFamily.getResidenceBooklet());
+                    old.setResidenceBookletType(hrEmployeeFamily.getResidenceBookletType());
+                    old.setUseYn("Y");
+                    bind(old);
+                    this.hrEmployeeFamilyService.save(old);
+                }
             }
         }
         return "success";

@@ -11,38 +11,38 @@
         WEBUTILS.validator.init({
             modes:[
                 {
-                    id:'hrEmployeeEdu\\.name',
+                    id:'hrEmployeeJob\\.name',
                     required:true,
                     pattern:[
-                        {type:'blank', exp:'!=', msg:'请输入学校名称'}
+                        {type:'blank', exp:'!=', msg:'请输入公司名称'}
                     ]
                 },
                 {
-                    id:'hrEmployeeEdu\\.title',
+                    id:'hrEmployeeJob\\.title',
                     required:true,
                     pattern:[
-                        {type:'blank', exp:'!=', msg:'请输入专业学历'}
+                        {type:'blank', exp:'!=', msg:'请输入担任职务'}
                     ]
                 },
                 {
-                    id:'hrEmployeeEdu\\.startDate',
+                    id:'hrEmployeeJob\\.startDate',
                     required:true,
                     pattern:[
-                        {type:'blank', exp:'!=', msg:'请输入入学日期'}
+                        {type:'blank', exp:'!=', msg:'请输入开始日期'}
                     ]
                 },
                 {
-                    id:'hrEmployeeEdu\\.endDate',
+                    id:'hrEmployeeJob\\.endDate',
                     required:true,
                     pattern:[
-                        {type:'blank', exp:'!=', msg:'请输入毕业日期'}
+                        {type:'blank', exp:'!=', msg:'请输入结束日期'}
                     ]
                 },
                 {
-                    id:'hrEmployeeEdu\\.description',
+                    id:'hrEmployeeJob\\.description',
                     required:true,
                     pattern:[
-                        {type:'blank', exp:'!=', msg:'请输入核心课程'}
+                        {type:'blank', exp:'!=', msg:'请输入描述'}
                     ]
                 }
             ]
@@ -50,7 +50,7 @@
     }
     $(document).ready(function () {
         initValidator();
-        $('#hrEmployeeEdu\\.startDate').off('focus').on('focus', function () {
+        $('#hrEmployeeJob\\.startDate').off('focus').on('focus', function () {
             var obj = $(this);
             WdatePicker({
                 doubleCalendar:false,
@@ -62,7 +62,7 @@
                 }
             });
         });
-        $('#hrEmployeeEdu\\.endDate').off('focus').on('focus', function () {
+        $('#hrEmployeeJob\\.endDate').off('focus').on('focus', function () {
             var obj = $(this);
             WdatePicker({
                 doubleCalendar:false,
@@ -74,7 +74,7 @@
                 }
             });
         });
-        $('#addEdu').off('click').on('click', function () {
+        $('#addJob').off('click').on('click', function () {
             if (!submited) {
                 WEBUTILS.validator.checkAll();
                 window.setTimeout(function () {
@@ -92,31 +92,30 @@
         $('.icon-delete').off('click').on('click',function(){
             var uid=$(this).attr('uid');
                 if(uid){
-                    var r=confirm("将删除选定的教育经历,是否继续?");
+                    var r=confirm("将删除选定的工作经历,是否继续?");
                     if(r==true){
-                        document.location.href='/hr/employeeEdu!improveDelete.dhtml?id='+uid;
+                        document.location.href='/hr/employeeJob!delete.dhtml?id='+uid;
                     }
                 }
         });
-
         $('.icon-edit').off('click').on('click',function(){
             var uid=$(this).attr('uid');
             if(uid){
                 $.ajax({
                     type:'POST',
-                    url:'/hr/employeeEdu!getEdu.dhtml',
+                    url:'/hr/employeeJob!getJob.dhtml',
                     data:{id:uid},
                     dataType:'json',
                     success:function (jsonData) {
                         if (jsonData) {
                             if (jsonData['result'] == '0') {
-                                $('#hrEmployeeEdu\\.name').val(jsonData['name']);
-                                $('#hrEmployeeEdu\\.title').val(jsonData['title']);
-                                $('#hrEmployeeEdu\\.startDate').val(jsonData['startDate']);
-                                $('#hrEmployeeEdu\\.endDate').val(jsonData['endDate']);
-                                $('#hrEmployeeEdu\\.description').val(jsonData['description']);
-                                $('#hrEmployeeEdu\\.id').val(jsonData['id']);
-                                $('span','#addEdu').text('修改教育经历');
+                                $('#hrEmployeeJob\\.name').val(jsonData['name']);
+                                $('#hrEmployeeJob\\.title').val(jsonData['title']);
+                                $('#hrEmployeeJob\\.startDate').val(jsonData['startDate']);
+                                $('#hrEmployeeJob\\.endDate').val(jsonData['endDate']);
+                                $('#hrEmployeeJob\\.description').val(jsonData['description']);
+                                $('#hrEmployeeJob\\.id').val(jsonData['id']);
+                                $('span','#addJob').text('修改工作经历');
                             }
                         }
                     },
@@ -126,21 +125,20 @@
                 });
             }
         });
-
     });
 </script>
 <!--左侧类目begin-->
 <div class="PopLeft floatleft">
     <ul>
-        <li><a href="#">个人信息</a></li>
-        <li><a href="#">家庭信息</a></li>
-        <li><a href="#">工作经历</a></li>
-        <li><a class="current" href="#">教育经历</a></li>
+        <li class="noname"><a href="#">个人信息</a></li>
+        <li class="noname"><a href="#">家庭信息</a></li>
+        <li><a class="current" href="#">工作经历</a></li>
+        <li class="noname"><a href="#">教育经历</a></li>
     </ul>
 </div>
 <!--左侧类目over-->
 <!--右侧详细信息begin-->
-        <div class="PopRight border-solid">
+        <div class="PopRight g-edit border-solid">
             <div class="UserInfo-top">
                 <span class="PerImg floatleft">
                     <img src="${user.avstar100?if_exists}">
@@ -162,15 +160,27 @@
                     <tr>
                         <th>职级：</th>
                         <td width="130">
-                            <select class="edit" id="hrEmployee.dutyLevel"  name="hrEmployee.dutyLevel" disabled="disabled">
-                                <option value="1">总裁</option>
-                                <option value="2">副总裁</option>
-                                <option value="3">总监</option>
-                                <option value="4">副总监</option>
-                                <option value="5">经理</option>
-                                <option value="6">主管</option>
-                                <option value="7" selected="selected">职员</option>
-                            </select>
+                            <#if hrEmployee.dutyLevel?exists>
+                                <#if hrEmployee.dutyLevel==1>
+                                    总裁
+                                <#elseif hrEmployee.dutyLevel==2>
+                                    副总裁
+                                <#elseif hrEmployee.dutyLevel==3>
+                                    总监
+                                <#elseif hrEmployee.dutyLevel==4>
+                                    副总监
+                                <#elseif hrEmployee.dutyLevel==5>
+                                    经理
+                                <#elseif hrEmployee.dutyLevel==6>
+                                    主管
+                                <#elseif hrEmployee.dutyLevel==7>
+                                    职员
+                                <#else >
+                                    未设置
+                                </#if>
+                            <#else >
+                                未设置
+                            </#if>
                         </td>
                         <th width="60">职位：</th>
                         <td>
@@ -183,87 +193,84 @@
             <table width="100%" class="UserTbale nomar Info WorkStory">
                 <thead>
                 <tr>
-                    <th width="70" class="alignleft">学校名称</th>
-                    <th width="60">专业学历</th>
-                    <th width="60">入学日期</th>
-                    <th width="60">毕业日期</th>
+                    <th width="70" class="alignleft">公司名称</th>
+                    <th width="60">担任职务</th>
+                    <th width="60">入职日期</th>
+                    <th width="60">离职日期</th>
                     <th width="40">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <#if employeeEduList?exists&&employeeEduList?size gt 0>
-                    <#list employeeEduList as edu>
-                    <tr title="${edu.description?if_exists}">
-                        <td style="text-align: left;">${edu.name?if_exists}</td>
-                        <td>${edu.title?if_exists}</td>
-                        <td>${edu.startDate?string("yyyy-MM-dd")}</td>
-                        <td>${edu.endDate?string("yyyy-MM-dd")}</td>
+                <#if employeeJobList?exists&&employeeJobList?size gt 0>
+                    <#list employeeJobList as job>
+                    <tr title="${job.description?if_exists}">
+                        <td style="text-align: left;">${job.name?if_exists}</td>
+                        <td>${job.title?if_exists}</td>
+                        <td>${job.startDate?string("yyyy-MM-dd")}</td>
+                        <td>${job.endDate?string("yyyy-MM-dd")}</td>
                         <td>
-                            <a title="修改" class="icon icon-edit" href="##" uid="${edu.id?c}"></a>
-                            <a title="删除" class="icon icon-delete" href="##" uid="${edu.id?c}"></a>
+                            <a title="修改" class="icon icon-edit" href="##" uid="${job.id?c}"></a>
+                            <a title="删除" class="icon icon-delete" href="##" uid="${job.id?c}"></a>
                         </td>
                     </tr>
                     </#list>
                 </#if>
                 </tbody>
             </table>
-            <form action="/hr/employeeEdu!improveSaveEdu.dhtml" method="POST" class="formStyle" name="editForm" id="editForm"
+            <form action="/hr/employeeJob!saveJob.dhtml" method="POST" class="formStyle" name="editForm" id="editForm"
                   onsubmit="return false;">
             <table width="100%" class="UserTbale nomar Info mart5">
                 <tbody>
                 <tr>
-                    <th width="60">学校名称：</th>
+                    <th width="60">公司名称：</th>
                     <td width="160">
                         <div class="has-general">
-                            <input type="text" class="edit"  id="hrEmployeeEdu.name" name="hrEmployeeEdu.name">
+                            <input type="text" class="edit"  id="hrEmployeeJob.name" name="hrEmployeeJob.name">
                             <label class="control-label"></label>
                         </div>
                     </td>
-                    <th width="60">专业学历：</th>
-                    <td >
+                    <th width="60">担任职务：</th>
+                    <td>
                         <div class="has-general">
-                            <input type="text" class="edit"  id="hrEmployeeEdu.title" name="hrEmployeeEdu.title">
+                            <input type="text" class="edit"  id="hrEmployeeJob.title" name="hrEmployeeJob.title">
                             <label class="control-label"></label>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <th width="60">入学日期：</th>
+                    <th width="60">开始日期：</th>
                     <td width="160">
                         <div class="has-general">
-                            <input type="text" class="edit"  id="hrEmployeeEdu.startDate" name="hrEmployeeEdu.startDate">
+                            <input type="text" class="edit"  id="hrEmployeeJob.startDate" name="hrEmployeeJob.startDate">
                             <label class="control-label"></label>
                         </div>
                     </td>
-                    <th width="60">毕业日期：</th>
-                    <td >
+                    <th width="60">结束日期：</th>
+                    <td>
                         <div class="has-general">
-                            <input type="text" class="edit"  id="hrEmployeeEdu.endDate" name="hrEmployeeEdu.endDate">
+                            <input type="text" class="edit"  id="hrEmployeeJob.endDate" name="hrEmployeeJob.endDate">
                             <label class="control-label"></label>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <th>核心课程：</th>
+                    <th>描述：</th>
                     <td colspan="3">
                         <div class="has-general">
-                            <input type="text" class="edit"  id="hrEmployeeEdu.description" name="hrEmployeeEdu.description">
+                            <input type="text" class="edit"  id="hrEmployeeJob.description" name="hrEmployeeJob.description">
                             <label class="control-label"></label>
                         </div>
                     </td>
                 </tr>
                 </tbody>
             </table>
-                <input type="hidden" name="hrEmployeeEdu.id" id="hrEmployeeEdu.id">
+                <input type="hidden" name="hrEmployeeJob.id" id="hrEmployeeJob.id">
+                <input type="hidden" name="id" id="id" value="${hrEmployee.id?c}">
             </form>
-            <a class="add-more block aligncenter" href="##" id="addEdu"><em class="icon icon-add"></em> 新增教育经历</a>
+            <a class="add-more block aligncenter" href="##" id="addJob"><em class="icon icon-add"></em><span>新增工作经历</span></a>
         </div>
-
-<p class="alignright mart5">
-    <a class="button" href="/hr/employeeJob!improveEditJob.dhtml" id="preSave">上一步</a>&nbsp;
-    <a class="button" href="/hr/employee!improveDone.dhtml" id="nextSave">完成</a>
-</p>
 <!--右侧详细信息over-->
+<p class="alignright mart5"><a class="button" href="/hr/employeeJob!viewJob.dhtml?id=${hrEmployee.id?c}" id="btnSave">完成</a></p>
 </@common.html>
 
 

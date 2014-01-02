@@ -5,7 +5,7 @@
 <script type="text/javascript">
     var submited = false;
     function pagerAction(start, rows) {
-        var searchUrl = '/hr/employee!news.dhtml';
+        var searchUrl = '/hr/employee.dhtml';
         searchUrl += '?start=' + start + '&rows=' + rows;
         <#if word?exists>
             searchUrl += '&word=${word?if_exists}';
@@ -19,27 +19,15 @@
         document.location.href = searchUrl
     }
     $(document).ready(function () {
-       <#if pyList?exists&&pyList?size gt 0>
-           <#list pyList as py>
-           $('li[word="${py?if_exists}"]','.word-ser').removeClass('noname');
-       </#list>
-           <#if word?exists>
-               $('li','.word-ser').first().removeClass('current');
-               $('li[word="${word?if_exists}"]','.word-ser').removeClass('noname').addClass('current');
-           </#if>
-       </#if>
-        $('a','.word-ser').off('click').on('click',function(){
-           var li=$(this).parent();
-            if(li){
-                var word=$(li).attr('word');
-                if(word){
-                    document.location.href = '/hr/employee!news.dhtml?word='+word;
-                }else{
-                    document.location.href = '/hr/employee!news.dhtml';
-                }
-            }
-        });
-
+        <#if pyList?exists&&pyList?size gt 0>
+            <#list pyList as py>
+                $('li[word="${py?if_exists}"]','.word-ser').removeClass('noname');
+            </#list>
+            <#if word?exists>
+                $('li','.word-ser').first().removeClass('current');
+                $('li[word="${word?if_exists}"]','.word-ser').removeClass('noname').addClass('current');
+            </#if>
+        </#if>
         $('#userName').off('userName').on('keyup', function (e) {
             e = (e) ? e : ((window.event) ? window.event : "")
             var keyCode = e.keyCode ? e.keyCode : (e.which ? e.which : e.charCode);
@@ -47,50 +35,30 @@
                 pagerAction(0,20);
             }
         });
-        $('.sendImprove').off('click').on('click',function(){
-            var li=$(this).parent().parent();
-            var uid=$(this).attr('uid');
-            if(uid){
-                $.ajax({
-                    type:'POST',
-                    url:'/hr/employee!sendImprove.dhtml',
-                    data:{id:uid},
-                    dataType:'json',
-                    success:function (jsonData) {
-                        if (jsonData) {
-                            if (jsonData['result'] == '0') {
-                                $(li).fadeOut();
-                                WEBUTILS.msg.alertSuccess('已向'+jsonData['userName']+'发送完善信息邀请!',1500,function(){
-                                    document.location.reload();
-                                });
-                            }
-                        }
-                    },
-                    error:function (jsonData) {
-
-                    }
-                });
+        $('a','.word-ser').off('click').on('click',function(){
+            var li=$(this).parent();
+            if(li){
+                var word=$(li).attr('word');
+                if(word){
+                    document.location.href = '/hr/employee.dhtml?word='+word;
+                }else{
+                    document.location.href = '/hr/employee.dhtml';
+                }
             }
         });
-        <#if improveCount?exists&&improveCount gt 0>
-            $('#allImprove').off('click').on('click',function(){
-                var r=confirm("此操作将邀请该列表下${improveCount?c}名员工完善人事档案,是否继续?");
-                if(r==true){
-                    WEBUTILS.popMask.show();
-                    document.location.href='/hr/employee!sendImproveAll.dhtml';
-                }
-            });
-        </#if>
+
+        $('.view').off('click').on('click',function(){
+            var uid=$(this).attr('uid');
+            var uname=$(this).attr('uname');
+            if(uid&&uname){
+                WEBUTILS.popWindow.createPopWindow(620, 500, uname+'的人事档案', '/hr/employee!viewInfo.dhtml?id='+uid,true);
+                WEBUTILS.popWindow.offset('30%',false);
+            }
+        });
     });
 </script>
-
 <!--排序搜索begin-->
 <div class="clearfix gotop">
-    <#if improveCount?exists&&improveCount gt 0>
-        <div class="floatleft marr10"><!--加current下拉框显示-->
-            <a class="button" id="allImprove">一键邀请</a>
-        </div>
-    </#if>
     <div class="AppSequence floatleft marr10"><!--加current下拉框显示-->
         <a href="#">按时间排序</a>
         <em class="app-icon ico-toogle"></em>
@@ -146,36 +114,33 @@
 <!--员工卡片begin-->
 <div class="PerMain floatleft">
 <ul class="PerList clearfix">
-<#if employeeList?exists&&employeeList?size gt 0>
-<#if userMapList?exists&&userMapList?size gt 0>
-    <#list employeeList as employee>
-    <#assign user=userMapList[employee.userId]?if_exists>
-    <#if user?exists>
-    <li>
-        <div class="CardTop clearfix">
-            <span class="PerImg floatleft"><img src="${user.avstar?if_exists}"></span>
-            <dl class="floatleft">
-                <dd><span>${employee.userName?if_exists}</span></dd>
-                <dd>${employee.deptName?if_exists}</dd>
-                <dd>${employee.jobName?if_exists}</dd>
-            </dl>
-        </div>
-        <p class="alignright">
-            <#if employee.complete==1>
-                <a class="font14 invite block sendImprove" href="##" uid="${employee.id?c}">邀请TA完善信息 <em class="icon icon-edit"></em></a>
-            <#elseif employee.complete==2>
-                    <a class="font14  block sendImprove" href="##" uid="${employee.id?c}" style="cursor: default;color: #999999;">等待TA完善信息 </a>
-            </#if>
-        </p>
-    </li>
+    <#if employeeList?exists&&employeeList?size gt 0>
+        <#if userMapList?exists&&userMapList?size gt 0>
+            <#list employeeList as employee>
+                <#assign user=userMapList[employee.userId]?if_exists>
+                <#if user?exists>
+                    <li>
+                        <div class="CardTop clearfix">
+                            <span class="PerImg floatleft"><img src="${user.avstar?if_exists}"></span>
+                            <dl class="floatleft">
+                                <dd><span>${employee.userName?if_exists}</span></dd>
+                                <dd>${employee.deptName?if_exists}</dd>
+                                <dd>${employee.jobName?if_exists}</dd>
+                            </dl>
+                        </div>
+                        <p class="alignright">
+                            <a class="font14 invite block view" href="##" uid="${employee.id?c}" uname="${employee.userName?if_exists}">查看人事档案 </a>
+                        </p>
+                    </li>
+                </#if>
+            </#list>
+        </#if>
     </#if>
-    </#list>
-</#if>
-</#if>
 </ul>
-    <!--分页begin-->
+<!--分页begin-->
     <@pager.pagerCommon object=pageObj?if_exists max=20/>
-    <!--分页over-->
+<!--分页over-->
 </div>
 <!--员工卡片over-->
+
 </@employee_common.employee_common>

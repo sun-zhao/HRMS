@@ -8,8 +8,8 @@
     $(document).ready(function () {
         <#if hrEmployee.complete==3>
             WEBUTILS.msg.alertInfo("请在即将弹出的信息框里完善您的个人信息...",5000,function(){
-                parent.WEBUTILS.popWindow.createPopWindow(620, 530, '${hrEmployee.userName?if_exists}的人事档案', '/hr/employee!improveEdit.dhtml',true);
-                parent.WEBUTILS.popWindow.offset('30%',false);
+                WEBUTILS.popWindow.createPopWindow(620, 530, '${hrEmployee.userName?if_exists}的人事档案', '/hr/employee!improveEdit.dhtml',true);
+                WEBUTILS.popWindow.offset('30%',false);
             });
         </#if>
     });

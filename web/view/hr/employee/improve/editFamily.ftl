@@ -125,7 +125,7 @@
                     </td>
                     <th width="60">家人关系：</th>
                     <td>
-                        <select class="edit" id="hrEmployeeFamily.familyRelation"  name="hrEmployee.familyRelation" >
+                        <select class="edit" id="hrEmployeeFamily.familyRelation"  name="hrEmployeeFamily.familyRelation" >
                             <option value="0">配偶</option>
                             <option value="1">父亲</option>
                             <option value="2">母亲</option>
@@ -155,14 +155,14 @@
                 <tr>
                     <th width="75">婚姻状况：</th>
                     <td width="130">
-                        <select class="edit" id="hrEmployeeFamily.marry"  name="hrEmployee.marry" >
+                        <select class="edit" id="hrEmployeeFamily.marry"  name="hrEmployeeFamily.marry" >
                             <option value="0">未婚</option>
                             <option value="1">已婚</option>
                         </select>
                     </td>
                     <th width="60">户口性质：</th>
                     <td>
-                        <select class="edit" id="hrEmployeeFamily.residenceBookletType"  name="hrEmployee.residenceBookletType" >
+                        <select class="edit" id="hrEmployeeFamily.residenceBookletType"  name="hrEmployeeFamily.residenceBookletType" >
                             <option value="0">城镇户口</option>
                             <option value="1">农村户口</option>
                         </select>

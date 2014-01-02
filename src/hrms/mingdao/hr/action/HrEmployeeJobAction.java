@@ -85,7 +85,7 @@ public class HrEmployeeJobAction extends ActionSupport<HrEmployeeJob> {
 
 
     @PageFlow(result = {
-            @Result(name = "success", path = "/view/hr/employee/improveEditJob.ftl", type = Dispatcher.FreeMarker)})
+            @Result(name = "success", path = "/view/hr/employee/improve/editJob.ftl", type = Dispatcher.FreeMarker)})
     public String improveEditJob() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null ) {
@@ -105,6 +105,20 @@ public class HrEmployeeJobAction extends ActionSupport<HrEmployeeJob> {
         if (userInfo != null&&id!=null) {
             hrEmployeeJob=this.hrEmployeeJobService.getById(id);
             if(hrEmployeeJob!=null){
+                this.hrEmployeeJobService.delete(hrEmployeeJob);
+            }
+        }
+        return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/hr/employeeJob!editJob.dhtml?id=${hrEmployee.id}", type = Dispatcher.Redirect)})
+    public String delete() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null) {
+            hrEmployeeJob=this.hrEmployeeJobService.getById(id);
+            if(hrEmployeeJob!=null){
+                hrEmployee=hrEmployeeJob.getEmpId();
                 this.hrEmployeeJobService.delete(hrEmployeeJob);
             }
         }
@@ -159,4 +173,60 @@ public class HrEmployeeJobAction extends ActionSupport<HrEmployeeJob> {
         return "success";
     }
 
+    @PageFlow(result = {
+            @Result(name = "success", path = "/view/hr/employee/view/job.ftl", type = Dispatcher.FreeMarker)})
+    public String viewJob() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null ) {
+            hrEmployee = this.hrEmployeeService.getById(id);
+            if(hrEmployee!=null){
+                employeeJobList=this.hrEmployeeJobService.getListByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
+                user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
+            }
+        }
+        return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/view/hr/employee/edit/job.ftl", type = Dispatcher.FreeMarker)})
+    public String editJob() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null &&id!=null) {
+            hrEmployee = this.hrEmployeeService.getById(id);
+            if(hrEmployee!=null){
+                user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
+                employeeJobList=this.hrEmployeeJobService.getListByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
+            }
+        }
+        return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/hr/employeeJob!editJob.dhtml?id=${hrEmployee.id}", type = Dispatcher.Redirect)})
+    public String saveJob() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&hrEmployeeJob!=null&&id!=null) {
+            hrEmployee = this.hrEmployeeService.getById(id);
+            if (hrEmployee!=null) {
+                user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
+                if(hrEmployeeJob.getId()!=null){
+                    HrEmployeeJob old=this.hrEmployeeJobService.getById(hrEmployeeJob.getId());
+                    old.setName(hrEmployeeJob.getName());
+                    old.setTitle(hrEmployeeJob.getTitle());
+                    old.setStartDate(hrEmployeeJob.getStartDate());
+                    old.setEndDate(hrEmployeeJob.getEndDate());
+                    old.setDescription(hrEmployeeJob.getDescription());
+                    bind(old);
+                    this.hrEmployeeJobService.save(old);
+                }else{
+                    hrEmployeeJob.setEmpId(hrEmployee);
+                    hrEmployeeJob.setCompanyId(userInfo.getCompanyId());
+                    hrEmployeeJob.setUseYn("Y");
+                    bind(hrEmployeeJob);
+                    this.hrEmployeeJobService.save(hrEmployeeJob);
+                }
+            }
+        }
+        return "success";
+    }
 }
