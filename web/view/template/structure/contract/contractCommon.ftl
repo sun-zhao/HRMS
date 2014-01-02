@@ -41,6 +41,7 @@
             <ul class="font16 clearfix floatleft">
                 <li class="signing"><a href="/hr/contract!signing.dhtml">签订合同</a></li>
                 <li class="due"><a href="/hr/contract!due.dhtml">到期合同</a></li>
+                <li class="due"><a href="/hr/contract!template.dhtml">合同模版</a></li>
             </ul>
         </div>
         <!--二级导航over-->
