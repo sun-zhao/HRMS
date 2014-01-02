@@ -1,7 +1,9 @@
 .PerMain{width:718px;min-height:650px;}
 .UserInfo-top{}
-.UserInfo-top .PerImg,.UserInfo-top .PerImg img{width:100px;height:100px;display:inline-block;}
+.UserInfo-top .PerImg{width:90px;height:90px;padding:5px;display:inline-block;border:2px solid #ECECEC;background:#fff;}
 .UserInfo-top .PerImg{position:relative;}
+.UserInfo-top .PerImg img{width:90px;height:90px;}
+.bttip{display:block;width:115px;height:9px;font-size:0;line-height:0;background:url("../images/accoundHeadShadow.png") no-repeat center bottom;position:absolute;left:-7px;bottom:-10px;}
 .UserTbale{margin-left:10px;}
 .UserTbale th{height:22px;vertical-align: top;}
 .UserTbale td{vertical-align: top;}

@@ -75,7 +75,10 @@
           onsubmit="return false;">
         <div class="PopRight g-edit border-solid">
             <div class="UserInfo-top">
-                <span class="PerImg floatleft"><img src="${user.avstar100?if_exists}"></span>
+                <span class="PerImg floatleft">
+                    <img src="${user.avstar100?if_exists}">
+                <em class="bttip"></em>
+                </span>
                 <table width="350" class="UserTbale Info floatleft" style="border-top: 0px;">
                     <tbody>
                     <tr>

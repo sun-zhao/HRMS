@@ -269,7 +269,8 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     }
 
     @PageFlow(result = {
-            @Result(name = "success", path = "/view/hr/employee/improve.ftl", type = Dispatcher.FreeMarker)})
+            @Result(name = "success", path = "/view/hr/employee/improve.ftl", type = Dispatcher.FreeMarker),
+            @Result(name = "info", path = "/hr/employee!info.dhtml", type = Dispatcher.Redirect)})
     public synchronized  String improve() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null) {
@@ -356,6 +357,8 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
                 employeeEduList=this.hrEmployeeEduService.getListByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
                 employeeJobList=this.hrEmployeeJobService.getListByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
+            }else  if (hrEmployee.getComplete().intValue() == 4) {
+                return "info";
             }
         }
         return "success";
@@ -472,7 +475,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
 
     public String improveDone() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
-        if (userInfo != null&&hrEmployeeFamily!=null) {
+        if (userInfo != null) {
             hrEmployee = this.hrEmployeeService.getByUserId(userInfo.getCompanyId(), userInfo.getUserId());
             if (hrEmployee.getComplete().intValue() == 3) {
                 hrEmployee.setComplete(4);
@@ -483,5 +486,21 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
         return "saveSuccess";
     }
 
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/view/hr/employee/info.ftl", type = Dispatcher.FreeMarker)})
+    public   String info() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null) {
+            userInfo.setTopMenuCss("myEmployee");
+            hrEmployee = this.hrEmployeeService.getByUserId(userInfo.getCompanyId(), userInfo.getUserId());
+            if(hrEmployee!=null){
+                user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
+                employeeEduList=this.hrEmployeeEduService.getListByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
+                employeeJobList=this.hrEmployeeJobService.getListByEmpId(userInfo.getCompanyId(),hrEmployee.getId());
+            }
+        }
+        return "success";
+    }
 
 }
