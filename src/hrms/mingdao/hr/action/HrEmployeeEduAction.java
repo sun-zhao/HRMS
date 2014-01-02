@@ -82,6 +82,19 @@ public class HrEmployeeEduAction extends ActionSupport<HrEmployeeEdu> {
 
     @PageFlow(result = {
             @Result(name = "success", path = "/hr/employeeEdu!improveEditEdu.dhtml", type = Dispatcher.Redirect)})
+    public String improveDelete() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null) {
+            hrEmployeeEdu=this.hrEmployeeEduService.getById(id);
+            if(hrEmployeeEdu!=null){
+                this.hrEmployeeEduService.delete(hrEmployeeEdu);
+            }
+        }
+        return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "success", path = "/hr/employeeEdu!improveEditEdu.dhtml", type = Dispatcher.Redirect)})
     public String improveSaveEdu() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null&&hrEmployeeEdu!=null) {

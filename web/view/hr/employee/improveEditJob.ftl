@@ -3,10 +3,53 @@
 <#import "/view/common/core.ftl" as c>
 <@common.html module="HR">
 <script type="text/javascript" src="/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/js/webutils/webutils.validator.js"></script>
+<script type="text/javascript" src="/js/webutils/reg.js"></script>
 <script type="text/javascript">
     var submited = false;
-
+    function initValidator() {
+        WEBUTILS.validator.init({
+            modes:[
+                {
+                    id:'hrEmployeeJob\\.name',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入公司名称'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeJob\\.title',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入担任职务'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeJob\\.startDate',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入开始日期'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeJob\\.endDate',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入结束日期'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeJob\\.description',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入描述'}
+                    ]
+                }
+            ]
+        }, true);
+    }
     $(document).ready(function () {
+        initValidator();
         $('#hrEmployeeJob\\.startDate').off('focus').on('focus', function () {
             var obj = $(this);
             WdatePicker({
@@ -33,10 +76,27 @@
         });
         $('#addJob').off('click').on('click', function () {
             if (!submited) {
-                WEBUTILS.popMask.show();
-                document.editForm.submit();
-                submited=true;
+                WEBUTILS.validator.checkAll();
+                window.setTimeout(function () {
+                    var passed = WEBUTILS.validator.isPassed();
+                    if (passed) {
+                        WEBUTILS.popMask.show();
+                        document.editForm.submit();
+                        submited=true;
+                    } else {
+                        WEBUTILS.validator.showErrors();
+                    }
+                }, 500);
             }
+        });
+        $('.icon-delete').off('click').on('click',function(){
+            var uid=$(this).attr('uid');
+                if(uid){
+                    var r=confirm("将删除选定的工作经历,是否继续?");
+                    if(r==true){
+                        document.location.href='/hr/employeeJob!improveDelete.dhtml?id='+uid;
+                    }
+                }
         });
     });
 </script>
@@ -51,7 +111,7 @@
 </div>
 <!--左侧类目over-->
 <!--右侧详细信息begin-->
-        <div class="PopRight border-solid">
+        <div class="PopRight g-edit border-solid">
             <div class="UserInfo-top">
                 <span class="PerImg floatleft"><img src="${user.avstar100?if_exists}"></span>
                 <table width="350" class="UserTbale Info floatleft" style="border-top: 0px;">
@@ -102,13 +162,13 @@
                 <#if employeeJobList?exists&&employeeJobList?size gt 0>
                     <#list employeeJobList as job>
                     <tr>
-                        <td>${job.name?if_exists}</td>
+                        <td style="text-align: left;">${job.name?if_exists}</td>
                         <td>${job.title?if_exists}</td>
                         <td>${job.startDate?string("yyyy-MM-dd")}</td>
                         <td>${job.endDate?string("yyyy-MM-dd")}</td>
                         <td>
-                            <a title="修改" class="icon icon-edit" href="#"></a>
-                            <a title="删除" class="icon icon-delete" href="#"></a>
+                            <a title="修改" class="icon icon-edit" href="##" uid="${job.id?c}"></a>
+                            <a title="删除" class="icon icon-delete" href="##" uid="${job.id?c}"></a>
                         </td>
                     </tr>
                     </#list>
@@ -122,27 +182,42 @@
                 <tr>
                     <th width="60">公司名称：</th>
                     <td width="160">
-                        <input type="text" class="edit"  id="hrEmployeeJob.name" name="hrEmployeeJob.name">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeJob.name" name="hrEmployeeJob.name">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
-                    <th width="60">职位：</th>
-                    <td w>
-                        <input type="text" class="edit"  id="hrEmployeeJob.title" name="hrEmployeeJob.title">
+                    <th width="60">担任职务：</th>
+                    <td>
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeJob.title" name="hrEmployeeJob.title">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th width="60">开始日期：</th>
                     <td width="160">
-                        <input type="text" class="edit"  id="hrEmployeeJob.startDate" name="hrEmployeeJob.startDate">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeJob.startDate" name="hrEmployeeJob.startDate">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                     <th width="60">结束日期：</th>
-                    <td w>
-                        <input type="text" class="edit"  id="hrEmployeeJob.endDate" name="hrEmployeeJob.endDate">
+                    <td>
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeJob.endDate" name="hrEmployeeJob.endDate">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th>描述：</th>
                     <td colspan="3">
-                        <input type="text" class="edit"  id="hrEmployeeJob.description" name="hrEmployeeJob.description">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeJob.description" name="hrEmployeeJob.description">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 </tbody>
@@ -152,6 +227,7 @@
         </div>
 
 <p class="alignright mart5">
+    <a class="button" href="/hr/employee!improveEditFamily.dhtml" id="preSave">上一步</a>&nbsp;
     <a class="button" href="/hr/employeeEdu!improveEditEdu.dhtml" id="nextSave">下一步</a>
 </p>
 <!--右侧详细信息over-->

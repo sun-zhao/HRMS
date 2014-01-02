@@ -2,15 +2,59 @@
 <#import "/view/template/page.ftl" as pager>
 <#import "/view/common/core.ftl" as c>
 <@common.html module="HR">
+<script type="text/javascript" src="/js/webutils/webutils.validator.js"></script>
+<script type="text/javascript" src="/js/webutils/reg.js"></script>
 <script type="text/javascript">
     var submited = false;
-
+    function initValidator() {
+        WEBUTILS.validator.init({
+            modes:[
+                {
+                    id:'hrEmployeeFamily\\.familyName',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入家人姓名'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeFamily\\.familyTel',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入家人电话'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeFamily\\.familyAddress',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入家庭住址'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeFamily\\.residenceBooklet',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入户口所在地'}
+                    ]
+                }
+            ]
+        }, true);
+    }
     $(document).ready(function () {
+        initValidator();
         $('#nextSave').off('click').on('click', function () {
             if (!submited) {
-                WEBUTILS.popMask.show();
-                document.editForm.submit();
-                submited=true;
+                WEBUTILS.validator.checkAll();
+                window.setTimeout(function () {
+                    var passed = WEBUTILS.validator.isPassed();
+                    if (passed) {
+                        WEBUTILS.popMask.show();
+                        document.editForm.submit();
+                        submited=true;
+                    } else {
+                        WEBUTILS.validator.showErrors();
+                    }
+                }, 500);
             }
         });
     });
@@ -29,7 +73,7 @@
     <@c.joddForm bean="hrEmployeeFamily" scope="request">
     <form action="/hr/employee!improveSaveFamily.dhtml" method="POST" class="formStyle" name="editForm" id="editForm"
           onsubmit="return false;">
-        <div class="PopRight border-solid">
+        <div class="PopRight g-edit border-solid">
             <div class="UserInfo-top">
                 <span class="PerImg floatleft"><img src="${user.avstar100?if_exists}"></span>
                 <table width="350" class="UserTbale Info floatleft" style="border-top: 0px;">
@@ -71,10 +115,13 @@
                 <tr>
                     <th width="75">家人姓名：</th>
                     <td width="130">
-                        <input type="text" class="edit"  id="hrEmployeeFamily.familyName" name="hrEmployeeFamily.familyName">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeFamily.familyName" name="hrEmployeeFamily.familyName">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                     <th width="60">家人关系：</th>
-                    <td w>
+                    <td>
                         <select class="edit" id="hrEmployeeFamily.familyRelation"  name="hrEmployee.familyRelation" >
                             <option value="0">配偶</option>
                             <option value="1">父亲</option>
@@ -87,13 +134,19 @@
                 <tr>
                     <th>家人电话：</th>
                     <td colspan="3">
-                        <input type="text" class="edit"  id="hrEmployeeFamily.familyTel" name="hrEmployeeFamily.familyTel">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeFamily.familyTel" name="hrEmployeeFamily.familyTel">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th>家庭住址：</th>
                     <td colspan="3">
-                        <input type="text" class="edit"  id="hrEmployeeFamily.familyAddress" name="hrEmployeeFamily.familyAddress">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeFamily.familyAddress" name="hrEmployeeFamily.familyAddress">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -105,7 +158,7 @@
                         </select>
                     </td>
                     <th width="60">户口性质：</th>
-                    <td w>
+                    <td>
                         <select class="edit" id="hrEmployeeFamily.residenceBookletType"  name="hrEmployee.residenceBookletType" >
                             <option value="0">城镇户口</option>
                             <option value="1">农村户口</option>
@@ -115,7 +168,10 @@
                 <tr>
                     <th>户口所在地：</th>
                     <td colspan="3">
-                        <input type="text" class="edit"  id="hrEmployeeFamily.residenceBooklet" name="hrEmployeeFamily.residenceBooklet">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeFamily.residenceBooklet" name="hrEmployeeFamily.residenceBooklet">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 </tbody>
@@ -123,7 +179,10 @@
         </div>
     </form>
     </@c.joddForm>
-<p class="alignright mart5"><a class="button" href="##" id="nextSave">下一步</a></p>
+<p class="alignright mart5">
+    <a class="button" href="/hr/employee!improveEdit.dhtml" id="preSave">上一步</a>&nbsp;
+    <a class="button" href="##" id="nextSave">下一步</a>
+</p>
 <!--右侧详细信息over-->
 </@common.html>
 

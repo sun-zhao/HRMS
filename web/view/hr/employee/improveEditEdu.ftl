@@ -3,10 +3,53 @@
 <#import "/view/common/core.ftl" as c>
 <@common.html module="HR">
 <script type="text/javascript" src="/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/js/webutils/webutils.validator.js"></script>
+<script type="text/javascript" src="/js/webutils/reg.js"></script>
 <script type="text/javascript">
     var submited = false;
-
+    function initValidator() {
+        WEBUTILS.validator.init({
+            modes:[
+                {
+                    id:'hrEmployeeEdu\\.name',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入学校名称'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeEdu\\.title',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入专业学历'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeEdu\\.startDate',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入入学日期'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeEdu\\.endDate',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入毕业日期'}
+                    ]
+                },
+                {
+                    id:'hrEmployeeEdu\\.description',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入核心课程'}
+                    ]
+                }
+            ]
+        }, true);
+    }
     $(document).ready(function () {
+        initValidator();
         $('#hrEmployeeEdu\\.startDate').off('focus').on('focus', function () {
             var obj = $(this);
             WdatePicker({
@@ -33,11 +76,29 @@
         });
         $('#addEdu').off('click').on('click', function () {
             if (!submited) {
-                WEBUTILS.popMask.show();
-                document.editForm.submit();
-                submited=true;
+                WEBUTILS.validator.checkAll();
+                window.setTimeout(function () {
+                    var passed = WEBUTILS.validator.isPassed();
+                    if (passed) {
+                        WEBUTILS.popMask.show();
+                        document.editForm.submit();
+                        submited=true;
+                    } else {
+                        WEBUTILS.validator.showErrors();
+                    }
+                }, 500);
             }
         });
+        $('.icon-delete').off('click').on('click',function(){
+            var uid=$(this).attr('uid');
+                if(uid){
+                    var r=confirm("将删除选定的教育经历,是否继续?");
+                    if(r==true){
+                        document.location.href='/hr/employeeEdu!improveDelete.dhtml?id='+uid;
+                    }
+                }
+        });
+
     });
 </script>
 <!--左侧类目begin-->
@@ -102,13 +163,13 @@
                 <#if employeeEduList?exists&&employeeEduList?size gt 0>
                     <#list employeeEduList as edu>
                     <tr>
-                        <td>${edu.name?if_exists}</td>
+                        <td style="text-align: left;">${edu.name?if_exists}</td>
                         <td>${edu.title?if_exists}</td>
                         <td>${edu.startDate?string("yyyy-MM-dd")}</td>
                         <td>${edu.endDate?string("yyyy-MM-dd")}</td>
                         <td>
-                            <a title="修改" class="icon icon-edit" href="#"></a>
-                            <a title="删除" class="icon icon-delete" href="#"></a>
+                            <a title="修改" class="icon icon-edit" href="##" uid="${edu.id?c}"></a>
+                            <a title="删除" class="icon icon-delete" href="##" uid="${edu.id?c}"></a>
                         </td>
                     </tr>
                     </#list>
@@ -122,27 +183,42 @@
                 <tr>
                     <th width="60">学校名称：</th>
                     <td width="160">
-                        <input type="text" class="edit"  id="hrEmployeeEdu.name" name="hrEmployeeEdu.name">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeEdu.name" name="hrEmployeeEdu.name">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                     <th width="60">专业学历：</th>
-                    <td w>
-                        <input type="text" class="edit"  id="hrEmployeeEdu.title" name="hrEmployeeEdu.title">
+                    <td >
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeEdu.title" name="hrEmployeeEdu.title">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th width="60">入学日期：</th>
                     <td width="160">
-                        <input type="text" class="edit"  id="hrEmployeeEdu.startDate" name="hrEmployeeEdu.startDate">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeEdu.startDate" name="hrEmployeeEdu.startDate">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                     <th width="60">毕业日期：</th>
-                    <td w>
-                        <input type="text" class="edit"  id="hrEmployeeEdu.endDate" name="hrEmployeeEdu.endDate">
+                    <td >
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeEdu.endDate" name="hrEmployeeEdu.endDate">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th>核心课程：</th>
                     <td colspan="3">
-                        <input type="text" class="edit"  id="hrEmployeeEdu.description" name="hrEmployeeEdu.description">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployeeEdu.description" name="hrEmployeeEdu.description">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 </tbody>
@@ -152,7 +228,8 @@
         </div>
 
 <p class="alignright mart5">
-    <a class="button" href="/hr/employee!improveEdit.dhtml" id="nextSave">下一步</a>
+    <a class="button" href="/hr/employeeJob!improveEditJob.dhtml" id="preSave">上一步</a>&nbsp;
+    <a class="button" href="/hr/employee!improveDone.dhtml" id="nextSave">完成</a>
 </p>
 <!--右侧详细信息over-->
 </@common.html>

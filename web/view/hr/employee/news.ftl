@@ -73,7 +73,7 @@
             }
         });
         $('#allImprove').off('click').on('click',function(){
-            var r=confirm("此操作将邀请该列表下${pageObj.totalRecord?c}名员工完善人事档案,是否继续");
+            var r=confirm("此操作将邀请该列表下${pageObj.totalRecord?c}名员工完善人事档案,是否继续?");
             if(r==true){
                 WEBUTILS.popMask.show();
                 document.location.href='/hr/employee!sendImproveAll.dhtml';

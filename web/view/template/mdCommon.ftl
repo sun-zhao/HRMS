@@ -9,7 +9,7 @@
 
         function setLaTitle(title){
             var laName=$('title').text();
-            $('title').text(laName+' '+title);
+            $('title').attr('title',laName+' '+title);
         }
         function startLoad(){
             var FilesArray=[

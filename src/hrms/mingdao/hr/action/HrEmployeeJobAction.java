@@ -100,6 +100,18 @@ public class HrEmployeeJobAction extends ActionSupport<HrEmployeeJob> {
 
     @PageFlow(result = {
             @Result(name = "success", path = "/hr/employeeJob!improveEditJob.dhtml", type = Dispatcher.Redirect)})
+    public String improveDelete() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&id!=null) {
+            hrEmployeeJob=this.hrEmployeeJobService.getById(id);
+            if(hrEmployeeJob!=null){
+                this.hrEmployeeJobService.delete(hrEmployeeJob);
+            }
+        }
+        return "success";
+    }
+    @PageFlow(result = {
+            @Result(name = "success", path = "/hr/employeeJob!improveEditJob.dhtml", type = Dispatcher.Redirect)})
     public String improveSaveJob() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null&&hrEmployeeJob!=null) {

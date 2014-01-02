@@ -3,8 +3,67 @@
 <#import "/view/common/core.ftl" as c>
 <@common.html module="HR">
 <script type="text/javascript" src="/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/js/webutils/webutils.validator.js"></script>
+<script type="text/javascript" src="/js/webutils/reg.js"></script>
 <script type="text/javascript">
     var submited = false;
+
+    function initValidator() {
+        WEBUTILS.validator.init({
+            modes:[
+                {
+                    id:'hrEmployee\\.entryDate',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入日期'}
+                    ]
+                },
+                {
+                    id:'hrEmployee\\.birthDay',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入日期'}
+                    ]
+                },
+                {
+                    id:'hrEmployee\\.officeAddress',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入工作地点'}
+                    ]
+                },
+                {
+                    id:'hrEmployee\\.idCard',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入身份证号'}
+                    ]
+                },
+                {
+                    id:'hrEmployee\\.mobileTel',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入移动电话'}
+                    ]
+                },
+                {
+                    id:'hrEmployee\\.officeTel',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入办公电话'}
+                    ]
+                },
+                {
+                    id:'hrEmployee\\.userEmail',
+                    required:true,
+                    pattern:[
+                        {type:'blank', exp:'!=', msg:'请输入电子邮件'}
+                    ]
+                }
+            ]
+        }, true);
+    }
+
     function showCity(){
         $.ajax({
             type:'POST',
@@ -30,6 +89,7 @@
         });
     }
     $(document).ready(function () {
+        initValidator();
         $('#hrEmployee\\.provinceId\\.id').off('change').on('change',function(){
            showCity();
         });
@@ -45,7 +105,7 @@
                 }
             });
         });
-        $('#hrEmployee\\.entryDay').off('focus').on('focus', function () {
+        $('#hrEmployee\\.entryDate').off('focus').on('focus', function () {
             var obj = $(this);
             WdatePicker({
                 doubleCalendar:false,
@@ -60,9 +120,17 @@
 
         $('#nextSave').off('click').on('click', function () {
             if (!submited) {
-                WEBUTILS.popMask.show();
-                document.editForm.submit();
-                submited=true;
+                WEBUTILS.validator.checkAll();
+                window.setTimeout(function () {
+                    var passed = WEBUTILS.validator.isPassed();
+                    if (passed) {
+                        WEBUTILS.popMask.show();
+                        document.editForm.submit();
+                        submited=true;
+                    } else {
+                        WEBUTILS.validator.showErrors();
+                    }
+                }, 500);
             }
         });
     });
@@ -81,10 +149,10 @@
     <@c.joddForm bean="hrEmployee" scope="request">
     <form action="/hr/employee!improveSaveInfo.dhtml" method="POST" class="formStyle" name="editForm" id="editForm"
           onsubmit="return false;">
-        <div class="PopRight border-solid">
+        <div class="PopRight g-edit border-solid">
             <div class="UserInfo-top">
                 <span class="PerImg floatleft"><img src="${user.avstar100?if_exists}"></span>
-                <table width="350" class="UserTbale Info floatleft" style="border-top: 0px;">
+                <table width="360" class="UserTbale Info floatleft" style="border-top: 0px;">
                     <tbody>
                     <tr>
                         <td colspan="4"><em class="icon icon-user"></em>
@@ -99,7 +167,7 @@
                     </tr>
                     <tr>
                         <th>职级：</th>
-                        <td width="130">
+                        <td width="100">
                             <select class="edit" id="hrEmployee.dutyLevel"  name="hrEmployee.dutyLevel" disabled="disabled">
                                 <option value="1">总裁</option>
                                 <option value="2">副总裁</option>
@@ -121,22 +189,15 @@
             <table width="100%" class="UserTbale nomar Info mart5">
                 <tbody>
                 <tr>
-                    <th width="60">家人姓名：</th>
+                    <th width="60">用工类型：</th>
                     <td width="130">
                         <select class="edit" id="hrEmployee.empType"  name="hrEmployee.empType" disabled="disabled">
                             <option value="1">劳务</option>
                             <option value="0">实习</option>
                         </select>
                     </td>
-                    <th width="60">家人电话：</th>
-                    <td w>
-                        <select class="edit" id="hrEmployee.workState"  name="hrEmployee.workState" disabled="disabled">
-                            <option value="0">在职</option>
-                            <option value="1">离职</option>
-                        </select>
-                    </td>
-                    <th width="60">家人关系：</th>
-                    <td w>
+                    <th width="60">工作状态：</th>
+                    <td>
                         <select class="edit" id="hrEmployee.workState"  name="hrEmployee.workState" disabled="disabled">
                             <option value="0">在职</option>
                             <option value="1">离职</option>
@@ -146,7 +207,10 @@
                 <tr>
                     <th>入职日期：</th>
                     <td colspan="3">
-                        <input type="text" class="edit"  id="hrEmployee.entryDay" name="hrEmployee.entryDay">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployee.entryDate" name="hrEmployee.entryDate" readonly="readonly">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 </tbody>
@@ -155,23 +219,35 @@
                 <tbody><tr>
                     <th width="60">移动电话：</th>
                     <td width="130">
-                        <input type="text" class="edit" id="hrEmployee.mobileTel" name="hrEmployee.mobileTel">
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrEmployee.mobileTel" name="hrEmployee.mobileTel">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                     <th width="60">办公电话：</th>
                     <td>
-                        <input type="text" class="edit"  id="hrEmployee.officeTel" name="hrEmployee.officeTel">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployee.officeTel" name="hrEmployee.officeTel">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th>电子邮件：</th>
                     <td colspan="3">
-                        <input type="text" class="edit"  id="hrEmployee.userEmail" name="hrEmployee.userEmail">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployee.userEmail" name="hrEmployee.userEmail">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th>工作地点：</th>
                     <td colspan="3">
-                        <input type="text" class="edit"  id="hrEmployee.officeAddress" name="hrEmployee.officeAddress">
+                        <div class="has-general">
+                            <input type="text" class="edit"  id="hrEmployee.officeAddress" name="hrEmployee.officeAddress">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 </tbody>
@@ -252,17 +328,26 @@
                     </td>
                     <th>身份证号：</th>
                     <td colspan="2">
-                        <input type="text" class="edit" id="hrEmployee.idCard"  name="hrEmployee.idCard">
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrEmployee.idCard"  name="hrEmployee.idCard">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th>出生日期：</th>
                     <td width="70" colspan="2">
-                        <input type="text" class="edit" id="hrEmployee.birthDay"  name="hrEmployee.birthDay">
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrEmployee.birthDay"  name="hrEmployee.birthDay">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                     <th width="70">银行卡号：</th>
                     <td colspan="2">
-                        <input type="text" class="edit" id="hrEmployee.bankCard"  name="hrEmployee.bankCard">
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrEmployee.bankCard"  name="hrEmployee.bankCard">
+                            <label class="control-label"></label>
+                        </div>
                     </td>
                 </tr>
                 </tbody>

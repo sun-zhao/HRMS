@@ -159,10 +159,15 @@ select.edit{padding-bottom:2px;height:auto;}
 .ThemeInput{height:24px;line-height:24px;padding-left:5px;}
 .ThemeText{padding: 5px;}
 .has-general{position: relative;}
-.control-label{position: absolute;width:auto;line-height:16px;height:16px;background:#fff;left:7px;top:5px;}
+.control-label{position: absolute;width:auto;line-height:16px;height:16px;background:#fff;left:7px;top:5px;display: none;}
 .has-error label.control-label{color:#B94A48;}
 .has-error .ThemeInput,.has-error .ThemeText,.has-error .ThemeInput:hover,.has-error .ThemeText:hover{border-color:#C09853;}
 .has-success .ThemeInput, .has-success .ThemeText,.has-success .ThemeInput:hover, .has-success .ThemeText:hover{border-color:#468847;}
+.has-error .edit{border-color:#C09853;}
+.has-success .edit{border-color:#468847;}
+.g-edit label{top:0px;left:5px;}
+.g-edit td{padding-right:10px;}
+.g-edit .Info th,.g-edit .Info td{padding:8px 4px;}
 /*日历控件*/
 /*.CLswitch,.CLswitch span{position: relative;z-index:200;}*/
 .Clander{position: relative;}

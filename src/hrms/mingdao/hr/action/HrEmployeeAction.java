@@ -470,4 +470,18 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
         return "success";
     }
 
+    public String improveDone() throws Exception {
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null&&hrEmployeeFamily!=null) {
+            hrEmployee = this.hrEmployeeService.getByUserId(userInfo.getCompanyId(), userInfo.getUserId());
+            if (hrEmployee.getComplete().intValue() == 3) {
+                hrEmployee.setComplete(4);
+                bind(hrEmployee);
+                this.hrEmployeeService.save(hrEmployee);
+            }
+        }
+        return "saveSuccess";
+    }
+
+
 }

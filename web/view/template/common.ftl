@@ -29,6 +29,9 @@
     <script src="/js/webutils/webutils.popWindow.js"></script>
     <script src="/js/webutils/webutils.popMask.js"></script>
     <script type="text/javascript">
+        function reload(){
+            document.location.reload();
+        }
         $(document).ready(function () {
             WEBUTILS.popMask.close();
         });

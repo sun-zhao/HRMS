@@ -6,37 +6,64 @@
     var submited = false;
 
     $(document).ready(function () {
-        WEBUTILS.msg.alertInfo("请在即将弹出的信息框里完善您的个人信息...",5000,function(){
-            parent.WEBUTILS.popWindow.createPopWindow(620, 530, '${hrEmployee.userName?if_exists}的人事档案', '/hr/employee!improveEdit.dhtml',true);
-            parent.WEBUTILS.popWindow.offset('30%',false);
-        });
+        <#if hrEmployee.complete==3>
+            WEBUTILS.msg.alertInfo("请在即将弹出的信息框里完善您的个人信息...",5000,function(){
+                parent.WEBUTILS.popWindow.createPopWindow(620, 530, '${hrEmployee.userName?if_exists}的人事档案', '/hr/employee!improveEdit.dhtml',true);
+                parent.WEBUTILS.popWindow.offset('30%',false);
+            });
+        </#if>
     });
 </script>
 <div class="UserInfo-top clearfix">
     <span class="PerImg floatleft"><img src="${user.avstar100?if_exists}"></span>
-    <table class="UserTbale mine floatleft">
+    <table class="UserTbale Info mine floatleft" style="border-top: 0px;">
         <tbody>
         <tr>
             <th colspan="6">
-                <em class="icon icon-user"></em><span class="PerName font16">${hrEmployee.userName?if_exists}</span>
+                <em class="icon icon-user"></em>
+                ${hrEmployee.userName?if_exists}
                 <#--<a class="a-link marl30" href="#">修改我的档案 <em class="icon icon-edit"></em></a>-->
             </th>
         </tr>
         <tr>
             <th width="80">部门：</th>
             <td width="120">${hrEmployee.deptName?if_exists}</td>
-            <th width="60">职级：</th>
+            <th width="80">职级：</th>
             <td width="120">&nbsp;</td>
-            <th width="60">职位：</th>
+            <th width="80">职位：</th>
             <td>${hrEmployee.jobName?if_exists}</td>
         </tr>
         <tr>
-            <th>入职日期：</th>
-            <td colspan="5">2013-10-28</td>
-        </tr>
-        <tr>
-            <th>工作地点：</th>
-            <td colspan="5">${hrEmployee.officeAddress?if_exists}</td>
+            <th width="80">用工类型：</th>
+            <td width="120">
+                <#if hrEmployee.empType?exists>
+                    <#if hrEmployee.empType==1>
+                    劳务
+                    <#elseif hrEmployee.empType==0>
+                    实习
+                    </#if>
+                <#else >
+                    &nbsp;
+                </#if>
+            </td>
+            <th width="80">工作状态：</th>
+            <td width="120">
+                <#if hrEmployee.workState?exists>
+                    <#if hrEmployee.workState==0>
+                        在职
+                    <#elseif hrEmployee.workState==1>
+                        离职
+                    </#if>
+                <#else >
+                    &nbsp;
+                </#if>
+            </td>
+            <th width="80">入职日期：</th>
+            <td>
+            <#if hrEmployee.entryDate?exists>
+            ${hrEmployee.entryDate?string("yyyy-MM-dd")}
+            </#if>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -65,19 +92,25 @@
             </#if>
         </td>
         <th width="50">学历：</th>
-        <td width="80">&nbsp;</td>
+        <td width="80">${hrEmployee.eduLevel.codeName?if_exists}</td>
         <th width="50">民族：</th>
-        <td width="80">&nbsp;</td>
+        <td width="80">${hrEmployee.nationalityId.codeName?if_exists}</td>
         <th width="50">政治面貌：</th>
-        <td >&nbsp;</td>
+        <td >${hrEmployee.politicsLevel.codeName?if_exists}</td>
     </tr>
     <tr>
         <th>国籍：</th>
-        <td>&nbsp;</td>
+        <td>
+        ${hrEmployee.contryId.codeName?if_exists}
+        </td>
         <th>省份：</th>
-        <td>&nbsp;</td>
+        <td>
+        ${(hrEmployee.provinceId.provinceName)?if_exists}
+        </td>
         <th>城市：</th>
-        <td>&nbsp;</td>
+        <td>
+        ${(hrEmployee.cityId.cityName)?if_exists}
+        </td>
         <th>出生日期：</th>
         <td width="70">
             <#if hrEmployee.birthDay?exists>
@@ -87,9 +120,14 @@
     </tr>
     <tr>
         <th>身份证号：</th>
-        <td colspan="3">&nbsp;</td>
+        <td colspan="3">
+        ${hrEmployee.idCard?if_exists}
+        </td>
         <th width="70">银行卡号：</th>
-        <td colspan="3">&nbsp; <em class="icon icon-card"></em></td>
+        <td colspan="3">
+        ${hrEmployee.bankCard?if_exists}
+            <em class="icon icon-card"></em>
+        </td>
     </tr>
     </tbody>
 </table>
@@ -138,10 +176,10 @@
         <#list employeeEduList as edu>
         <tr>
             <td>${edu.name?if_exists}</td>
-            <td>${edu.title?if_exists}<</td>
-            <td>${edu.description?string("yyyy-MM-dd")}</td>
+            <td>${edu.title?if_exists}</td>
+            <td>${edu.description?if_exists}</td>
             <td>${edu.startDate?string("yyyy-MM-dd")}</td>
-            <td>${edu.endDate?if_exists}</td>
+            <td>${edu.endDate?string("yyyy-MM-dd")}</td>
         </tr>
         </#list>
     <#else >
