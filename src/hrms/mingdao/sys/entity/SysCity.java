@@ -25,7 +25,7 @@ public class SysCity extends IdEntity implements Tracker {
 
     private SysProvince provinceId;
 
-    private String cityName;
+    private String name;
 
     private Integer displayOrder;
 
@@ -106,13 +106,13 @@ public class SysCity extends IdEntity implements Tracker {
         this.provinceId = provinceId;
     }
 
-    @Column(name = "CITY_NAME")
-    public String getCityName() {
-        return cityName;
+    @Column(name = "NAME")
+    public String getName() {
+        return name;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Column(name = "DISPLAY_ORDER")

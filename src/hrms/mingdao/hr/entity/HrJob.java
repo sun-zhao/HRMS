@@ -1,4 +1,4 @@
-package hrms.mingdao.sys.entity;
+package hrms.mingdao.hr.entity;
 
 import org.guiceside.persistence.entity.IdEntity;
 import org.guiceside.persistence.entity.Tracker;
@@ -13,8 +13,8 @@ import java.util.Date;
  * @since JDK1.5
  */
 @Entity
-@Table(name = "SYS_PROVINCE")
-public class SysProvince extends IdEntity implements Tracker {
+@Table(name = "HR_JOB")
+public class HrJob extends IdEntity implements Tracker {
 
     /**
      *
@@ -23,11 +23,9 @@ public class SysProvince extends IdEntity implements Tracker {
 
     private Long id;
 
+    private String companyId;
+
     private String name;
-
-    private Integer displayOrder;
-
-    private String note;
 
     private Date created;
 
@@ -38,6 +36,8 @@ public class SysProvince extends IdEntity implements Tracker {
     private String updatedBy;
 
     private String useYn;
+
+    private Integer count;
 
 
     @Column(name = "CREATED", updatable = false)
@@ -95,6 +95,16 @@ public class SysProvince extends IdEntity implements Tracker {
         this.id = id;
     }
 
+
+    @Column(name = "COMPANY_ID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
+    }
+
     @Column(name = "NAME")
     public String getName() {
         return name;
@@ -104,21 +114,12 @@ public class SysProvince extends IdEntity implements Tracker {
         this.name = name;
     }
 
-    @Column(name = "DISPLAY_ORDER")
-    public Integer getDisplayOrder() {
-        return displayOrder;
+    @Transient
+    public Integer getCount() {
+        return count;
     }
 
-    public void setDisplayOrder(Integer displayOrder) {
-        this.displayOrder = displayOrder;
-    }
-
-    @Column(name = "NOTE")
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
+    public void setCount(Integer count) {
+        this.count = count;
     }
 }

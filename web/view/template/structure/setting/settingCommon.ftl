@@ -40,8 +40,8 @@
         <div class="AppNavT border-solid border-bottom clearfix">
             <ul class="font16 clearfix floatleft">
                 <li class="type"><a href="/hr/contractType.dhtml">合同设置</a></li>
-                <li class="signing"><a href="/hr/contract!signing.dhtml">职级设置</a></li>
-                <li class="dm"><a href="#">岗位设置</a></li>
+                <li class="dutyLevel"><a href="/hr/dutyLevel.dhtml">职级设置</a></li>
+                <li class="job"><a href="/hr/job.dhtml">岗位设置</a></li>
             </ul>
         </div>
         <!--二级导航over-->

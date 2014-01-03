@@ -34,7 +34,7 @@
             <th width="80">职级：</th>
             <td width="120">&nbsp;</td>
             <th width="80">职位：</th>
-            <td>${hrEmployee.jobName?if_exists}</td>
+            <td>${(hrEmployee.jobId.name)?if_exists}</td>
         </tr>
         <tr>
             <th width="80">用工类型：</th>

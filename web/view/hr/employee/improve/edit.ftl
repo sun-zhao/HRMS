@@ -183,7 +183,7 @@
                         </td>
                         <th width="60">职位：</th>
                         <td>
-                        ${hrEmployee.jobName}
+                        ${(hrEmployee.jobId.name)?if_exists}
                         </td>
                     </tr>
                     </tbody>
@@ -302,7 +302,7 @@
                         <select class="edit" id="hrEmployee.provinceId.id"  name="hrEmployee.provinceId.id">
                             <#if provinceList?exists&&provinceList?size gt 0>
                                 <#list provinceList as province>
-                                    <option value="${province.id?c}">${province.provinceName?if_exists}</option>
+                                    <option value="${province.id?c}">${province.name?if_exists}</option>
                                 </#list>
                             </#if>
                         </select>
@@ -312,7 +312,7 @@
                         <select class="edit" id="hrEmployee.cityId.id"  name="hrEmployee.cityId.id">
                             <#if cityList?exists&&cityList?size gt 0>
                                 <#list cityList as city>
-                                    <option value="${city.id?c}">${city.cityName?if_exists}</option>
+                                    <option value="${city.id?c}">${city.name?if_exists}</option>
                                 </#list>
                             </#if>
                         </select>

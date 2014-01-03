@@ -12,13 +12,6 @@
         WEBUTILS.validator.init({
             modes:[
                 {
-                    id:'hrEmployee\\.jobName',
-                    required:true,
-                    pattern:[
-                        {type:'blank', exp:'!=', msg:'请输入职位'}
-                    ]
-                },
-                {
                     id:'hrEmployee\\.entryDate',
                     required:true,
                     pattern:[
@@ -196,10 +189,13 @@
                         </td>
                         <th width="60">职位：</th>
                         <td>
-                            <div class="has-general">
-                                <input type="text" class="edit" id="hrEmployee.jobName"  name="hrEmployee.jobName">
-                                <label class="control-label"></label>
-                            </div>
+                            <select class="edit" id="hrEmployee.jobId.id"  name="hrEmployee.jobId.id">
+                                <#if jobList?exists&&jobList?size gt 0>
+                                    <#list jobList as job>
+                                        <option value="${job.id?c}">${job.name}</option>
+                                    </#list>
+                                </#if>
+                            </select>
                         </td>
                     </tr>
                     </tbody>
@@ -318,7 +314,7 @@
                         <select class="edit" id="hrEmployee.provinceId.id"  name="hrEmployee.provinceId.id">
                             <#if provinceList?exists&&provinceList?size gt 0>
                                 <#list provinceList as province>
-                                    <option value="${province.id?c}">${province.provinceName?if_exists}</option>
+                                    <option value="${province.id?c}">${province.name?if_exists}</option>
                                 </#list>
                             </#if>
                         </select>
@@ -328,7 +324,7 @@
                         <select class="edit" id="hrEmployee.cityId.id"  name="hrEmployee.cityId.id">
                             <#if cityList?exists&&cityList?size gt 0>
                                 <#list cityList as city>
-                                    <option value="${city.id?c}">${city.cityName?if_exists}</option>
+                                    <option value="${city.id?c}">${city.name?if_exists}</option>
                                 </#list>
                             </#if>
                         </select>

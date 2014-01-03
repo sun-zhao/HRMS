@@ -28,7 +28,7 @@
                 $('li[word="${word?if_exists}"]','.word-ser').removeClass('noname').addClass('current');
             </#if>
         </#if>
-        $('#userName').off('userName').on('keyup', function (e) {
+        $('#userName').off('keyup').on('keyup', function (e) {
             e = (e) ? e : ((window.event) ? window.event : "")
             var keyCode = e.keyCode ? e.keyCode : (e.which ? e.which : e.charCode);
             if (keyCode ==13) {
@@ -125,7 +125,7 @@
                             <dl class="floatleft">
                                 <dd><span>${employee.userName?if_exists}</span></dd>
                                 <dd>${employee.deptName?if_exists}</dd>
-                                <dd>${employee.jobName?if_exists}</dd>
+                                <dd>${(employee.jobId.name)?if_exists}</dd>
                             </dl>
                         </div>
                         <p class="alignright">

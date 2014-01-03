@@ -68,7 +68,7 @@
                         </td>
                         <th width="60">职位：</th>
                         <td>
-                        ${hrEmployee.jobName}
+                        ${(hrEmployee.jobId.name)?if_exists}
                         </td>
                     </tr>
                     </tbody>
@@ -174,11 +174,11 @@
                     </td>
                     <th>省份：</th>
                     <td>
-                    ${(hrEmployee.provinceId.provinceName)?if_exists}
+                    ${(hrEmployee.provinceId.name)?if_exists}
                     </td>
                     <th>城市：</th>
                     <td>
-                    ${(hrEmployee.cityId.cityName)?if_exists}
+                    ${(hrEmployee.cityId.name)?if_exists}
                     </td>
                 </tr>
                 <tr>

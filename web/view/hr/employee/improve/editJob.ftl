@@ -172,7 +172,7 @@
                         </td>
                         <th width="60">职位：</th>
                         <td>
-                        ${hrEmployee.jobName}
+                        ${(hrEmployee.jobId.name)?if_exists}
                         </td>
                     </tr>
                     </tbody>

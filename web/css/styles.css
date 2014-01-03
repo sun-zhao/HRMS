@@ -73,6 +73,10 @@ a:hover .icon-por,.icon-por:hover{background-position:-14px -280px;}/*档案袋*
 .right{vertical-align:middle;margin-right:7px;}
 .icon-re{background-position:0 -406px;}
 .icon-re:hover,a:hover .icon-re{background-position:-14px -406px;}
+.icon-up{background-position:0 -420px;}/*向上*/
+.icon-up:hover,a:hover .icon-up{background-position:-14px -420px;}
+.icon-down{background-position:0 -434px;}/*向下*/
+.icon-down:hover,a:hover .icon-down{background-position:-14px -434px;}
 /*搜索框插件*/
 .AppSequence{min-width:90px;height:30px;position: relative;z-index:20;}
 .AppSequence a{line-height:20px;color:#000;}
@@ -117,7 +121,7 @@ a:hover .icon-por,.icon-por:hover{background-position:-14px -280px;}/*档案袋*
 .PerList li .PerImg,.PerList li .PerImg img{display:block;width:60px;height:60px;border-radius:3px;}
 .PerList li .PerImg{padding:1px;border:1px solid #fff;backdground:#fff;}
 .PerList li .PerImg img{vertical-align:bottom;}
-.PerList li .CardTop dl{margin-left:5px;width:89px;}
+.PerList li .CardTop dl{margin-left:5px;width:89px;min-height:65px;}
 .PerList li .CardTop dl dd{line-height:20px;color:#999;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:block;}
 .PerList li:hover .CardTop dl dd{color:#666;}
 .PerList li .CardTop dl dd span{color:#333;font-size:14px;padding:2px 0 3px 0;display:block;}
@@ -192,15 +196,12 @@ select.edit{padding-bottom:2px;height:auto;}
 .PopTable td{height:40px;padding-left:5px;}
 .AppPop .PerListmini li{margin:0 8px 20px 16px;}
 .PerList li p.alignright,.CardBt{border-top:1px solid;padding:5px 0 2px 0;margin-top:5px;}
-
-
 .alertDialog,.warningDialog,.errorDialog{background-color:#CFFBC7;border:2px solid #FFFFFF;border-radius:6px;color:green;font-size:20px;padding:10px 40px 10px 20px;
     box-shadow:0 0 40px #000000;position:fixed;text-align:left;z-index:9999;}
 a.close{background:#fff;display: block;font-size:20px;font-weight: 700;border-radius:10px;overflow: hidden;position: absolute;height:20px;right:10px;line-height: 16px;color:#119900;top:12px; text-align: center;width:20px;}
 a.close:hover{text-decoration: none;}
 .errorDialog{background-color:#ec8778;color:#a73524;}
 .errorDialog a.close{color:#c69385;}
-
 .mask{width:100%;height:100%;position: fixed;left:0;top:0;text-align: center;background:url(../images/mask-bg.png) repeat;z-index: 9999;}
 .mask-x{display:inline-block;position: absolute;top:50%;left:50%;margin:-10px 0 0 -60px;z-index: 100;color:#000;
     background-image: url(../images/loading-ico.gif);background-position:left center;background-repeat:no-repeat; background-color:#fff;padding-left:25px;padding:2px 25px;}

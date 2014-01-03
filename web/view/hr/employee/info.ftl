@@ -28,7 +28,7 @@
             <th width="80">职级：</th>
             <td width="120">&nbsp;</td>
             <th width="80">职位：</th>
-            <td>${hrEmployee.jobName?if_exists}</td>
+            <td>${(hrEmployee.jobId.name)?if_exists}</td>
         </tr>
         <tr>
             <th width="80">用工类型：</th>
@@ -102,11 +102,11 @@
         </td>
         <th>省份：</th>
         <td>
-        ${(hrEmployee.provinceId.provinceName)?if_exists}
+        ${(hrEmployee.provinceId.name)?if_exists}
         </td>
         <th>城市：</th>
         <td>
-        ${(hrEmployee.cityId.cityName)?if_exists}
+        ${(hrEmployee.cityId.name)?if_exists}
         </td>
         <th>出生日期：</th>
         <td width="70">

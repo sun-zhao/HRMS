@@ -37,7 +37,7 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     private Integer dutyLevel;
 
-    private String jobName;
+    private HrJob jobId;
 
     private Integer userSex;
 
@@ -288,13 +288,15 @@ public class HrEmployee extends IdEntity implements Tracker {
         this.dutyLevel = dutyLevel;
     }
 
-    @Column(name = "JOB_NAME")
-    public String getJobName() {
-        return jobName;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "JOB_ID")
+    public HrJob getJobId() {
+        return jobId;
     }
 
-    public void setJobName(String jobName) {
-        this.jobName = jobName;
+    public void setJobId(HrJob jobId) {
+        this.jobId = jobId;
     }
 
     @Column(name = "USER_SEX")

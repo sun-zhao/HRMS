@@ -159,7 +159,7 @@ public class CommonAction extends BaseAction {
                 for(SysCity city:cityList){
                     JSONObject object=new JSONObject();
                     object.put("id",city.getId());
-                    object.put("name",city.getCityName());
+                    object.put("name",city.getName());
                     cityArray.add(object);
                 }
                 root.put("cityList", cityArray);

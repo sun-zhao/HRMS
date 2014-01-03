@@ -86,7 +86,7 @@ public class HrEmployeeService extends HQuery {
 
     @Transactional(type = TransactionType.READ_ONLY)
     public Integer getCountByCompanyEqComplete(String companyId, Integer complete) {
-        return $($eq("companyId", companyId),$eq("complete",complete),$eq("useYn", "Y")).value(HrEmployee.class, Integer.class);
+        return $($eq("companyId", companyId),$eq("complete",complete),$eq("useYn", "Y"),$count("id")).value(HrEmployee.class, Integer.class);
     }
 
     @Transactional(type = TransactionType.READ_ONLY)
@@ -94,6 +94,15 @@ public class HrEmployeeService extends HQuery {
         return $($eq("companyId", companyId), $eq("useYn", "Y"), $distinct("userId")).list(HrEmployee.class, String.class);
     }
 
+    @Transactional(type = TransactionType.READ_ONLY)
+    public Integer getCountByCompanyJob(String companyId, Long jobId) {
+        return $($eq("companyId", companyId),$eq("jobId.id",jobId),$count("id")).value(HrEmployee.class, Integer.class);
+    }
+
+    @Transactional(type = TransactionType.READ_ONLY)
+    public Integer getCountByCompanyDutyLevel(String companyId, Long dutyLevelId) {
+        return $($eq("companyId", companyId),$eq("dutyLevel.id",dutyLevelId),$count("id")).value(HrEmployee.class, Integer.class);
+    }
     /**
      * 保存对象
      */
