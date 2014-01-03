@@ -128,7 +128,7 @@
             <#list dutyLevelList as dutyLevel>
             <tr>
                 <th>${dutyLevel.name?if_exists}</th>
-                <td>20</td>
+                <td>${dutyLevel.count?c}</td>
                 <td>
                     <a href="##" uid="${dutyLevel.id?c}" order="${dutyLevel.displayOrder?c}" class="icon icon-up" title="上移"></a>
                     <a href="##" uid="${dutyLevel.id?c}" order="${dutyLevel.displayOrder?c}" class="icon icon-down" title="下移"></a>

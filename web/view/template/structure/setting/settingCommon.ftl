@@ -31,7 +31,7 @@
                 <li class="employee"><a href="/hr/employee.dhtml">人事档案</a></li>
                 <li class="contract"><a href="/hr/contract!signing.dhtml">合同管理</a></li>
                 <li><a href="#">报表统计</a></li>
-                <li class="myEmployee"><a href="#">我的档案</a></li>
+                <li class="myEmployee"><a href="/hr/employee!info.dhtml">我的档案</a></li>
                 <li class="AppSet"><a href="/hr/contractType.dhtml"><em class="icon icon-set"></em>应用设置</a></li>
             </ul>
         </div>
@@ -42,6 +42,7 @@
                 <li class="type"><a href="/hr/contractType.dhtml">合同设置</a></li>
                 <li class="dutyLevel"><a href="/hr/dutyLevel.dhtml">职级设置</a></li>
                 <li class="job"><a href="/hr/job.dhtml">岗位设置</a></li>
+                <li class="address"><a href="/hr/officeAddr.dhtml">工作地点</a></li>
             </ul>
         </div>
         <!--二级导航over-->

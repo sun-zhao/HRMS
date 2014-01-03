@@ -163,30 +163,18 @@
                         <th>职级：</th>
                         <td width="130">
                             <#if hrEmployee.dutyLevel?exists>
-                                <#if hrEmployee.dutyLevel==1>
-                                    总裁
-                                <#elseif hrEmployee.dutyLevel==2>
-                                    副总裁
-                                <#elseif hrEmployee.dutyLevel==3>
-                                    总监
-                                <#elseif hrEmployee.dutyLevel==4>
-                                    副总监
-                                <#elseif hrEmployee.dutyLevel==5>
-                                    经理
-                                <#elseif hrEmployee.dutyLevel==6>
-                                    主管
-                                <#elseif hrEmployee.dutyLevel==7>
-                                    职员
-                                <#else >
-                                    未设置
-                                </#if>
-                            <#else >
+                            ${(hrEmployee.dutyLevel.name)?if_exists}
+                            <#else>
                                 未设置
                             </#if>
                         </td>
                         <th width="60">职位：</th>
                         <td>
-                        ${(hrEmployee.jobId.name)?if_exists}
+                            <#if hrEmployee.jobId?exists>
+                                ${(hrEmployee.jobId.name)?if_exists}
+                            <#else>
+                                未设置
+                            </#if>
                         </td>
                     </tr>
                     </tbody>

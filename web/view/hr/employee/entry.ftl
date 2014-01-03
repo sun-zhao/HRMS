@@ -5,7 +5,7 @@
 <script type="text/javascript">
     var submited = false;
     function pagerAction(start, rows) {
-        var searchUrl = '/hr/employee!news.dhtml';
+        var searchUrl = '/hr/employee!entry.dhtml';
         searchUrl += '?start=' + start + '&rows=' + rows;
         <#if word?exists>
             searchUrl += '&word=${word?if_exists}';
@@ -33,9 +33,9 @@
             if(li){
                 var word=$(li).attr('word');
                 if(word){
-                    document.location.href = '/hr/employee!news.dhtml?word='+word;
+                    document.location.href = '/hr/employee!entry.dhtml?word='+word;
                 }else{
-                    document.location.href = '/hr/employee!news.dhtml';
+                    document.location.href = '/hr/employee!entry.dhtml';
                 }
             }
         });
@@ -50,7 +50,8 @@
         $('.sendImprove').off('click').on('click',function(){
             var li=$(this).parent().parent();
             var uid=$(this).attr('uid');
-            if(uid){
+            var aObj=$(this);
+            if(uid&&aObj.hasClass('invite')){
                 $.ajax({
                     type:'POST',
                     url:'/hr/employee!sendImprove.dhtml',
@@ -59,9 +60,11 @@
                     success:function (jsonData) {
                         if (jsonData) {
                             if (jsonData['result'] == '0') {
-                                $(li).fadeOut();
                                 WEBUTILS.msg.alertSuccess('已向'+jsonData['userName']+'发送完善信息邀请!',1500,function(){
-                                    document.location.reload();
+                                    $(aObj).css({'cursor':'default',color:'#999999'});
+                                    $(aObj).removeClass('invite');
+                                    $(aObj).text('等待TA完善信息');
+                                    $(aObj).off('click');
                                 });
                             }
                         }

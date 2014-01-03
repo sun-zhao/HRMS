@@ -29,8 +29,8 @@ public class HrDutyLevelService extends HQuery {
     }
 
     @Transactional(type = TransactionType.READ_ONLY)
-    public HrDutyLevel getListByCompanyId(String companyId) {
-        return $($eq("companyId", companyId), $eq("useYn", "Y"),$order("displayOrder")).get(HrDutyLevel.class);
+    public List<HrDutyLevel> getListByCompanyId(String companyId) {
+        return $($eq("companyId", companyId), $eq("useYn", "Y"),$order("displayOrder")).list(HrDutyLevel.class);
     }
 
     @Transactional(type = TransactionType.READ_ONLY)

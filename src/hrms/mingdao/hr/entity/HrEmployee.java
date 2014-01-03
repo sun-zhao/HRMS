@@ -35,7 +35,7 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     private String deptName;
 
-    private Integer dutyLevel;
+    private HrDutyLevel dutyLevel;
 
     private HrJob jobId;
 
@@ -47,7 +47,7 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     private String userEmail;
 
-    private String officeAddress;
+    private HrOfficeAddr officeAddress;
 
     private Date entryDate;
 
@@ -279,14 +279,19 @@ public class HrEmployee extends IdEntity implements Tracker {
         this.deptName = deptName;
     }
 
-    @Column(name = "DUTY_LEVEL")
-    public Integer getDutyLevel() {
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DUTY_LEVEL")
+    public HrDutyLevel getDutyLevel() {
         return dutyLevel;
     }
 
-    public void setDutyLevel(Integer dutyLevel) {
+    public void setDutyLevel(HrDutyLevel dutyLevel) {
         this.dutyLevel = dutyLevel;
     }
+
+
+
 
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -335,14 +340,18 @@ public class HrEmployee extends IdEntity implements Tracker {
         this.userEmail = userEmail;
     }
 
-    @Column(name = "OFFICE_ADDRESS")
-    public String getOfficeAddress() {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "OFFICE_ADDRESS")
+    public HrOfficeAddr getOfficeAddress() {
         return officeAddress;
     }
 
-    public void setOfficeAddress(String officeAddress) {
+    public void setOfficeAddress(HrOfficeAddr officeAddress) {
         this.officeAddress = officeAddress;
     }
+
+
+
 
     @Column(name = "ENTRY_DATE")
     public Date getEntryDate() {

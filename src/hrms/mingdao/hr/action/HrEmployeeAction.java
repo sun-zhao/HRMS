@@ -43,6 +43,12 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     private HrEmployeeService hrEmployeeService;
 
     @Inject
+    private HrDutyLevelService hrDutyLevelService;
+
+    @Inject
+    private HrOfficeAddrService hrOfficeAddrService;
+
+    @Inject
     private HrJobService hrJobService;
 
     @Inject
@@ -125,8 +131,15 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
 
     @ReqSet
     private List<SysCity> cityList;
+
     @ReqSet
     private List<HrJob> jobList;
+
+    @ReqSet
+    private List<HrDutyLevel> dutyLevelList;
+
+    @ReqSet
+    private List<HrOfficeAddr> officeAddrList;
 
     @ReqSet
     private Integer improveCount;
@@ -443,7 +456,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
                 employeeEduList = this.hrEmployeeEduService.getListByEmpId(userInfo.getCompanyId(), hrEmployee.getId());
                 employeeJobList = this.hrEmployeeJobService.getListByEmpId(userInfo.getCompanyId(), hrEmployee.getId());
-            } else if (hrEmployee.getComplete().intValue() == 4) {
+            } else if (hrEmployee.getComplete().intValue() == 0) {
                 return "info";
             }
         }
@@ -462,6 +475,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 contryList = this.sysCodeService.getListByParentId("CONTRY");
                 nationalityList = this.sysCodeService.getListByParentId("NATIONALITY");
                 politicsLevelList = this.sysCodeService.getListByParentId("POLITICS_LEVEL");
+                officeAddrList=this.hrOfficeAddrService.getListByCompanyId(userInfo.getCompanyId());
                 provinceList = this.sysProvinceService.getList();
                 departmentList = userInfo.getDepartmentList();
                 if (provinceList != null && !provinceList.isEmpty()) {
@@ -617,6 +631,8 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 nationalityList = this.sysCodeService.getListByParentId("NATIONALITY");
                 politicsLevelList = this.sysCodeService.getListByParentId("POLITICS_LEVEL");
                 jobList = this.hrJobService.getListByCompanyId(userInfo.getCompanyId());
+                dutyLevelList=this.hrDutyLevelService.getListByCompanyId(userInfo.getCompanyId());
+                officeAddrList=this.hrOfficeAddrService.getListByCompanyId(userInfo.getCompanyId());
                 provinceList = this.sysProvinceService.getList();
                 departmentList = userInfo.getDepartmentList();
                 if (provinceList != null && !provinceList.isEmpty()) {

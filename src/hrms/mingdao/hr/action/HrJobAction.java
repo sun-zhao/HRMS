@@ -52,8 +52,6 @@ public class HrJobAction extends ActionSupport<HrJob> {
     @ReqSet
     private List<HrJob> jobList;
 
-    @ReqSet
-    private List<Department> departmentList;
 
 
     private List<Selector> searchModeCallback() throws Exception {
@@ -87,7 +85,6 @@ public class HrJobAction extends ActionSupport<HrJob> {
             pageObj = this.hrJobService.getPageList(getStart(), 14, searchModeCallback());
             if (pageObj != null) {
                 jobList = pageObj.getResultList();
-                departmentList=userInfo.getDepartmentList();
                 if(jobList!=null&&!jobList.isEmpty()){
                     for(HrJob job:jobList){
                         Integer count=this.hrEmployeeService.getCountByCompanyJob(userInfo.getCompanyId(),job.getId());

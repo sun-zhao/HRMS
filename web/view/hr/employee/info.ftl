@@ -26,9 +26,21 @@
             <th width="80">部门：</th>
             <td width="120">${hrEmployee.deptName?if_exists}</td>
             <th width="80">职级：</th>
-            <td width="120">&nbsp;</td>
+            <td width="120">
+                <#if hrEmployee.dutyLevel?exists>
+                    ${(hrEmployee.dutyLevel.name)?if_exists}
+                <#else>
+                    未设置
+                </#if>
+            </td>
             <th width="80">职位：</th>
-            <td>${(hrEmployee.jobId.name)?if_exists}</td>
+            <td>
+                <#if hrEmployee.jobId?exists>
+                    ${(hrEmployee.jobId.name)?if_exists}
+                <#else>
+                    未设置
+                </#if>
+            </td>
         </tr>
         <tr>
             <th width="80">用工类型：</th>
@@ -89,16 +101,16 @@
             </#if>
         </td>
         <th width="50">学历：</th>
-        <td width="80">${hrEmployee.eduLevel.codeName?if_exists}</td>
+        <td width="80">${(hrEmployee.eduLevel.codeName)?if_exists}</td>
         <th width="50">民族：</th>
-        <td width="80">${hrEmployee.nationalityId.codeName?if_exists}</td>
+        <td width="80">${(hrEmployee.nationalityId.codeName)?if_exists}</td>
         <th width="50">政治面貌：</th>
-        <td >${hrEmployee.politicsLevel.codeName?if_exists}</td>
+        <td >${(hrEmployee.politicsLevel.codeName)?if_exists}</td>
     </tr>
     <tr>
         <th>国籍：</th>
         <td>
-        ${hrEmployee.contryId.codeName?if_exists}
+        ${(hrEmployee.contryId.codeName)?if_exists}
         </td>
         <th>省份：</th>
         <td>

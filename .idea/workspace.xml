@@ -2,46 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrDutyLevel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrDutyLevelAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrDutyLevelService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrJob.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrJobAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrJobService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/hr/dutyLevel/list.ftl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/hr/job/list.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/theme1/theme-ico.png" afterPath="$PROJECT_DIR$/web/images/theme1/theme-ico.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/common/action/CommonAction.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/common/action/CommonAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrOfficeAddr.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrOfficeAddrAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrOfficeAddrService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/hr/officeAddr/list.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrDutyLevelService.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrDutyLevelService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrEmployee.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrEmployee.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrEmployeeService.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrEmployeeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/sys/entity/SysCity.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/sys/entity/SysCity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/sys/entity/SysProvince.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/sys/entity/SysProvince.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrJobAction.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrJobAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/template/structure/common.ftl" afterPath="$PROJECT_DIR$/web/view/template/structure/common.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/contract.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/contract.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/contract/due.ftl" afterPath="$PROJECT_DIR$/web/view/hr/contract/due.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl" afterPath="$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/improve/editEdu.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/improve/editEdu.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/improve/editFamily.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/improve/editFamily.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/improve/editJob.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/improve/editJob.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/edu.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/edu.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl" afterPath="$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/entry.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/entry.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/edit/family.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/edit/family.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/family.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/family.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/global.css" afterPath="$PROJECT_DIR$/web/css/global.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/improve.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/improve.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/info.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/info.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/info.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/info.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/edit/job.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/edit/job.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/job.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/job.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/list.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/list.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/contract/news.ftl" afterPath="$PROJECT_DIR$/web/view/hr/contract/news.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/per-style.css" afterPath="$PROJECT_DIR$/web/css/per-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/contract/renewal.ftl" afterPath="$PROJECT_DIR$/web/view/hr/contract/renewal.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/dutyLevel/list.ftl" afterPath="$PROJECT_DIR$/web/view/hr/dutyLevel/list.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl" afterPath="$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/contract/signing.ftl" afterPath="$PROJECT_DIR$/web/view/hr/contract/signing.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/styles.css" afterPath="$PROJECT_DIR$/web/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HRMS.iws" />
@@ -50,12 +39,12 @@
     <file path="$PROJECT_DIR$/src/hrms/mingdao/web/startup/PlatformSessionListener.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388482746289" ignored="false" />
     <file path="$PROJECT_DIR$/src/hrms/mingdao/web/startup/PlatformLoader.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388482746289" ignored="false" />
     <file path="$PROJECT_DIR$/web/WEB-INF/tld/guiceSide.tld" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388482746289" ignored="false" />
-    <file path="/fragment.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388753515419" ignored="false" />
-    <file path="/Dummy.txt" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762364247" ignored="false" />
+    <file path="/fragment.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388775669686" ignored="false" />
+    <file path="/Dummy.txt" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388765507441" ignored="false" />
     <file path="/SysCode.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388485696735" ignored="false" />
     <file path="/SysProvince.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388744929056" ignored="false" />
     <file path="/SysCity.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388744910013" ignored="false" />
-    <file path="/HrEmployee.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388761909198" ignored="false" />
+    <file path="/HrEmployee.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388777116851" ignored="false" />
     <file path="/HrEmployeeState.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388486536444" ignored="false" />
     <file path="/HrEmployeeFamily.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388625339442" ignored="false" />
     <file path="/HrContract.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388703138003" ignored="false" />
@@ -65,7 +54,7 @@
     <file path="/employeeCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388697809399" ignored="false" />
     <file path="/common.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388691893354" ignored="false" />
     <file path="/index.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388698107229" ignored="false" />
-    <file path="/HrEmployeeAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388764631918" ignored="false" />
+    <file path="/HrEmployeeAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776988138" ignored="false" />
     <file path="/guiceSide.xml" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388563105855" ignored="false" />
     <file path="/HrEmployeeService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388764723997" ignored="false" />
     <file path="/hibernate.cfg.xml" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388568050275" ignored="false" />
@@ -74,9 +63,9 @@
     <file path="$PROJECT_DIR$/../LA/web/view/template/page.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388582082241" ignored="false" />
     <file path="$PROJECT_DIR$/../LA/web/view/template/mdCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388575751237" ignored="false" />
     <file path="/mdCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388657211664" ignored="false" />
-    <file path="/improve.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762884877" ignored="false" />
+    <file path="/improve.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388774501605" ignored="false" />
     <file path="/authorize.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388604469675" ignored="false" />
-    <file path="/a.dummy" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388765386868" ignored="false" />
+    <file path="/a.dummy" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388777252253" ignored="false" />
     <file path="/HrEmployeeJob.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388607346321" ignored="false" />
     <file path="/HrEmployeeJobService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388607457316" ignored="false" />
     <file path="/HrEmployeeEduService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388607520523" ignored="false" />
@@ -97,8 +86,8 @@
     <file path="/approve.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388655468955" ignored="false" />
     <file path="$PROJECT_DIR$/../dqy/DQY/web/view/sys/budgetAmount/approve.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388655469945" ignored="false" />
     <file path="$PROJECT_DIR$/../LA/web/view/req/out/input.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388662849651" ignored="false" />
-    <file path="/list.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388765485743" ignored="false" />
-    <file path="/info.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388763133280" ignored="false" />
+    <file path="/list.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776165198" ignored="false" />
+    <file path="/info.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388777948648" ignored="false" />
     <file path="/family.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388687107754" ignored="false" />
     <file path="/edu.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762929064" ignored="false" />
     <file path="/job.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388699724862" ignored="false" />
@@ -108,13 +97,13 @@
     <file path="/HrContractService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388701158094" ignored="false" />
     <file path="/HrContractAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388704203661" ignored="false" />
     <file path="/signing.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762840537" ignored="false" />
-    <file path="/settingCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388756611267" ignored="false" />
+    <file path="/settingCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388775925156" ignored="false" />
     <file path="/contract.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388701863765" ignored="false" />
     <file path="/due.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762804508" ignored="false" />
     <file path="/renewal.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388702945673" ignored="false" />
-    <file path="/edit.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388745021183" ignored="false" />
+    <file path="/edit.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388777960094" ignored="false" />
     <file path="/HrDutyLevel.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388764746135" ignored="false" />
-    <file path="/HrDutyLevelService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388757685827" ignored="false" />
+    <file path="/HrDutyLevelService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388774393258" ignored="false" />
     <file path="/HrDutyLevelAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388764850397" ignored="false" />
     <file path="$USER_HOME$/Documents/GitHub/HR/css/per-style.css" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388746046652" ignored="false" />
     <file path="$USER_HOME$/Documents/GitHub/HR/css/global.css" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388746046652" ignored="false" />
@@ -122,7 +111,10 @@
     <file path="/HrJob.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388764763421" ignored="false" />
     <file path="/HrJobService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388763962715" ignored="false" />
     <file path="/HrJobAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388764881773" ignored="false" />
-    <file path="/entry.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762854480" ignored="false" />
+    <file path="/entry.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388775164568" ignored="false" />
+    <file path="/HrOfficeAddr.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776546763" ignored="false" />
+    <file path="/HrAddressService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776514867" ignored="false" />
+    <file path="/HrOfficeAddrAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776616209" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,21 +191,6 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" line="215" class="hrms.mingdao.hr.action.HrEmployeeAction" package="hrms.mingdao.hr.action">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
     </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
@@ -229,28 +206,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="job.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/job.ftl">
+      <file leaf-file-name="contractCommon.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="4" selection-start="221" selection-end="221" vertical-scroll-proportion="-4.071429">
+            <state line="33" column="71" selection-start="1598" selection-end="1598" vertical-scroll-proportion="-12.285714">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/hr/job/list.ftl">
+      <file leaf-file-name="edit.ftl" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="35" selection-start="4796" selection-end="4796" vertical-scroll-proportion="-8.142858">
+            <state line="242" column="76" selection-start="9336" selection-end="9336" vertical-scroll-proportion="0.29517242">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signing.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/hr/contract/signing.ftl">
+      <file leaf-file-name="info.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="35" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-6.142857">
+            <state line="252" column="76" selection-start="10209" selection-end="10209" vertical-scroll-proportion="-4.418605">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="info.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/info.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="126" column="27" selection-start="4966" selection-end="4966" vertical-scroll-proportion="-6.285714">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="improve.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="99" column="8" selection-start="3411" selection-end="3411" vertical-scroll-proportion="-14.25">
               <folding />
             </state>
           </provider>
@@ -259,69 +254,51 @@
       <file leaf-file-name="HrEmployeeAction.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="236" column="0" selection-start="8047" selection-end="8047" vertical-scroll-proportion="0.0">
+            <state line="665" column="60" selection-start="31147" selection-end="31176" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3187#3197#0" expanded="true" />
-                <element signature="e#4842#4850#0" expanded="true" />
-                <element signature="e#5567#5577#0" expanded="true" />
-                <element signature="e#7285#7293#0" expanded="true" />
-                <element signature="e#10830#10838#0" expanded="true" />
-                <element signature="e#11886#11896#0" expanded="true" />
+                <element signature="e#3436#3446#0" expanded="true" />
+                <element signature="e#5091#5099#0" expanded="true" />
+                <element signature="e#5816#5826#0" expanded="true" />
+                <element signature="e#7534#7542#0" expanded="true" />
+                <element signature="e#11079#11087#0" expanded="true" />
+                <element signature="e#12135#12145#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HrEmployeeService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrEmployeeService.java">
+      <file leaf-file-name="edu.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="45" selection-start="4433" selection-end="4433" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HrDutyLevel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrDutyLevel.java">
+      <file leaf-file-name="common.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/template/structure/common.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="695" selection-end="722" vertical-scroll-proportion="0.0">
+            <state line="30" column="49" selection-start="1417" selection-end="1417" vertical-scroll-proportion="-20.357143">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HrJob.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrJob.java">
+      <file leaf-file-name="settingCommon.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="14" selection-start="2156" selection-end="2156" vertical-scroll-proportion="0.0">
+            <state line="33" column="49" selection-start="1551" selection-end="1551" vertical-scroll-proportion="-12.607142">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HrDutyLevelAction.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrDutyLevelAction.java">
+      <file leaf-file-name="employeeCommon.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="72" selection-start="2806" selection-end="2806" vertical-scroll-proportion="1.0358423">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HrJobAction.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrJobAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="66" selection-start="2675" selection-end="2675" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HrEmployee.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrEmployee.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="13" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
+            <state line="33" column="71" selection-start="1598" selection-end="1598" vertical-scroll-proportion="-12.214286">
               <folding />
             </state>
           </provider>
@@ -346,22 +323,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/view/hr/employee/improve/editJob.ftl" />
-        <option value="$PROJECT_DIR$/web/view/hr/employee/view/contract.ftl" />
-        <option value="$PROJECT_DIR$/web/view/hr/employee/view/edu.ftl" />
-        <option value="$PROJECT_DIR$/web/view/hr/employee/view/family.ftl" />
-        <option value="$PROJECT_DIR$/web/view/hr/employee/view/info.ftl" />
-        <option value="$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrJobService.java" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrEmployeeService.java" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrDutyLevel.java" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrJob.java" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/info.ftl" />
+        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrAddressService.java" />
         <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrJobAction.java" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrDutyLevelAction.java" />
-        <option value="$PROJECT_DIR$/web/view/hr/employee/view/job.ftl" />
-        <option value="$PROJECT_DIR$/web/view/hr/contract/signing.ftl" />
-        <option value="$PROJECT_DIR$/web/view/hr/job/list.ftl" />
+        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrOfficeAddr.java" />
+        <option value="$PROJECT_DIR$/web/view/hr/officeAddr/list.ftl" />
+        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrOfficeAddrAction.java" />
+        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrOfficeAddrService.java" />
+        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrEmployee.java" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/view/info.ftl" />
+        <option value="$PROJECT_DIR$/web/view/template/structure/common.ftl" />
+        <option value="$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl" />
+        <option value="$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl" />
+        <option value="$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl" />
+        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl" />
       </list>
     </option>
   </component>
@@ -704,6 +681,92 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="structure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="employee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="structure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contract" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="officeAddr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="hr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -735,6 +798,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="employee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="employee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="employee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="improve" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1039,11 +1162,11 @@
       <recent name="hrms.mingdao.sys.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\HRMS\web\view\hr\officeAddr" />
       <recent name="D:\project\HRMS\web\view\hr\job" />
       <recent name="D:\project\HRMS\web\images" />
       <recent name="D:\project\HRMS\web\css" />
       <recent name="D:\project\HRMS\web\view\hr\dutyLevel" />
-      <recent name="D:\project\HRMS\web\view\hr\contract" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\HRMS\web\view\hr\employee" />
@@ -1275,7 +1398,11 @@
       <created>1388706243740</created>
       <updated>1388706243740</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="12-31">
+      <created>1388765522260</created>
+      <updated>1388765522260</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1285,7 +1412,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1298,11 +1425,11 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6009122" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6704675" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6009122" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991362" sideWeight="0.6704675" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -1377,122 +1504,122 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/contract.ftl">
+    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrDutyLevelAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="60" selection-start="3102" selection-end="3102" vertical-scroll-proportion="-6.642857">
+        <state line="121" column="58" selection-start="4218" selection-end="4450" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/edu.ftl">
+    <entry file="file://$PROJECT_DIR$/web/view/hr/dutyLevel/list.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="60" selection-start="3099" selection-end="3099" vertical-scroll-proportion="-6.642857">
+        <state line="107" column="11" selection-start="3162" selection-end="4153" vertical-scroll-proportion="0.73748475">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/family.ftl">
+    <entry file="file://$PROJECT_DIR$/web/view/hr/officeAddr/list.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="60" selection-start="3100" selection-end="3100" vertical-scroll-proportion="-6.642857">
+        <state line="119" column="49" selection-start="4725" selection-end="4725" vertical-scroll-proportion="0.73748475">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/info.ftl">
+    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrOfficeAddrAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="60" selection-start="3097" selection-end="3097" vertical-scroll-proportion="-6.642857">
+        <state line="32" column="31" selection-start="1055" selection-end="1074" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl">
+    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrOfficeAddrService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="63" selection-start="1201" selection-end="1201" vertical-scroll-proportion="-21.035715">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrJobService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="41" selection-start="1007" selection-end="1025" vertical-scroll-proportion="0.0">
+        <state line="32" column="85" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrEmployee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
+        <state line="343" column="38" selection-start="6970" selection-end="6970" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrEmployeeService.java">
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/info.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="45" selection-start="4433" selection-end="4433" vertical-scroll-proportion="0.0">
+        <state line="126" column="27" selection-start="4966" selection-end="4966" vertical-scroll-proportion="-6.285714">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrDutyLevel.java">
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="695" selection-end="722" vertical-scroll-proportion="0.0">
+        <state line="99" column="8" selection-start="3411" selection-end="3411" vertical-scroll-proportion="-14.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrJob.java">
+    <entry file="file://$PROJECT_DIR$/web/view/template/structure/common.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="14" selection-start="2156" selection-end="2156" vertical-scroll-proportion="0.0">
+        <state line="30" column="49" selection-start="1417" selection-end="1417" vertical-scroll-proportion="-20.357143">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrJobAction.java">
+    <entry file="file://$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="66" selection-start="2675" selection-end="2675" vertical-scroll-proportion="0.0">
+        <state line="33" column="49" selection-start="1551" selection-end="1551" vertical-scroll-proportion="-12.607142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="71" selection-start="1598" selection-end="1598" vertical-scroll-proportion="-12.214286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="71" selection-start="1598" selection-end="1598" vertical-scroll-proportion="-12.285714">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="236" column="0" selection-start="8047" selection-end="8047" vertical-scroll-proportion="0.0">
+        <state line="665" column="60" selection-start="31147" selection-end="31176" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3187#3197#0" expanded="true" />
-            <element signature="e#4842#4850#0" expanded="true" />
-            <element signature="e#5567#5577#0" expanded="true" />
-            <element signature="e#7285#7293#0" expanded="true" />
-            <element signature="e#10830#10838#0" expanded="true" />
-            <element signature="e#11886#11896#0" expanded="true" />
+            <element signature="e#3436#3446#0" expanded="true" />
+            <element signature="e#5091#5099#0" expanded="true" />
+            <element signature="e#5816#5826#0" expanded="true" />
+            <element signature="e#7534#7542#0" expanded="true" />
+            <element signature="e#11079#11087#0" expanded="true" />
+            <element signature="e#12135#12145#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/job.ftl">
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="221" selection-end="221" vertical-scroll-proportion="-4.071429">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/contract/signing.ftl">
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="35" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-6.142857">
+        <state line="252" column="76" selection-start="10209" selection-end="10209" vertical-scroll-proportion="-4.418605">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/job/list.ftl">
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="35" selection-start="4796" selection-end="4796" vertical-scroll-proportion="-8.142858">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrDutyLevelAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="72" selection-start="2806" selection-end="2806" vertical-scroll-proportion="1.0358423">
+        <state line="242" column="76" selection-start="9336" selection-end="9336" vertical-scroll-proportion="0.29517242">
           <folding />
         </state>
       </provider>

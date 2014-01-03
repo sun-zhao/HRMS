@@ -26,13 +26,6 @@
                     ]
                 },
                 {
-                    id:'hrEmployee\\.officeAddress',
-                    required:true,
-                    pattern:[
-                        {type:'blank', exp:'!=', msg:'请输入工作地点'}
-                    ]
-                },
-                {
                     id:'hrEmployee\\.idCard',
                     required:true,
                     pattern:[
@@ -177,14 +170,12 @@
                     <tr>
                         <th>职级：</th>
                         <td width="100">
-                            <select class="edit" id="hrEmployee.dutyLevel"  name="hrEmployee.dutyLevel">
-                                <option value="1">总裁</option>
-                                <option value="2">副总裁</option>
-                                <option value="3">总监</option>
-                                <option value="4">副总监</option>
-                                <option value="5">经理</option>
-                                <option value="6">主管</option>
-                                <option value="7" selected="selected">职员</option>
+                            <select class="edit" id="hrEmployee.dutyLevel.id"  name="hrEmployee.dutyLevel.id">
+                                <#if dutyLevelList?exists&&dutyLevelList?size gt 0>
+                                    <#list dutyLevelList as duty>
+                                        <option value="${duty.id?c}">${duty.name}</option>
+                                    </#list>
+                                </#if>
                             </select>
                         </td>
                         <th width="60">职位：</th>
@@ -259,10 +250,13 @@
                 <tr>
                     <th>工作地点：</th>
                     <td colspan="3">
-                        <div class="has-general">
-                            <input type="text" class="edit"  id="hrEmployee.officeAddress" name="hrEmployee.officeAddress">
-                            <label class="control-label"></label>
-                        </div>
+                        <select class="edit" id="hrEmployee.officeAddress.id"  name="hrEmployee.officeAddress.id" >
+                            <#if officeAddrList?exists&&officeAddrList?size gt 0>
+                                <#list officeAddrList as addr>
+                                    <option value="${addr.id?c}">${addr.address}</option>
+                                </#list>
+                            </#if>
+                        </select>
                     </td>
                 </tr>
                 </tbody>

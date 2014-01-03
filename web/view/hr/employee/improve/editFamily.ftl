@@ -95,19 +95,19 @@
                     <tr>
                         <th>职级：</th>
                         <td width="130">
-                            <select class="edit" id="hrEmployee.dutyLevel"  name="hrEmployee.dutyLevel" disabled="disabled">
-                                <option value="1">总裁</option>
-                                <option value="2">副总裁</option>
-                                <option value="3">总监</option>
-                                <option value="4">副总监</option>
-                                <option value="5">经理</option>
-                                <option value="6">主管</option>
-                                <option value="7" selected="selected">职员</option>
-                            </select>
+                            <#if hrEmployee.dutyLevel?exists>
+                            ${(hrEmployee.dutyLevel.name)?if_exists}
+                            <#else>
+                                未设置
+                            </#if>
                         </td>
                         <th width="60">职位：</th>
                         <td>
-                        ${(hrEmployee.jobId.name)?if_exists}
+                            <#if hrEmployee.jobId?exists>
+                                ${(hrEmployee.jobId.name)?if_exists}
+                            <#else>
+                                未设置
+                            </#if>
                         </td>
                     </tr>
                     </tbody>
