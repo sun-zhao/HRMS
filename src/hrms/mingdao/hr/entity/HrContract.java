@@ -42,6 +42,20 @@ public class HrContract extends IdEntity implements Tracker {
 
     private Integer contractState;
 
+    private String workArea;
+
+    private String insuranceArea;
+
+    private String insuranceType;
+
+    private Double probationPay;
+
+    private Double pay;
+
+    private String workTime;
+
+    private HrContractTemplate templateId;
+
     private String remarks;
 
     private Date created;
@@ -191,5 +205,69 @@ public class HrContract extends IdEntity implements Tracker {
 
     public void setRenewalFlag(Integer renewalFlag) {
         this.renewalFlag = renewalFlag;
+    }
+
+    @Column(name = "WORK_AREA")
+    public String getWorkArea() {
+        return workArea;
+    }
+
+    public void setWorkArea(String workArea) {
+        this.workArea = workArea;
+    }
+
+    @Column(name = "INSURANCE_AREA")
+    public String getInsuranceArea() {
+        return insuranceArea;
+    }
+
+    public void setInsuranceArea(String insuranceArea) {
+        this.insuranceArea = insuranceArea;
+    }
+
+    @Column(name = "INSURANCE_TYPE")
+    public String getInsuranceType() {
+        return insuranceType;
+    }
+
+    public void setInsuranceType(String insuranceType) {
+        this.insuranceType = insuranceType;
+    }
+
+    @Column(name = "PROBATION_PAY")
+    public Double getProbationPay() {
+        return probationPay;
+    }
+
+    public void setProbationPay(Double probationPay) {
+        this.probationPay = probationPay;
+    }
+
+    @Column(name = "PAY")
+    public Double getPay() {
+        return pay;
+    }
+
+    public void setPay(Double pay) {
+        this.pay = pay;
+    }
+
+    @Column(name = "WORK_TIME")
+    public String getWorkTime() {
+        return workTime;
+    }
+
+    public void setWorkTime(String workTime) {
+        this.workTime = workTime;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TEMPLATE_ID")
+    public HrContractTemplate getTemplateId() {
+        return templateId;
+    }
+
+    public void setTemplateId(HrContractTemplate templateId) {
+        this.templateId = templateId;
     }
 }

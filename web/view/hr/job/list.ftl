@@ -101,17 +101,6 @@
 </script>
 <!--排序搜索begin-->
 <div class="clearfix gotop">
-    <div class="AppSequence floatleft marr10"><!--加current下拉框显示-->
-        <a href="#">按时间排序</a>
-        <em class="app-icon ico-toogle"></em>
-        <div class="down-list">
-            <ul>
-                <li>按时间排序</li>
-                <li>按类别排序</li>
-                <li>按紧急排序</li>
-            </ul>
-        </div>
-    </div>
     <!--搜索框begin-->
     <div class="search-area floatleft">
         <input type="text" id="name" name="name" class="search-int" placeholder="请输入职位名称"

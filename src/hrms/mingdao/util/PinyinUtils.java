@@ -319,6 +319,8 @@ public class PinyinUtils {
     }
 
     public static void main(String[] args) {
+        String aa="<p style=\"text-align: right;\"><span style=\"font-family: 宋体,SimSun;\">合同编号<span uid=\"contractNo\" style=\"color:#FF0000;\">#合同编号#</span></span><span style=\"font-family: 宋体,SimSun;\"></span></p>";
+        System.out.print(aa.replaceAll("<span uid=\"contractNo\" style=\"color:#FF0000;\">#合同编号#</span>","12313"));
         System.out.println(getHeadByString("西湖区")[0]);
     }
 

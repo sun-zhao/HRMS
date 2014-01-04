@@ -35,8 +35,14 @@ public class HrContractTemplateService extends HQuery {
     }
 
     @Transactional(type = TransactionType.READ_ONLY)
-    public HrContractTemplate getByCompanyId(String companyId) {
-        return $($eq("companyId",companyId)).get(HrContractTemplate.class);
+    public Page<HrContractTemplate> getPageList(int start,
+                                   int limit, List<Selector> selectorList) {
+        return $(selectorList).page(HrContractTemplate.class, start, limit);
+    }
+
+    @Transactional(type = TransactionType.READ_ONLY)
+    public List<HrContractTemplate> getListByCompanyId(String companyId) {
+        return $($eq("companyId",companyId)).list(HrContractTemplate.class);
     }
     /**
      * 保存对象
@@ -69,5 +75,10 @@ public class HrContractTemplateService extends HQuery {
     @Transactional(type = TransactionType.READ_WRITE)
     public void deleteById(Long id) {
         $(id).delete(HrContractTemplate.class);
+    }
+
+    @Transactional(type = TransactionType.READ_ONLY)
+    public Integer validateName(String companyId,String name) {
+        return $($count("id"),$eq("companyId",companyId), $eq("name", name)).value(HrContractTemplate.class, Integer.class);
     }
 }

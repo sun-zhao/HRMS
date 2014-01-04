@@ -27,7 +27,7 @@ public class HrContractTypeService extends HQuery {
     }
 
     @Transactional(type = TransactionType.READ_ONLY)
-    public HrContractType getListByCompanyId(String companyId) {
+    public HrContractType getByCompanyId(String companyId) {
         return $($eq("companyId", companyId), $eq("useYn", "Y")).get(HrContractType.class);
     }
 

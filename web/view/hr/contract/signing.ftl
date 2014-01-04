@@ -4,6 +4,11 @@
 <@contract_common.contract_common>
 <script type="text/javascript">
     var submited = false;
+    function printContract(id){
+        $('body').append('<a href="" id="printContractA" target="_blank"/>');
+        $('#printContractA').attr('href','/hr/contract!print.dhtml?id='+id);
+        $('#printContractA').trigger('click');
+    }
     function pagerAction(start, rows) {
         var searchUrl = '/hr/contract!signing.dhtml';
         searchUrl += '?start=' + start + '&rows=' + rows;
@@ -28,7 +33,7 @@
                 $('li[word="${word?if_exists}"]','.word-ser').removeClass('noname').addClass('current');
             </#if>
         </#if>
-        $('#userName').off(''keyup'').on('keyup', function (e) {
+        $('#userName').off('keyup').on('keyup', function (e) {
             e = (e) ? e : ((window.event) ? window.event : "")
             var keyCode = e.keyCode ? e.keyCode : (e.which ? e.which : e.charCode);
             if (keyCode ==13) {

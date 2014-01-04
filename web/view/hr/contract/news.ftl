@@ -23,6 +23,34 @@
                     pattern: [
                         {type: 'blank', exp: '!=', msg: '请输入截止日期'}
                     ]
+                },
+                {
+                    id: 'hrContract\\.workArea',
+                    required: true,
+                    pattern: [
+                        {type: 'blank', exp: '!=', msg: '请输入工作地点'}
+                    ]
+                },
+                {
+                    id: 'hrContract\\.probationPay',
+                    required: true,
+                    pattern: [
+                        {type: 'number', exp: '==', msg: '请输入试用期薪资'}
+                    ]
+                },
+                {
+                    id: 'hrContract\\.pay',
+                    required: true,
+                    pattern: [
+                        {type: 'number', exp: '==', msg: '请输入转正后薪资'}
+                    ]
+                },
+                {
+                    id: 'hrContract\\.insuranceArea',
+                    required: true,
+                    pattern: [
+                        {type: 'blank', exp: '!=', msg: '请输入保险缴纳地'}
+                    ]
                 }
             ]
         }, true);
@@ -39,27 +67,17 @@
     }
     $(document).ready(function () {
         initValidator();
-        $('#hrContract\\.endDate').off('focus').on('focus', function () {
-            var obj = $(this);
-            WdatePicker({
-                doubleCalendar:false,
-                readOnly:true,
-                highLineWeekDay:true,
-                skin:'twoer',
-                onpicked:function () {
-                    $(obj).trigger('blur');
-                }
-            });
-        });
         $('#btnSave').off('click').on('click', function () {
             if (!submited) {
                 WEBUTILS.validator.checkAll();
                 window.setTimeout(function () {
                     var passed = WEBUTILS.validator.isPassed();
                     if (passed) {
-                        WEBUTILS.popMask.show();
-                        document.editForm.submit();
-                        submited = true;
+                        WEBUTILS.msg.alertInfo("合同签订完成后可到人事档案-员工档案进行合同打印签订",1500,function(){
+                            WEBUTILS.popMask.show();
+                            document.editForm.submit();
+                            submited = true;
+                        })
                     } else {
                         WEBUTILS.validator.showErrors();
                     }
@@ -96,44 +114,37 @@
                     <tbody>
                     <tr>
                         <td colspan="4"><em class="icon icon-user"></em>
-                        ${hrEmployee.userName}
+                        ${hrEmployee.userName?if_exists}
                         </td>
                     </tr>
                     <tr>
-                        <th width="60">部门：</th>
-                        <td colspan="3">
-                        ${hrEmployee.deptName}
+                        <th style="width: 60px;">公司：</th>
+                        <td style="width: 100px;">
+                        ${(hrEmployee.orgId.name)?if_exists}
+                        </td>
+                        <th style="width: 60px;">部门：</th>
+                        <td >
+                        ${hrEmployee.deptName?if_exists}
                         </td>
                     </tr>
                     <tr>
                         <th>职级：</th>
-                        <td width="130">
+                        <td >
                             <#if hrEmployee.dutyLevel?exists>
-                                <#if hrEmployee.dutyLevel==1>
-                                    总裁
-                                <#elseif hrEmployee.dutyLevel==2>
-                                    副总裁
-                                <#elseif hrEmployee.dutyLevel==3>
-                                    总监
-                                <#elseif hrEmployee.dutyLevel==4>
-                                    副总监
-                                <#elseif hrEmployee.dutyLevel==5>
-                                    经理
-                                <#elseif hrEmployee.dutyLevel==6>
-                                    主管
-                                <#elseif hrEmployee.dutyLevel==7>
-                                    职员
-                                <#else >
-                                    未设置
-                                </#if>
-                            <#else >
+                            ${(hrEmployee.dutyLevel.name)?if_exists}
+                            <#else>
                                 未设置
                             </#if>
                         </td>
-                        <th width="60">职位：</th>
+                        <th >职位：</th>
                         <td>
-                        ${(hrEmployee.jobId.name)?if_exists}
+                            <#if hrEmployee.jobId?exists>
+                            ${(hrEmployee.jobId.name)?if_exists}
+                            <#else>
+                                未设置
+                            </#if>
                         </td>
+                    </tr>
                     </tr>
                     </tbody>
                 </table>
@@ -141,14 +152,14 @@
             <table width="100%" class="UserTbale nomar Info mart5">
                 <tbody>
                 <tr>
-                    <th width="75">合同编号：</th>
-                    <td width="130">
+                    <th style="width: 75px;">合同编号：</th>
+                    <td style="width: 130px;">
                         <div class="has-general">
                             <input type="text" class="edit" id="hrContract.contractNo" name="hrContract.contractNo">
                             <label class="control-label"></label>
                         </div>
                     </td>
-                    <th width="60">合同类别：</th>
+                    <th style="width: 75px;">合同类别：</th>
                     <td>
                         <select class="edit" id="hrContract.contractType" name="hrContract.contractType">
                             <option value="1">固定期劳动合同</option>
@@ -157,17 +168,83 @@
                     </td>
                 </tr>
                 <tr>
-                    <th width="75">签订日期：</th>
-                    <td width="130">
+                    <th >签订日期：</th>
+                    <td >
                     ${hrEmployee.entryDate?string("yyyy-MM-dd")}
                     </td>
-                    <th width="60">截止日期：</th>
+                    <th >截止日期：</th>
                     <td>
                         <div class="has-general">
                             <input type="text" class="edit" id="hrContract.endDate" name="hrContract.endDate"
-                                   value="${staticDueDate?string("yyyy-MM-dd")}">
+                                   value="${staticDueDate?string("yyyy-MM-dd")}" readonly="readonly">
                             <label class="control-label"></label>
                         </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th >工作地点：</th>
+                    <td >
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrContract.workArea" name="hrContract.workArea">
+                            <label class="control-label"></label>
+                        </div>
+                    </td>
+                    <th >工时制度：</th>
+                    <td>
+                        <select class="edit" id="hrContract.workTime" name="hrContract.workTime">
+                            <option value="每周5天每天8小时">每周5天每天8小时</option>
+                            <option value="根据劳动行政部门批准，实行不定时工作制">根据劳动行政部门批准，实行不定时工作制</option>
+                            <option value="自行填写"> 实行按N计时的综合计算工作</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th >试用期薪资：</th>
+                    <td >
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrContract.probationPay" name="hrContract.probationPay">
+                            <label class="control-label"></label>
+                        </div>
+                    </td>
+                    <th >转正后薪资：</th>
+                    <td>
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrContract.pay" name="hrContract.pay">
+                            <label class="control-label"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th >保险缴纳地：</th>
+                    <td colspan="3">
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrContract.insuranceArea" name="hrContract.insuranceArea">
+                            <label class="control-label"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+
+                    <th >保险种类：</th>
+                    <td colspan="3">
+                        养老 <input type="checkbox" name="insuranceType" value="养老">
+                        医疗 <input type="checkbox" name="insuranceType" value="医疗">
+                        工伤 <input type="checkbox" name="insuranceType" value="工伤">
+                        失业 <input type="checkbox" name="insuranceType" value="失业">
+                        生育 <input type="checkbox" name="insuranceType" value="生育">
+                    </td>
+                </tr>
+                <tr>
+
+                    <th >合同模版：</th>
+                    <td colspan="3">
+                        <select class="edit" id="hrContract.templateId.id" name="hrContract.templateId.id">
+                            <#if templateList?exists&&templateList?size gt 0>
+                            <#list templateList as template>
+                                <option value="${template.id?c}">${template.name?if_exists}</option>
+                            </#list>
+                            </#if>
+                        </select>
                     </td>
                 </tr>
                 <tr>

@@ -35,12 +35,17 @@
 .icon-delete{background-position:0 -28px;}/*删除*/
 .icon-delete:hover,a:hover .icon-delete{background-position:-14px -28px;}
 .icon-add{background-position:0 -126px;}/*添加*/
+.icon-add:hover,a:hover .icon-add{background-position:-14px -126px;}
 .icon-mail{background-position:0 -84px;}/*邮件*/
 .icon-phone{background-position:0 -140px;}/*手机*/
 .icon-phone2{background-position:0 -155px;}/*座机*/
 .invite{padding-left:2px;}
 .icon-invite{background-position:0 -169px;}/*酒杯*/
 .icon-set{background-position:0 0;}/*设置*/
+.icon-print{background-position:0 -70px;}/*打印*/
+.icon-print:hover,a:hover .icon-print{background-position:-14px -70px;}
+.icon-look{background-position:0 -112px;}/*查看*/
+.icon-look:hover,a:hover .icon-look{background-position:-14px -112px;}
 .icon-move{background-position:0 -182px;}/*移动*/
 .icon-move:hover,a:hover .icon-move{background-position:-14px -182px;}/*移动*/
 .icon-set:hover,.Nav-ul li.AppSet a .icon-set{background-position:-14px 0;}

@@ -1,10 +1,67 @@
-<#import "/view/template/structure/setting/settingCommon.ftl" as setting_common>
+<#import "/view/template/common.ftl" as common_common>
 <#import "/view/common/core.ftl" as c>
-<@setting_common.setting_common>
+<@common_common.html module="HR">
 <script type="text/javascript" charset="utf-8" src="/js/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/js/ueditor/editor_api.js"> </script>
-<script type="text/javascript" charset="utf-8" src="/view/hr/contract/template/contract.js"> </script>
 <script type="text/javascript">
+
+    UE.plugins['contract'] = function() {
+        var me = this;
+        me.setOpt('contract',{
+            '<span style="color:#FF0000;" uid="userName">#员工姓名#</span>':'员工姓名',
+            '<span style="color:#FF0000;" uid="orgName">#员工公司#</span>':'员工公司',
+            '<span style="color:#FF0000;" uid="userSex">#员工性别#</span>':'员工性别',
+            '<span style="color:#FF0000;" uid="idCard">#身份证号#</span>':'身份证号',
+            '<span style="color:#FF0000;" uid="familyAddress">#家庭地址#</span>':'家庭地址',
+            '<span style="color:#FF0000;" uid="mobileTel">#联系方式#</span>':'联系方式',
+            '<span style="color:#FF0000;" uid="jobName">#岗位#</span>':'岗位',
+            '<span style="color:#FF0000;" uid="contractNo">#合同编号#</span>':'合同编号',
+            '<span style="color:#FF0000;" uid="contractType">#合同类型#</span>':'合同类型',
+            '<span style="color:#FF0000;" uid="contractStartDate">#合同开始日期#</span>':'合同开始日期',
+            '<span style="color:#FF0000;" uid="contractEndDate">#合同截止日期#</span>':'合同截止日期',
+            '<span style="color:#FF0000;" uid="contractYear">#合同有效期#</span>':'合同有效期',
+            '<span style="color:#FF0000;" uid="probationMonth">#试用期长度#</span>':'试用期长度',
+            '<span style="color:#FF0000;" uid="probationStartDate">#试用期开始日期#</span>':'试用期开始日期',
+            '<span style="color:#FF0000;" uid="probationEndDate">#试用期结束日期#</span>':'试用期结束日期',
+            '<span style="color:#FF0000;" uid="probationPay">#试用期薪资#</span>':'试用期薪资',
+            '<span style="color:#FF0000;" uid="pay">#转正后薪资#</span>':'转正后薪资',
+            '<span style="color:#FF0000;" uid="workArea">#工作地点#</span>':'工作地点',
+            '<span style="color:#FF0000;" uid="workTime">#工时制度#</span>':'工时制度',
+            '<span style="color:#FF0000;" uid="insuranceArea">#保险缴纳地#</span>':'保险缴纳地',
+            '<span style="color:#FF0000;" uid="insuranceType">#保险种类#</span>':'保险种类'
+        });
+
+        /**
+         * 插入代码
+         * @command insertcode
+         * @method execCommand
+         * @param { String } cmd 命令字符串
+         * @param { String } lang 插入代码的语言
+         * @example
+         * ```javascript
+         * editor.execCommand( 'insertcode', 'javascript' );
+         * ```
+         */
+
+        /**
+         * 如果选区所在位置是插入插入代码区域，返回代码的语言
+         * @command insertcode
+         * @method queryCommandValue
+         * @param { String } cmd 命令字符串
+         * @return { String } 返回代码的语言
+         * @example
+         * ```javascript
+         * editor.queryCommandValue( 'insertcode' );
+         * ```
+         */
+
+        me.commands['contract'] = {
+            execCommand : function(cmd,text){
+                var me = this;
+                me.execCommand('insertHtml', text);
+            }
+        };
+    };
     var submited = false;
     function hasContent() {
         var arr = [];
@@ -60,9 +117,10 @@
             </script>
         </div>
         <input type="hidden" name="hrContractTemplate.id" id="hrContractTemplate.id">
+        <input type="hidden" name="hrContractTemplate.name" id="hrContractTemplate.name">
         <input type="hidden" name="hrContractTemplate.template" id="hrContractTemplate.template">
     </form>
     </@c.joddForm>
 <p class="alignright mart5"><a class="button" href="##" id="btnSave">保存模版</a></p>
 
-</@setting_common.setting_common>
+</@common_common.html>

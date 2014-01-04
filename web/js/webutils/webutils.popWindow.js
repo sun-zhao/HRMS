@@ -9,8 +9,8 @@ WEBUTILS.popWindow = (function () {
         },
         createPopWindow:function (width, height, title, url,scroll) {
             var mt,mr,mb,ml,margin,scrolling='no',winID='mdWindow';
-            if(height&&height>530){
-                height=530;
+            if(height&&height>600){
+                height=600;
             }
             mt=parseInt(height/2);
             mr=0;

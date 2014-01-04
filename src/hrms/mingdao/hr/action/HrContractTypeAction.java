@@ -53,7 +53,7 @@ public class HrContractTypeAction extends ActionSupport<HrContractType> {
         if (userInfo != null ) {
             userInfo.setTopMenuCss("AppSet");
             userInfo.setMenuCss("contractType");
-            hrContractType = this.hrContractTypeService.getListByCompanyId(userInfo.getCompanyId());
+            hrContractType = this.hrContractTypeService.getByCompanyId(userInfo.getCompanyId());
         }
         return "success";
     }

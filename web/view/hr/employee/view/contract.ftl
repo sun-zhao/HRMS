@@ -69,11 +69,12 @@
             <table width="100%" class="UserTbale nomar Info WorkStory">
                 <thead>
                 <tr>
-                    <th width="70" class="alignleft">合同编号</th>
+                    <th style="width: 70px;" class="alignleft">合同编号</th>
                     <th >合同类别</th>
-                    <th width="60">签订日期</th>
-                    <th width="60">截止日期</th>
-                    <th width="60">状态</th>
+                    <th style="width: 60px;">签订日期</th>
+                    <th style="width: 60px;">截止日期</th>
+                    <th style="width: 40px;">状态</th>
+                    <th style="width: 60px;">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -98,6 +99,10 @@
                             <#elseif contract.contractState==2>
                                 终止
                             </#if>
+                        </td>
+                        <td>
+                            <a title="查看" class="icon icon-look" href="##" uid="${contract.id?c}"></a>
+                            <a title="打印"  target="_blank" class="icon icon-print" href="/hr/contract!print.dhtml?id=${contract.id?c}" uid="${contract.id?c}"></a>
                         </td>
                     </tr>
                     </#list>

@@ -25,6 +25,8 @@ public class HrContractTemplate extends IdEntity implements Tracker {
 
     private String companyId;
 
+    private String name;
+
     private String template;
 
     private Date created;
@@ -110,5 +112,15 @@ public class HrContractTemplate extends IdEntity implements Tracker {
 
     public void setTemplate(String template) {
         this.template = template;
+    }
+
+    @Column(name = "NAME")
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
