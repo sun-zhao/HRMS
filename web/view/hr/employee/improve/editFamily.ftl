@@ -62,10 +62,10 @@
 <!--左侧类目begin-->
 <div class="PopLeft floatleft">
     <ul>
-        <li><a href="#">个人信息</a></li>
-        <li><a class="current" href="#">家庭信息</a></li>
-        <li><a href="#">工作经历</a></li>
-        <li><a href="#">教育经历</a></li>
+        <li class="noname"><a href="#">个人信息</a></li>
+        <li ><a class="current" href="#">家庭信息</a></li>
+        <li class="noname"><a href="#">工作经历</a></li>
+        <li class="noname"><a href="#">教育经历</a></li>
     </ul>
 </div>
 <!--左侧类目over-->
@@ -79,29 +79,33 @@
                     <img src="${user.avstar100?if_exists}">
                 <em class="bttip"></em>
                 </span>
-                <table width="350" class="UserTbale Info floatleft" style="border-top: 0px;">
+                <table width="380" class="UserTbale Info floatleft" style="border-top: 0px;">
                     <tbody>
                     <tr>
                         <td colspan="4"><em class="icon icon-user"></em>
-                        ${hrEmployee.userName}
+                        ${hrEmployee.userName?if_exists}
                         </td>
                     </tr>
                     <tr>
-                        <th width="60">部门：</th>
-                        <td colspan="3">
-                            ${hrEmployee.deptName}
+                        <th style="width: 60px;">公司：</th>
+                        <td style="width: 100px;">
+                        ${(hrEmployee.orgId.name)?if_exists}
+                        </td>
+                        <th style="width: 60px;">部门：</th>
+                        <td >
+                        ${hrEmployee.deptName?if_exists}
                         </td>
                     </tr>
                     <tr>
                         <th>职级：</th>
-                        <td width="130">
+                        <td >
                             <#if hrEmployee.dutyLevel?exists>
                             ${(hrEmployee.dutyLevel.name)?if_exists}
                             <#else>
                                 未设置
                             </#if>
                         </td>
-                        <th width="60">职位：</th>
+                        <th >职位：</th>
                         <td>
                             <#if hrEmployee.jobId?exists>
                                 ${(hrEmployee.jobId.name)?if_exists}
@@ -116,14 +120,14 @@
             <table width="100%" class="UserTbale nomar Info mart5">
                 <tbody>
                 <tr>
-                    <th width="75">家人姓名：</th>
-                    <td width="130">
+                    <th style="width: 75px;">家人姓名：</th>
+                    <td style="width: 130px;">
                         <div class="has-general">
                             <input type="text" class="edit"  id="hrEmployeeFamily.familyName" name="hrEmployeeFamily.familyName">
                             <label class="control-label"></label>
                         </div>
                     </td>
-                    <th width="60">家人关系：</th>
+                    <th style="width: 75px;">家人关系：</th>
                     <td>
                         <select class="edit" id="hrEmployeeFamily.familyRelation"  name="hrEmployeeFamily.familyRelation" >
                             <option value="0">配偶</option>
@@ -153,14 +157,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <th width="75">婚姻状况：</th>
-                    <td width="130">
+                    <th>婚姻状况：</th>
+                    <td>
                         <select class="edit" id="hrEmployeeFamily.marry"  name="hrEmployeeFamily.marry" >
                             <option value="0">未婚</option>
                             <option value="1">已婚</option>
                         </select>
                     </td>
-                    <th width="60">户口性质：</th>
+                    <th>户口性质：</th>
                     <td>
                         <select class="edit" id="hrEmployeeFamily.residenceBookletType"  name="hrEmployeeFamily.residenceBookletType" >
                             <option value="0">城镇户口</option>

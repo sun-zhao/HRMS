@@ -29,29 +29,33 @@
                     <img src="${user.avstar100?if_exists}">
                 <em class="bttip"></em>
                 </span>
-                <table width="350" class="UserTbale Info floatleft" style="border-top: 0px;">
+                <table width="380" class="UserTbale Info floatleft" style="border-top: 0px;">
                     <tbody>
                     <tr>
                         <td colspan="4"><em class="icon icon-user"></em>
-                        ${hrEmployee.userName}
+                        ${hrEmployee.userName?if_exists}
                         </td>
                     </tr>
                     <tr>
-                        <th width="60">部门：</th>
-                        <td colspan="3">
-                            ${hrEmployee.deptName}
+                        <th style="width: 60px;">公司：</th>
+                        <td style="width: 100px;">
+                        ${(hrEmployee.orgId.name)?if_exists}
+                        </td>
+                        <th style="width: 60px;">部门：</th>
+                        <td >
+                        ${hrEmployee.deptName?if_exists}
                         </td>
                     </tr>
                     <tr>
                         <th>职级：</th>
-                        <td width="130">
+                        <td >
                             <#if hrEmployee.dutyLevel?exists>
                                 ${(hrEmployee.dutyLevel.name)?if_exists}
                             <#else>
                                 未设置
                             </#if>
                         </td>
-                        <th width="60">职位：</th>
+                        <th >职位：</th>
                         <td>
                             <#if hrEmployee.jobId?exists>
                                 ${(hrEmployee.jobId.name)?if_exists}
@@ -66,11 +70,11 @@
             <table width="100%" class="UserTbale nomar Info mart5">
                 <tbody>
                 <tr>
-                    <th width="75">家人姓名：</th>
-                    <td width="130">
+                    <th style="width: 75px;">家人姓名：</th>
+                    <td style="width: 130px;">
                         ${hrEmployeeFamily.familyName?if_exists}
                     </td>
-                    <th width="60">家人关系：</th>
+                    <th style="width: 75px;">家人关系：</th>
                     <td>
                         <#if hrEmployeeFamily.familyRelation?exists>
                             <#if hrEmployeeFamily.familyRelation==0>
@@ -104,8 +108,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <th width="75">婚姻状况：</th>
-                    <td width="130">
+                    <th >婚姻状况：</th>
+                    <td >
                         <#if hrEmployeeFamily.marry?exists>
                             <#if hrEmployeeFamily.marry==0>
                                 未婚
@@ -118,7 +122,7 @@
                             未设置
                         </#if>
                     </td>
-                    <th width="60">户口性质：</th>
+                    <th >户口性质：</th>
                     <td>
                         <#if hrEmployeeFamily.residenceBookletType?exists>
                             <#if hrEmployeeFamily.residenceBookletType==0>

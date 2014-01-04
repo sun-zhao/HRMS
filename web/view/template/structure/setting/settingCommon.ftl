@@ -32,17 +32,19 @@
                 <li class="contract"><a href="/hr/contract!signing.dhtml">合同管理</a></li>
                 <li><a href="#">报表统计</a></li>
                 <li class="myEmployee"><a href="/hr/employee!info.dhtml">我的档案</a></li>
-                <li class="AppSet"><a href="/hr/contractType.dhtml"><em class="icon icon-set"></em>应用设置</a></li>
+                <li class="AppSet"><a href="/hr/org.dhtml"><em class="icon icon-set"></em>应用设置</a></li>
             </ul>
         </div>
         <!--一级导航over-->
         <!--二级导航begin-->
         <div class="AppNavT border-solid border-bottom clearfix">
             <ul class="font16 clearfix floatleft">
-                <li class="type"><a href="/hr/contractType.dhtml">合同设置</a></li>
+                <li class="org"><a href="/hr/org.dhtml">公司设置</a></li>
+                <li class="contractType"><a href="/hr/contractType.dhtml">合同设置</a></li>
                 <li class="dutyLevel"><a href="/hr/dutyLevel.dhtml">职级设置</a></li>
                 <li class="job"><a href="/hr/job.dhtml">岗位设置</a></li>
                 <li class="address"><a href="/hr/officeAddr.dhtml">工作地点</a></li>
+                <li class="template"><a href="/hr/contractTemplate.dhtml">合同模版</a></li>
             </ul>
         </div>
         <!--二级导航over-->

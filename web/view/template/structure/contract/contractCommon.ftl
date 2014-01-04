@@ -32,7 +32,7 @@
                 <li class="contract"><a href="/hr/contract!signing.dhtml">合同管理</a></li>
                 <li><a href="#">报表统计</a></li>
                 <li class="myEmployee"><a href="/hr/employee!info.dhtml">我的档案</a></li>
-                <li class="AppSet"><a href="/hr/contractType.dhtml"><em class="icon icon-set"></em>应用设置</a></li>
+                <li class="AppSet"><a href="/hr/org.dhtml"><em class="icon icon-set"></em>应用设置</a></li>
             </ul>
         </div>
         <!--一级导航over-->
@@ -41,7 +41,6 @@
             <ul class="font16 clearfix floatleft">
                 <li class="signing"><a href="/hr/contract!signing.dhtml">签订合同</a></li>
                 <li class="due"><a href="/hr/contract!due.dhtml">到期合同</a></li>
-                <li class="due"><a href="/hr/contract!template.dhtml">合同模版</a></li>
             </ul>
         </div>
         <!--二级导航over-->

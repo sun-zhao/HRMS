@@ -18,22 +18,22 @@
         <tr>
             <th colspan="6">
                 <em class="icon icon-user"></em>
-                ${hrEmployee.userName?if_exists}
+                ${hrEmployee.userName?if_exists}(${(hrEmployee.orgId.name)?if_exists})
                 <#--<a class="a-link marl30" href="#">修改我的档案 <em class="icon icon-edit"></em></a>-->
             </th>
         </tr>
         <tr>
-            <th width="80">部门：</th>
-            <td width="120">${hrEmployee.deptName?if_exists}</td>
-            <th width="80">职级：</th>
-            <td width="120">
+            <th style="width: 80px;">部门：</th>
+            <td style="width: 120px;">${hrEmployee.deptName?if_exists}</td>
+            <th style="width: 80px;">职级：</th>
+            <td style="width: 120px;">
                 <#if hrEmployee.dutyLevel?exists>
                     ${(hrEmployee.dutyLevel.name)?if_exists}
                 <#else>
                     未设置
                 </#if>
             </td>
-            <th width="80">职位：</th>
+            <th style="width: 80px;">职位：</th>
             <td>
                 <#if hrEmployee.jobId?exists>
                     ${(hrEmployee.jobId.name)?if_exists}
@@ -43,8 +43,8 @@
             </td>
         </tr>
         <tr>
-            <th width="80">用工类型：</th>
-            <td width="120">
+            <th >用工类型：</th>
+            <td >
                 <#if hrEmployee.empType?exists>
                     <#if hrEmployee.empType==1>
                     劳务
@@ -55,8 +55,8 @@
                     &nbsp;
                 </#if>
             </td>
-            <th width="80">工作状态：</th>
-            <td width="120">
+            <th >工作状态：</th>
+            <td >
                 <#if hrEmployee.workState?exists>
                     <#if hrEmployee.workState==0>
                         在职
@@ -67,7 +67,7 @@
                     &nbsp;
                 </#if>
             </td>
-            <th width="80">入职日期：</th>
+            <th >入职日期：</th>
             <td>
             <#if hrEmployee.entryDate?exists>
             ${hrEmployee.entryDate?string("yyyy-MM-dd")}
@@ -80,32 +80,38 @@
 <table width="100%" class="UserTbale nomar Info mine mart10">
     <tbody>
     <tr>
-        <th width="50">手机：</th>
-        <td width="133">${hrEmployee.mobileTel?if_exists} <em class="icon icon-phone"></em></td>
-        <th width="70">办公电话：</th>
-        <td>${hrEmployee.officeTel?if_exists} <em class="icon icon-phone2"></em></td>
-        <th>电子邮件：</th>
-        <td colspan="3"><a class="a-link" href="#">${hrEmployee.userEmail?if_exists}</a> <em class="icon icon-mail"></em></td>
+        <th style="width: 70px;">手机：</th>
+        <td style="width: 130px;">${hrEmployee.mobileTel?if_exists} <em class="icon icon-phone"></em></td>
+        <th style="width: 70px;">办公电话：</th>
+        <td style="width: 150px;">${hrEmployee.officeTel?if_exists} <em class="icon icon-phone2"></em></td>
+        <th style="width: 70px;">电子邮件：</th>
+        <td><a class="a-link" href="#">${hrEmployee.userEmail?if_exists}</a> <em class="icon icon-mail"></em></td>
+    </tr>
+    <tr>
+        <th>工作地点：</th>
+        <td colspan="5">
+        ${(hrEmployee.officeAddress.address)?if_exists}
+        </td>
     </tr>
     </tbody>
 </table>
 <table width="100%" class="UserTbale nomar Info mine mart5">
     <tbody>
     <tr>
-        <th width="50">性别：</th>
-        <td width="80">
+        <th style="width: 70px;">性别：</th>
+        <td style="width: 100px;">
             <#if hrEmployee.userSex==1>
                 男
             <#elseif hrEmployee.userSex==2>
                 女
             </#if>
         </td>
-        <th width="50">学历：</th>
-        <td width="80">${(hrEmployee.eduLevel.codeName)?if_exists}</td>
-        <th width="50">民族：</th>
-        <td width="80">${(hrEmployee.nationalityId.codeName)?if_exists}</td>
-        <th width="50">政治面貌：</th>
-        <td >${(hrEmployee.politicsLevel.codeName)?if_exists}</td>
+        <th style="width: 70px;">学历：</th>
+        <td style="width: 100px;">${(hrEmployee.eduLevel.codeName)?if_exists}</td>
+        <th style="width: 70px;">民族：</th>
+        <td style="width: 100px;">${(hrEmployee.nationalityId.codeName)?if_exists}</td>
+        <th style="width: 70px;">政治面貌：</th>
+        <td>${(hrEmployee.politicsLevel.codeName)?if_exists}</td>
     </tr>
     <tr>
         <th>国籍：</th>
@@ -121,7 +127,7 @@
         ${(hrEmployee.cityId.name)?if_exists}
         </td>
         <th>出生日期：</th>
-        <td width="70">
+        <td >
             <#if hrEmployee.birthDay?exists>
             ${hrEmployee.birthDay?string("yyyy-MM-dd")}
             </#if>
@@ -132,7 +138,7 @@
         <td colspan="3">
         ${hrEmployee.idCard?if_exists}
         </td>
-        <th width="70">银行卡号：</th>
+        <th >银行卡号：</th>
         <td colspan="3">
         ${hrEmployee.bankCard?if_exists}
             <em class="icon icon-card"></em>

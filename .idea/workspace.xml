@@ -2,14 +2,388 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrOfficeAddr.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrOfficeAddrAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrOfficeAddrService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/hr/officeAddr/list.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrDutyLevelService.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrDutyLevelService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/images/0.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/snapscreen/UEditorSnapscreen.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/addimage.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/addimg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/alldeletebtnhoverskin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/alldeletebtnupskin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/anchor.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/arrow_down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/arrow_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/images/bface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/images/bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/brush.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/button-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/button.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/cancelbutton.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/image/images/center_focus.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/video/images/center_focus.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/images/cface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/charts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/images/charts0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/images/charts1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/images/charts2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/images/charts3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/images/charts4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/images/charts5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/zh-cn/images/copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/cursor_h.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/cursor_h.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/cursor_v.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/cursor_v.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/deletedisable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/deleteenable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/delimg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/delimgH.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/dialog-title-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/table/dragicon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/empty.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/emptyH.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/eraser.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/wordimage/fClipboard_ueditor.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/images/fface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/filescan.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/highlighted.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_chm.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_default.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_doc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_exe.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_mp3.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_mv.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_pdf.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_ppt.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_psd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_rar.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeImages/icon_xls.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/icons-all.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/icons.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/image/imageUploader.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/wordimage/imageUploader.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/imglabel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/zh-cn/images/imglabel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/images/jxface2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/image/images/left_focus.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/video/images/left_focus.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/listbackground.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/localimage.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/zh-cn/images/localimage.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/lock.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/md-del-ico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/music.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/zh-cn/images/music.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/images/neweditor-tab-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/neweditor-tab-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/image/images/none_focus.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/video/images/none_focus.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/pagebreak.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/images/pre0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/images/pre1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/images/pre2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/images/pre3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/images/pre4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/redo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/redoH.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/image/images/right_focus.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/video/images/right_focus.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/rotateleftdisable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/rotateleftenable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/rotaterightdisable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/rotaterightenable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/scale.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/scale.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/scaleH.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/size.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/sortable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/spacer.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/sparator_v.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/swfupload/swfupload.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/swfupload/swfupload_fp9.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/table-cell-align.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/tangram-colorpicker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/images/tface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/toolbar_bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/undo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/images/undoH.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/unhighlighted.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/images/upload.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/zh-cn/images/upload.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/upload.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/video-js/video-js.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/videologo.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/video-js/font/vjs.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/video-js/font/vjs.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/video-js/font/vjs.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/images/wface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/word.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/images/wordpaste.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/images/yface.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/Editor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/EventBase.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrContractTemplate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrContractTemplateAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrContractTemplateService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrOrg.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrOrgAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrOrgService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/Range.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/Selection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/anchor/anchor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/anchor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/annotations.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/annotations.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/attachment.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/attachment.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/autofloat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/autoheight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/autolink.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/autosave.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/autosubmit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/autotypeset.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/autotypesetbutton.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/autotypesetpicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/autotypesetpicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/autoupload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/background/background.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/background/background.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_parse/background.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/background.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/background/background.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/basestyle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/blockquote.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/breakline.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/button.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/button.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/buttonicon.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/callbacks.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/video/callbacks.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/canvas-tools.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/canvas-tools.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/catchremoteimage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/cellalignpicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/cellalignpicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/chart.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/charts.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/charts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_parse/charts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/charts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/charts/charts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/cleardoc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/codemirror/codemirror.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/codemirror/codemirror.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/colorbutton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/colorbutton.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/colorpicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/colorpicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/combox.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/combox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/contextmenu.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/contextmenu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/hr/contract/template/contract.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/convertcase.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/customstyle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/themes/dark-blue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/themes/dark-green.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/data.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/defaultfilter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/dialog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/dialog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/dialogbase.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/directionality.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/domUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/dragdrop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/drilldown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/drilldown.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/dtd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/editor.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/editor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/editor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/editor_api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/editorui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/table/edittable.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/table/edittable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/table/edittable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/table/edittd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/table/edittip.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/elementpath.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/emotion.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/emotion.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/emotion/emotion.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/en/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/enterkey.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/exporting.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/exporting.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/attachment/fileTypeMaps.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/swfupload/fileprogress.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/filternode.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/filterword.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/fiximgclick.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/font.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/formatmatch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/funnel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/funnel.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/gmap/gmap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/themes/gray.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/themes/grid.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/heatmap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/heatmap.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/help/help.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/help/help.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/help/help.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/highcharts-more.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/highcharts-more.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/highcharts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/highcharts.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/horizontal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/htmlparser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/iframe.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/iframe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/image/image.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/image/image.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/image/image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/indent.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/hr/contract/template/index.ftl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_parse/insertcode.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/insertcode.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/insertframe/insertframe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/inserthtml.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/insertparagraph.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/internal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/jquery-1.10.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/justify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/keystrokes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/lineheight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/link/link.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/link.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/hr/org/list.ftl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_parse/list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/map/map.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/map.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/map.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/mask.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/menu.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/menu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/menubutton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/menubutton.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/adapters/mootools-adapter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/multiMenu.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/multiMenu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/music/music.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/music/music.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/music.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/music/music.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/no-data-to-display.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/modules/no-data-to-display.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/pagebreak.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/paragraph.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/paragraphpicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_parse/parse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/paste.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/pastepicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/pastepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/plugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/popup.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/popup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/preview/preview.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/print.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/adapters/prototype-adapter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/puretxtpaste.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/removeformat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/rowspacing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/scrawl.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/scrawl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/scrawl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/scrawl/scrawl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/searchreplace/searchreplace.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/searchreplace.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/searchreplace/searchreplace.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/section.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/selectall.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/separator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/separtor.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/SyntaxHighlighter/shCore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/shortcutmenu.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/shortcutmenu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/shortcutmenu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/map/show.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/themes/skies.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/snapscreen/snapscreen.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/snapscreen.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/spechars/spechars.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/spechars/spechars.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/splitbutton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/splitbutton.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/adapters/standalone-framework.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/highcharts/adapters/standalone-framework.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/stateful.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/swfupload/swfupload.cookies.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/swfupload/swfupload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/swfupload/swfupload.proxy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/swfupload/swfupload.queue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/swfupload/swfupload.speed.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/table.action.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/table.cmds.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/table.core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_parse/table.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/table.sort.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/tablebutton.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/tablepicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/tablepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/tangram.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/template.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/template.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/template.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/template/template.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/time.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/toolbar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/toolbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/ueditor.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/ueditor.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/ueditor.parse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/ui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/themes/default/_css/uibase.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/uibase.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/ui/uiutils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/undo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/core/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/video-js/video-js.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/video-js/video-js.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/video/video.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/video-js/video.dev.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/video/video.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_parse/video.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/video.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/video/video.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/video-js/video.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/third-party/video-js/font/vjs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/webapp/webapp.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/webapp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/wordcount.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/wordimage/wordimage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/_src/plugins/wordimage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/dialogs/wordimage/wordimage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/ueditor/lang/zh-cn/zh-cn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrContractTypeAction.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrContractTypeAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrEmployee.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrEmployee.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrJobAction.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrJobAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrEmployeeService.java" afterPath="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrEmployeeService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/template/structure/common.ftl" afterPath="$PROJECT_DIR$/web/view/template/structure/common.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/contract.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/contract.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl" afterPath="$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl" />
@@ -20,17 +394,18 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/edu.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/edu.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl" afterPath="$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/entry.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/entry.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/edit/family.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/edit/family.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/family.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/family.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/improve.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/improve.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/contract/type/index.ftl" afterPath="$PROJECT_DIR$/web/view/hr/contract/type/index.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/info.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/info.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/info.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/info.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/edit/job.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/edit/job.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/view/job.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/view/job.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/dutyLevel/list.ftl" afterPath="$PROJECT_DIR$/web/view/hr/dutyLevel/list.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/hr/employee/list.ftl" afterPath="$PROJECT_DIR$/web/view/hr/employee/list.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl" afterPath="$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/styles.css" afterPath="$PROJECT_DIR$/web/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HRMS.iws" />
@@ -39,12 +414,12 @@
     <file path="$PROJECT_DIR$/src/hrms/mingdao/web/startup/PlatformSessionListener.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388482746289" ignored="false" />
     <file path="$PROJECT_DIR$/src/hrms/mingdao/web/startup/PlatformLoader.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388482746289" ignored="false" />
     <file path="$PROJECT_DIR$/web/WEB-INF/tld/guiceSide.tld" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388482746289" ignored="false" />
-    <file path="/fragment.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388775669686" ignored="false" />
-    <file path="/Dummy.txt" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388765507441" ignored="false" />
+    <file path="/fragment.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388841916426" ignored="false" />
+    <file path="/Dummy.txt" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388839577322" ignored="false" />
     <file path="/SysCode.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388485696735" ignored="false" />
     <file path="/SysProvince.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388744929056" ignored="false" />
     <file path="/SysCity.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388744910013" ignored="false" />
-    <file path="/HrEmployee.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388777116851" ignored="false" />
+    <file path="/HrEmployee.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388843368574" ignored="false" />
     <file path="/HrEmployeeState.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388486536444" ignored="false" />
     <file path="/HrEmployeeFamily.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388625339442" ignored="false" />
     <file path="/HrContract.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388703138003" ignored="false" />
@@ -53,19 +428,19 @@
     <file path="$PROJECT_DIR$/../LA/web/view/template/common.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388562457192" ignored="false" />
     <file path="/employeeCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388697809399" ignored="false" />
     <file path="/common.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388691893354" ignored="false" />
-    <file path="/index.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388698107229" ignored="false" />
-    <file path="/HrEmployeeAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776988138" ignored="false" />
+    <file path="/index.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388848827936" ignored="false" />
+    <file path="/HrEmployeeAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388848310506" ignored="false" />
     <file path="/guiceSide.xml" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388563105855" ignored="false" />
-    <file path="/HrEmployeeService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388764723997" ignored="false" />
+    <file path="/HrEmployeeService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388842253796" ignored="false" />
     <file path="/hibernate.cfg.xml" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388568050275" ignored="false" />
     <file path="/news.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762817832" ignored="false" />
     <file path="/page.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388582099692" ignored="false" />
     <file path="$PROJECT_DIR$/../LA/web/view/template/page.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388582082241" ignored="false" />
     <file path="$PROJECT_DIR$/../LA/web/view/template/mdCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388575751237" ignored="false" />
     <file path="/mdCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388657211664" ignored="false" />
-    <file path="/improve.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388774501605" ignored="false" />
+    <file path="/improve.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388848873559" ignored="false" />
     <file path="/authorize.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388604469675" ignored="false" />
-    <file path="/a.dummy" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388777252253" ignored="false" />
+    <file path="/a.dummy" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388826216940" ignored="false" />
     <file path="/HrEmployeeJob.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388607346321" ignored="false" />
     <file path="/HrEmployeeJobService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388607457316" ignored="false" />
     <file path="/HrEmployeeEduService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388607520523" ignored="false" />
@@ -86,22 +461,22 @@
     <file path="/approve.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388655468955" ignored="false" />
     <file path="$PROJECT_DIR$/../dqy/DQY/web/view/sys/budgetAmount/approve.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388655469945" ignored="false" />
     <file path="$PROJECT_DIR$/../LA/web/view/req/out/input.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388662849651" ignored="false" />
-    <file path="/list.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776165198" ignored="false" />
-    <file path="/info.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388777948648" ignored="false" />
-    <file path="/family.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388687107754" ignored="false" />
-    <file path="/edu.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762929064" ignored="false" />
-    <file path="/job.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388699724862" ignored="false" />
+    <file path="/list.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388842542977" ignored="false" />
+    <file path="/info.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388849322137" ignored="false" />
+    <file path="/family.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388849528599" ignored="false" />
+    <file path="/edu.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388849597864" ignored="false" />
+    <file path="/job.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388847883223" ignored="false" />
     <file path="/HrContractTypeAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388695815880" ignored="false" />
     <file path="/HrContractTypeService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388695083527" ignored="false" />
     <file path="/contractCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388704840795" ignored="false" />
     <file path="/HrContractService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388701158094" ignored="false" />
     <file path="/HrContractAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388704203661" ignored="false" />
     <file path="/signing.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762840537" ignored="false" />
-    <file path="/settingCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388775925156" ignored="false" />
-    <file path="/contract.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388701863765" ignored="false" />
+    <file path="/settingCommon.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388842608208" ignored="false" />
+    <file path="/contract.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388847894406" ignored="false" />
     <file path="/due.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388762804508" ignored="false" />
     <file path="/renewal.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388702945673" ignored="false" />
-    <file path="/edit.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388777960094" ignored="false" />
+    <file path="/edit.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388847912381" ignored="false" />
     <file path="/HrDutyLevel.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388764746135" ignored="false" />
     <file path="/HrDutyLevelService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388774393258" ignored="false" />
     <file path="/HrDutyLevelAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388764850397" ignored="false" />
@@ -115,6 +490,17 @@
     <file path="/HrOfficeAddr.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776546763" ignored="false" />
     <file path="/HrAddressService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776514867" ignored="false" />
     <file path="/HrOfficeAddrAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388776616209" ignored="false" />
+    <file path="/HrContractTemplate.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388823498228" ignored="false" />
+    <file path="/HrContractTemplateService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388836492349" ignored="false" />
+    <file path="/HrContractTemplateAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388836499142" ignored="false" />
+    <file path="/zh-cn.js" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388825470781" ignored="false" />
+    <file path="/editorui.js" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388826411332" ignored="false" />
+    <file path="/contract.js" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388827877985" ignored="false" />
+    <file path="/HrOrgService.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388842197113" ignored="false" />
+    <file path="/HrOrgAction.java" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388843735686" ignored="false" />
+    <file path="/editEdu.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388849970576" ignored="false" />
+    <file path="/editFamily.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388847922432" ignored="false" />
+    <file path="/editJob.ftl" changelist="c2f383b4-6dd9-438c-a8a0-1e61f6f898ac" time="1388847927192" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +525,24 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" line="2" class="HrEmployeeAction.java" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -175,24 +579,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" line="2" class="HrEmployeeAction.java" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -206,20 +592,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="contractCommon.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl">
+      <file leaf-file-name="edu.ftl" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="71" selection-start="1598" selection-end="1598" vertical-scroll-proportion="-12.285714">
-              <folding />
+            <state line="241" column="23" selection-start="9733" selection-end="9733" vertical-scroll-proportion="-6.107143">
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.ftl" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl">
+      <file leaf-file-name="job.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/job.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="242" column="76" selection-start="9336" selection-end="9336" vertical-scroll-proportion="0.29517242">
-              <folding />
+            <state line="239" column="24" selection-start="9728" selection-end="9728" vertical-scroll-proportion="0.25518927">
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,79 +638,134 @@
       <file leaf-file-name="info.ftl" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="252" column="76" selection-start="10209" selection-end="10209" vertical-scroll-proportion="-4.418605">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="info.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/info.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="27" selection-start="4966" selection-end="4966" vertical-scroll-proportion="-6.285714">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="improve.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="8" selection-start="3411" selection-end="3411" vertical-scroll-proportion="-14.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HrEmployeeAction.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="665" column="60" selection-start="31147" selection-end="31176" vertical-scroll-proportion="0.0">
+            <state line="293" column="44" selection-start="12398" selection-end="12418" vertical-scroll-proportion="-13.571428">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3436#3446#0" expanded="true" />
-                <element signature="e#5091#5099#0" expanded="true" />
-                <element signature="e#5816#5826#0" expanded="true" />
-                <element signature="e#7534#7542#0" expanded="true" />
-                <element signature="e#11079#11087#0" expanded="true" />
-                <element signature="e#12135#12145#0" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="family.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/family.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="166" column="23" selection-start="6801" selection-end="6801" vertical-scroll-proportion="-38.75">
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="349" column="24" selection-start="14888" selection-end="14888" vertical-scroll-proportion="-30.607143">
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editEdu.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/editEdu.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="218" column="44" selection-start="8608" selection-end="8628" vertical-scroll-proportion="-13.571428">
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editFamily.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/editFamily.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="166" column="23" selection-start="6804" selection-end="6804" vertical-scroll-proportion="-6.785714">
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editJob.ftl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/editJob.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="216" column="44" selection-start="8591" selection-end="8611" vertical-scroll-proportion="-18.321428">
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="edu.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl">
+        <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/edu.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/template/structure/common.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="49" selection-start="1417" selection-end="1417" vertical-scroll-proportion="-20.357143">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settingCommon.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="49" selection-start="1551" selection-end="1551" vertical-scroll-proportion="-12.607142">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employeeCommon.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="71" selection-start="1598" selection-end="1598" vertical-scroll-proportion="-12.214286">
-              <folding />
+            <state line="38" column="48" selection-start="1648" selection-end="1668" vertical-scroll-proportion="-13.285714">
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -323,22 +789,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/web/view/hr/contract/type/index.ftl" />
         <option value="$PROJECT_DIR$/web/view/hr/employee/info.ftl" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrAddressService.java" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrJobAction.java" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrOfficeAddr.java" />
-        <option value="$PROJECT_DIR$/web/view/hr/officeAddr/list.ftl" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrOfficeAddrAction.java" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrOfficeAddrService.java" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrEmployee.java" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/improve.ftl" />
         <option value="$PROJECT_DIR$/web/view/hr/employee/view/info.ftl" />
-        <option value="$PROJECT_DIR$/web/view/template/structure/common.ftl" />
-        <option value="$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl" />
-        <option value="$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl" />
-        <option value="$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl" />
-        <option value="$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java" />
-        <option value="$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/view/contract.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/view/family.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/view/edu.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/view/job.ftl" />
         <option value="$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/improve/editEdu.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/improve/editFamily.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/improve/editJob.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/edit/family.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl" />
+        <option value="$PROJECT_DIR$/web/view/hr/employee/edit/job.ftl" />
       </list>
     </option>
   </component>
@@ -400,111 +866,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="la.mingdao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HRMS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HRMS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HRMS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="la/mingdao">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HRMS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT=".idea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="All">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HRMS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HRMS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HRMS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="la/mingdao">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -689,36 +1050,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="employee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HRMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HRMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="structure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="contract" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -745,7 +1076,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="officeAddr" />
+              <option name="myItemId" value="org" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -768,10 +1099,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="hr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="job" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -961,7 +1288,177 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="hr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contract" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="type" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ueditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ueditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ueditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ueditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HRMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1129,6 +1626,111 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HRMS">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HRMS">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HRMS">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="la/mingdao">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HRMS">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT=".idea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="All">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HRMS">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HRMS">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HRMS">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="la/mingdao">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1140,18 +1742,18 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/view/hr/contract/template" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1162,20 +1764,22 @@
       <recent name="hrms.mingdao.sys.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\HRMS\web\view\hr\officeAddr" />
-      <recent name="D:\project\HRMS\web\view\hr\job" />
+      <recent name="D:\project\HRMS\web\view\hr\org" />
       <recent name="D:\project\HRMS\web\images" />
-      <recent name="D:\project\HRMS\web\css" />
-      <recent name="D:\project\HRMS\web\view\hr\dutyLevel" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\project\HRMS\web\view\hr\employee" />
-      <recent name="D:\project\HRMS\web\view\hr\employee\improve" />
-      <recent name="D:\project\HRMS\web\view" />
+      <recent name="D:\project\HRMS\web\js\ueditor\_src\plugins" />
+      <recent name="D:\project\HRMS\web\view\hr\contract\template" />
+      <recent name="D:\project\HRMS\web\js\ueditor" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="hrms.mingdao.hr" />
       <recent name="hrms.mingdao.sys" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\HRMS\web\view\hr\contract\template" />
+      <recent name="D:\project\HRMS\web\js\ueditor\_src\plugins" />
+      <recent name="D:\project\HRMS\web\view\hr\employee" />
+      <recent name="D:\project\HRMS\web\view\hr\employee\improve" />
+      <recent name="D:\project\HRMS\web\view" />
     </key>
   </component>
   <component name="RunManager" selected="Remote.Unnamed">
@@ -1223,6 +1827,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1249,19 +1866,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1402,7 +2006,11 @@
       <created>1388765522260</created>
       <updated>1388765522260</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="12-31">
+      <created>1388778670481</created>
+      <updated>1388778670481</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1425,11 +2033,11 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6009122" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6009122" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6009122" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6704675" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991362" sideWeight="0.6704675" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -1504,123 +2112,296 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrDutyLevelAction.java">
+    <entry file="file://$PROJECT_DIR$/web/view/hr/contract/type/index.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="58" selection-start="4218" selection-end="4450" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/dutyLevel/list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="11" selection-start="3162" selection-end="4153" vertical-scroll-proportion="0.73748475">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/officeAddr/list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="49" selection-start="4725" selection-end="4725" vertical-scroll-proportion="0.73748475">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrOfficeAddrAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="31" selection-start="1055" selection-end="1074" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/service/HrOfficeAddrService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="85" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/entity/HrEmployee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="343" column="38" selection-start="6970" selection-end="6970" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/info.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="27" selection-start="4966" selection-end="4966" vertical-scroll-proportion="-6.285714">
-          <folding />
+        <state line="77" column="40" selection-start="3464" selection-end="3464" vertical-scroll-proportion="0.6031746">
+          <folding>
+            <element signature="e#946#966#0" expanded="true" />
+            <element signature="e#998#1019#0" expanded="true" />
+            <element signature="e#1474#1494#0" expanded="true" />
+            <element signature="e#1525#1546#0" expanded="true" />
+            <element signature="e#1995#2015#0" expanded="true" />
+            <element signature="e#2047#2068#0" expanded="true" />
+            <element signature="e#2760#2780#0" expanded="true" />
+            <element signature="e#2812#2833#0" expanded="true" />
+            <element signature="e#3077#3097#0" expanded="true" />
+            <element signature="e#3128#3149#0" expanded="true" />
+            <element signature="e#3392#3412#0" expanded="true" />
+            <element signature="e#3444#3465#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="8" selection-start="3411" selection-end="3411" vertical-scroll-proportion="-14.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/template/structure/common.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="49" selection-start="1417" selection-end="1417" vertical-scroll-proportion="-20.357143">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/template/structure/setting/settingCommon.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="49" selection-start="1551" selection-end="1551" vertical-scroll-proportion="-12.607142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/template/structure/employee/employeeCommon.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="71" selection-start="1598" selection-end="1598" vertical-scroll-proportion="-12.214286">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/template/structure/contract/contractCommon.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="71" selection-start="1598" selection-end="1598" vertical-scroll-proportion="-12.285714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hrms/mingdao/hr/action/HrEmployeeAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="665" column="60" selection-start="31147" selection-end="31176" vertical-scroll-proportion="0.0">
+        <state line="52" column="16" selection-start="1934" selection-end="1934" vertical-scroll-proportion="-30.535715">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3436#3446#0" expanded="true" />
-            <element signature="e#5091#5099#0" expanded="true" />
-            <element signature="e#5816#5826#0" expanded="true" />
-            <element signature="e#7534#7542#0" expanded="true" />
-            <element signature="e#11079#11087#0" expanded="true" />
-            <element signature="e#12135#12145#0" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/info.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="17" selection-start="880" selection-end="1529" vertical-scroll-proportion="0.974359">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#tbody#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#1;n#tbody#0;n#table#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/contract.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="28" selection-start="2412" selection-end="2412" vertical-scroll-proportion="-19.678572">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/info.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="25" selection-start="1617" selection-end="2022" vertical-scroll-proportion="-16.964285">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#2;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#tbody#0;n#table#2;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/family.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="24" selection-start="5066" selection-end="5066" vertical-scroll-proportion="-9.571428">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/job.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="35" selection-start="3461" selection-end="3461" vertical-scroll-proportion="-18.321428">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/view/edu.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="48" selection-start="1648" selection-end="1668" vertical-scroll-proportion="-13.285714">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="349" column="24" selection-start="14888" selection-end="14888" vertical-scroll-proportion="-30.607143">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/editEdu.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="218" column="44" selection-start="8608" selection-end="8628" vertical-scroll-proportion="-13.571428">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/editFamily.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="23" selection-start="6804" selection-end="6804" vertical-scroll-proportion="-6.785714">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/editJob.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="216" column="44" selection-start="8591" selection-end="8611" vertical-scroll-proportion="-18.321428">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="293" column="44" selection-start="12398" selection-end="12418" vertical-scroll-proportion="-13.571428">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/family.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="23" selection-start="6801" selection-end="6801" vertical-scroll-proportion="-38.75">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/edu.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
+        <state line="241" column="23" selection-start="9733" selection-end="9733" vertical-scroll-proportion="-6.107143">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/info.ftl">
+    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/edit/job.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="252" column="76" selection-start="10209" selection-end="10209" vertical-scroll-proportion="-4.418605">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/hr/employee/improve/edit.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="242" column="76" selection-start="9336" selection-end="9336" vertical-scroll-proportion="0.29517242">
-          <folding />
+        <state line="239" column="24" selection-start="9728" selection-end="9728" vertical-scroll-proportion="0.25518927">
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

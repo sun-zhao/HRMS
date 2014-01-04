@@ -28,6 +28,7 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     private String companyId;
 
+    private HrOrg orgId;
 
     private String userId;
 
@@ -406,5 +407,15 @@ public class HrEmployee extends IdEntity implements Tracker {
 
     public void setContractFlag(Integer contractFlag) {
         this.contractFlag = contractFlag;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ORG_ID")
+    public HrOrg getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(HrOrg orgId) {
+        this.orgId = orgId;
     }
 }

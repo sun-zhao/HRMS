@@ -23,8 +23,8 @@
                 <td class="font14 Themetxt-color" colspan="4">固定期劳动合同</td>
             </tr>
             <tr>
-                <th>合同签订期</th>
-                <td>
+                <th style="width: 90px;">合同签订期</th>
+                <td style="width: 100px;">
                     <select class="ThemeSelect" id="hrContractType.staticValidMonth"
                             name="hrContractType.staticValidMonth">
                         <option value="12">12个月</option>
@@ -33,8 +33,8 @@
                         <option value="48">48个月</option>
                     </select>
                 </td>
-                <th>预先提醒</th>
-                <td>
+                <th style="width: 90px;">预先提醒</th>
+                <td style="width: 100px;">
                     <select class="ThemeSelect" id="hrContractType.staticRemindDay"
                             name="hrContractType.staticRemindDay">
                         <option value="15">15日</option>
@@ -43,8 +43,8 @@
                         <option value="60">60日</option>
                     </select>
                 </td>
-                <th>入职试用期</th>
-                <td>
+                <th style="width: 90px;">入职试用期</th>
+                <td style="width: 100px;">
                     <select class="ThemeSelect" id="hrContractType.staticProbation"
                             name="hrContractType.staticProbation">
                         <option value="1">1个月</option>
@@ -62,20 +62,20 @@
                 <td class="font14 Themetxt-color" colspan="4">无固定期劳动合同</td>
             </tr>
             <tr>
-                <th>合同签订期</th>
-                <td>
+                <th style="width: 90px;">合同签订期</th>
+                <td style="width: 100px;">
                     <select class="ThemeSelect" id="hrContractType.validMonth" name="hrContractType.validMonth">
                         <option value="9999">永久</option>
                     </select>
                 </td>
-                <th>预先提醒</th>
-                <td>
+                <th style="width: 90px;">预先提醒</th>
+                <td style="width: 100px;">
                     <select class="ThemeSelect" id="hrContractType.remindDay" name="hrContractType.remindDay">
                         <option value="9999">不提醒</option>
                     </select>
                 </td>
-                <th>入职试用期</th>
-                <td>
+                <th style="width: 90px;">入职试用期</th>
+                <td style="width: 100px;">
                     <select class="ThemeSelect" id="hrContractType.probation" name="hrContractType.probation">
                         <option value="1">1个月</option>
                         <option value="2">2个月</option>

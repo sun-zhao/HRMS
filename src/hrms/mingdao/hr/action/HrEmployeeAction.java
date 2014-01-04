@@ -1,12 +1,9 @@
 package hrms.mingdao.hr.action;
 
 import com.google.inject.Inject;
-import com.mingdao.api.billing.RequestBilling;
+import com.mingdao.api.company.RequestCompany;
 import com.mingdao.api.entity.*;
-import com.mingdao.api.message.RequestMessage;
 import com.mingdao.api.user.RequestUser;
-import com.mingdao.api.utils.AppConfigUtil;
-import com.mingdao.api.utils.SignatureUtil;
 import hrms.mingdao.common.UserInfo;
 import hrms.mingdao.common.UserSession;
 import hrms.mingdao.hr.entity.*;
@@ -41,6 +38,9 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
 
     @Inject
     private HrEmployeeService hrEmployeeService;
+
+    @Inject
+    private HrOrgService hrOrgService;
 
     @Inject
     private HrDutyLevelService hrDutyLevelService;
@@ -142,6 +142,9 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     private List<HrOfficeAddr> officeAddrList;
 
     @ReqSet
+    private  List<HrOrg> orgList;
+
+    @ReqSet
     private Integer improveCount;
 
     private List<Selector> searchModeCallback() throws Exception {
@@ -228,13 +231,27 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
         if (userInfo != null) {
             List<HrEmployee> addEmployeeList = null;
             List<User> userList = RequestUser.getUserAll(userInfo.getAccessToken());
+            orgList = hrOrgService.getListByCompanyId(userInfo.getCompanyId());
+            if (orgList == null || orgList.isEmpty()) {
+                NetWork netWork = RequestCompany.getDetail(userInfo.getAccessToken());
+                if (netWork != null) {
+                    HrOrg org = new HrOrg();
+                    org.setCompanyId(userInfo.getCompanyId());
+                    org.setDisplayOrder(1);
+                    org.setName(netWork.getName().toUpperCase());
+                    org.setUseYn("Y");
+                    bind(org);
+                    this.hrOrgService.save(org);
+                }
+            }
             if (userList != null && !userList.isEmpty()) {
+
                 List<String> jobNameList = this.hrJobService.getNameListByCompanyId(userInfo.getCompanyId());
                 Set<String> newJobNameList = new HashSet<String>();
                 if (jobNameList != null && !jobNameList.isEmpty()) {
                     for (User user : userList) {
                         if (StringUtils.isNotBlank(user.getJob())) {
-                            String userJob=user.getJob().toUpperCase();
+                            String userJob = user.getJob().toUpperCase();
                             if (!jobNameList.contains(userJob)) {
                                 newJobNameList.add(userJob);
                             }
@@ -247,6 +264,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                         }
                     }
                 }
+
                 List<HrJob> addJobList = null;
                 if (newJobNameList != null && !newJobNameList.isEmpty()) {
                     addJobList = new ArrayList<HrJob>();
@@ -262,6 +280,11 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 }
                 List<String> userIdList = hrEmployeeService.getUserIdByCompany(userInfo.getCompanyId());
                 addEmployeeList = new ArrayList<HrEmployee>();
+                HrOrg hrOrg=null;
+                orgList= this.hrOrgService.getListByCompanyId(userInfo.getCompanyId());
+                if (orgList != null && !orgList.isEmpty()) {
+                    hrOrg = orgList.get(0);
+                }
                 for (User user : userList) {
                     if (userIdList != null && !userIdList.isEmpty()) {
                         if (userIdList.contains(user.getId())) {
@@ -277,10 +300,11 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                     HrJob hrJob = null;
                     if (StringUtils.isNotBlank(user.getJob())) {
                         List<HrJob> jobs = this.hrJobService.getListByCompanyId(userInfo.getCompanyId(), user.getJob());
-                        if (jobs != null&&!jobs.isEmpty()) {
-                            hrJob=jobs.get(0);
+                        if (jobs != null && !jobs.isEmpty()) {
+                            hrJob = jobs.get(0);
                         }
                     }
+                    hrEmployee.setOrgId(hrOrg);
                     hrEmployee.setJobId(hrJob);
                     if (StringUtils.isNotBlank(user.getName())) {
                         String pys[] = PinyinUtils.getHeadByString(user.getName());
@@ -475,7 +499,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 contryList = this.sysCodeService.getListByParentId("CONTRY");
                 nationalityList = this.sysCodeService.getListByParentId("NATIONALITY");
                 politicsLevelList = this.sysCodeService.getListByParentId("POLITICS_LEVEL");
-                officeAddrList=this.hrOfficeAddrService.getListByCompanyId(userInfo.getCompanyId());
+                officeAddrList = this.hrOfficeAddrService.getListByCompanyId(userInfo.getCompanyId());
                 provinceList = this.sysProvinceService.getList();
                 departmentList = userInfo.getDepartmentList();
                 if (provinceList != null && !provinceList.isEmpty()) {
@@ -631,8 +655,9 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 nationalityList = this.sysCodeService.getListByParentId("NATIONALITY");
                 politicsLevelList = this.sysCodeService.getListByParentId("POLITICS_LEVEL");
                 jobList = this.hrJobService.getListByCompanyId(userInfo.getCompanyId());
-                dutyLevelList=this.hrDutyLevelService.getListByCompanyId(userInfo.getCompanyId());
-                officeAddrList=this.hrOfficeAddrService.getListByCompanyId(userInfo.getCompanyId());
+                dutyLevelList = this.hrDutyLevelService.getListByCompanyId(userInfo.getCompanyId());
+                officeAddrList = this.hrOfficeAddrService.getListByCompanyId(userInfo.getCompanyId());
+                orgList=this.hrOrgService.getListByCompanyId(userInfo.getCompanyId());
                 provinceList = this.sysProvinceService.getList();
                 departmentList = userInfo.getDepartmentList();
                 if (provinceList != null && !provinceList.isEmpty()) {
@@ -654,18 +679,27 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
             HrEmployee old = this.hrEmployeeService.getById(hrEmployee.getId());
             if (old != null) {
                 old.setDeptName(hrEmployee.getDeptName());
-                old.setDutyLevel(hrEmployee.getDutyLevel());
-                old.setJobId(hrEmployee.getJobId());
                 old.setWorkState(hrEmployee.getWorkState());
                 old.setEmpType(hrEmployee.getEmpType());
+                if (hrEmployee.getOrgId() != null && hrEmployee.getOrgId().getId() != null) {
+                    old.setOrgId(hrEmployee.getOrgId());
+                }
+                if (hrEmployee.getDutyLevel() != null && hrEmployee.getDutyLevel().getId() != null) {
+                    old.setDutyLevel(hrEmployee.getDutyLevel());
+                }
+                if (hrEmployee.getJobId() != null && hrEmployee.getJobId().getId() != null) {
+                    old.setJobId(hrEmployee.getJobId());
+                }
 
                 old.setEntryDate(hrEmployee.getEntryDate());
                 old.setMobileTel(hrEmployee.getMobileTel());
                 old.setOfficeTel(hrEmployee.getOfficeTel());
                 old.setUserEmail(hrEmployee.getUserEmail());
-                old.setOfficeAddress(hrEmployee.getOfficeAddress());
                 old.setBirthDay(hrEmployee.getBirthDay());
                 old.setUserSex(hrEmployee.getUserSex());
+                if (hrEmployee.getOfficeAddress() != null && hrEmployee.getOfficeAddress().getId() != null) {
+                    old.setOfficeAddress(hrEmployee.getOfficeAddress());
+                }
                 if (hrEmployee.getEduLevel() != null && hrEmployee.getEduLevel().getId() != null) {
                     old.setEduLevel(hrEmployee.getEduLevel());
                 }

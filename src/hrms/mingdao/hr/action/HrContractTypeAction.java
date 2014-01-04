@@ -52,7 +52,7 @@ public class HrContractTypeAction extends ActionSupport<HrContractType> {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null ) {
             userInfo.setTopMenuCss("AppSet");
-            userInfo.setMenuCss("type");
+            userInfo.setMenuCss("contractType");
             hrContractType = this.hrContractTypeService.getListByCompanyId(userInfo.getCompanyId());
         }
         return "success";

@@ -103,6 +103,11 @@ public class HrEmployeeService extends HQuery {
     public Integer getCountByCompanyDutyLevel(String companyId, Long dutyLevelId) {
         return $($eq("companyId", companyId),$eq("dutyLevel.id",dutyLevelId),$count("id")).value(HrEmployee.class, Integer.class);
     }
+
+    @Transactional(type = TransactionType.READ_ONLY)
+    public Integer getCountByCompanyOrg(String companyId, Long orgId) {
+        return $($eq("companyId", companyId),$eq("orgId.id",orgId),$count("id")).value(HrEmployee.class, Integer.class);
+    }
     /**
      * 保存对象
      */

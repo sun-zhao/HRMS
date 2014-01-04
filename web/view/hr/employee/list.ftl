@@ -51,7 +51,7 @@
             var uid=$(this).attr('uid');
             var uname=$(this).attr('uname');
             if(uid&&uname){
-                WEBUTILS.popWindow.createPopWindow(620, 500, uname+'的人事档案', '/hr/employee!viewInfo.dhtml?id='+uid,true);
+                WEBUTILS.popWindow.createPopWindow(650, 530, uname+'的人事档案', '/hr/employee!viewInfo.dhtml?id='+uid,true);
                 WEBUTILS.popWindow.offset('30%',false);
             }
         });
