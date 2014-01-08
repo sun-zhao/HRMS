@@ -50,11 +50,17 @@ public class AuthorizeAction extends BaseAction {
     private String url;
 
     @ReqSet
+    @ReqGet
+    private String action;
+
+    @ReqSet
     private String authorizeUrl;
 
     @Override
     @PageFlow(result = {@Result(name = "success", path = "/common/authorize!index.dhtml", type = Dispatcher.Redirect),
-            @Result(name = "login", path = "/view/authorize.ftl", type = Dispatcher.FreeMarker)})
+            @Result(name = "login", path = "/view/authorize.ftl", type = Dispatcher.FreeMarker),
+            @Result(name = "improve", path = "/hr/employee!improve.dhtml", type = Dispatcher.Redirect),
+            @Result(name = "empInfo", path = "/hr/employee!info.dhtml", type = Dispatcher.Redirect)})
     public String execute() throws Exception {
         if (StringUtils.isNotBlank(code)) {
             UserInfo userInfo = UserSession.create(getHttpServletRequest());
@@ -154,6 +160,14 @@ public class AuthorizeAction extends BaseAction {
                     userInfo.setLeftHtml(leftHtml);
                     userInfo.setFooterHtml(footerHtml);
                 }
+            }
+            if(StringUtils.isNotBlank(action)){
+                if(action.equals("improve")){
+                    return "improve";
+                }
+            }
+            if(!userInfo.isAdmin()){
+                return "empInfo";
             }
             return "success";
         } else {

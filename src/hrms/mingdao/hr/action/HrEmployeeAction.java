@@ -3,6 +3,7 @@ package hrms.mingdao.hr.action;
 import com.google.inject.Inject;
 import com.mingdao.api.company.RequestCompany;
 import com.mingdao.api.entity.*;
+import com.mingdao.api.message.RequestMessage;
 import com.mingdao.api.user.RequestUser;
 import hrms.mingdao.common.UserInfo;
 import hrms.mingdao.common.UserSession;
@@ -355,6 +356,16 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 for (HrEmployee employee : employeeList) {
                     if (employee.getComplete().intValue() == 1) {
                         employee.setComplete(2);
+                        String msgContent = "#完善个人资料# " + employee.getUserName() + "邀请您完善个人资料，请您点击链接进行操作";
+                        msgContent += "<a target=\"_blank\" href=\"" + getMdURI() + "&action=improve\">完善个人资料</a>";
+                        String messageId = null;
+                        try {
+                            messageId = RequestMessage.createSys( employee.getUserId(), userInfo.getCompanyId(),
+                                    msgContent, userInfo.getAppKey(), userInfo.getAppSecret());
+                            employee.setCompleteMessageId(messageId);
+                        } catch (Exception e) {
+                            employee.setCompleteMessageId(messageId);
+                        }
                         bind(employee);
                     }
                 }
@@ -373,16 +384,16 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
             if (hrEmployee.getComplete().intValue() == 1) {
                 hrEmployee.setComplete(2);
 
-//                String msgContent = "#完善个人资料# " + userInfo.getUserName() + "邀请您完善个人资料，请您点击链接进行操作";
-//                msgContent += "<a target=\"_blank\" href=\"" + getMdURI() + "&action=improve\">完善个人资料</a>";
-//                String messageId = null;
-//                try {
-//                    messageId = RequestMessage.createSys(userInfo.getAccessToken(), hrEmployee.getUserId(), userInfo.getCompanyId(),
-//                            msgContent, userInfo.getAppKey(), userInfo.getAppSecret());
-//                    hrEmployee.setCompleteMessageId(messageId);
-//                } catch (Exception e) {
-//                    hrEmployee.setCompleteMessageId(messageId);
-//                }
+                String msgContent = "#完善个人资料# " + hrEmployee.getUserName() + "邀请您完善个人资料，请您点击链接进行操作";
+                msgContent += "<a target=\"_blank\" href=\"" + getMdURI() + "&action=improve\">完善个人资料</a>";
+                String messageId = null;
+                try {
+                    messageId = RequestMessage.createSys( hrEmployee.getUserId(), userInfo.getCompanyId(),
+                            msgContent, userInfo.getAppKey(), userInfo.getAppSecret());
+                    hrEmployee.setCompleteMessageId(messageId);
+                } catch (Exception e) {
+                    hrEmployee.setCompleteMessageId(messageId);
+                }
                 bind(hrEmployee);
                 this.hrEmployeeService.save(hrEmployee);
                 root.put("userName", hrEmployee.getUserName());

@@ -51,7 +51,7 @@
                             <#if hrEmployee.dutyLevel?exists>
                                 ${(hrEmployee.dutyLevel.name)?if_exists}
                             <#else>
-                                未设置
+                                <span style="color: #ff0000">未设置</span>
                             </#if>
                         </td>
                         <th >职位：</th>
@@ -59,7 +59,7 @@
                             <#if hrEmployee.jobId?exists>
                                 ${(hrEmployee.jobId.name)?if_exists}
                             <#else>
-                                未设置
+                                <span style="color: #ff0000">未设置</span>
                             </#if>
                         </td>
                     </tr>
@@ -77,10 +77,10 @@
                             <#elseif hrEmployee.empType==0>
                                 实习
                             <#else >
-                                未设置
+                                <span style="color: #ff0000">未设置</span>
                             </#if>
                         <#else >
-                            未设置
+                            <span style="color: #ff0000">未设置</span>
                         </#if>
                     </td>
                     <th style="width: 60px;">工作状态：</th>
@@ -91,10 +91,10 @@
                             <#elseif hrEmployee.workState==0>
                                 在职
                             <#else >
-                                未设置
+                                <span style="color: #ff0000">未设置</span>
                             </#if>
                         <#else >
-                            未设置
+                            <span style="color: #ff0000">未设置</span>
                         </#if>
                     </td>
                 </tr>
@@ -140,14 +140,14 @@
                     <td style="width: 100px;">
                         <#if hrEmployee.userSex?exists>
                             <#if hrEmployee.userSex==1>
-                                高富帅
+                                男
                             <#elseif hrEmployee.userSex==2>
-                                软妹纸
+                                女
                             <#else >
-                                未设置
+                                <span style="color: #ff0000">未设置</span>
                             </#if>
                         <#else >
-                            未设置
+                            <span style="color: #ff0000">未设置</span>
                         </#if>
                     </td>
                     <th style="width: 60px;">学历：</th>

@@ -139,7 +139,7 @@
                     <a href="##" uid="${dutyLevel.id?c}" order="${dutyLevel.displayOrder?c}" class="icon icon-up" title="上移"></a>
                     <a href="##" uid="${dutyLevel.id?c}" order="${dutyLevel.displayOrder?c}" class="icon icon-down" title="下移"></a>
                     <a href="##" uid="${dutyLevel.id?c}" class="icon icon-edit" title="编辑"></a>
-                    <a href="##" uid="${dutyLevel.id?c}" count="${org.count?c}" class="icon icon-delete" title="删除"></a>
+                    <a href="##" uid="${dutyLevel.id?c}" count="${dutyLevel.count?c}" class="icon icon-delete" title="删除"></a>
                 </td>
             </tr>
             </#list>
