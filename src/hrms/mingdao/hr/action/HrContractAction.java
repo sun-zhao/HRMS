@@ -99,6 +99,8 @@ public class HrContractAction extends ActionSupport<HrContract> {
     @ReqSet
     private Date staticDueDate;
 
+    @ReqSet
+    private List<String> insuranceTypeList;
 
     @ReqSet
     private Date renewalDate;
@@ -119,6 +121,9 @@ public class HrContractAction extends ActionSupport<HrContract> {
             String companyId = userInfo.getCompanyId();
             if (StringUtils.isNotBlank(companyId)) {
                 selectorList.add(SelectorUtils.$eq("companyId", companyId));
+                if (userInfo.getOrgId()!=null) {
+                    selectorList.add(SelectorUtils.$eq("orgId.id", userInfo.getOrgId()));
+                }
                 selectorList.add(SelectorUtils.$eq("complete", 0));
                 selectorList.add(SelectorUtils.$eq("contractFlag", 0));
                 if (StringUtils.isNotBlank(word)) {
@@ -147,6 +152,9 @@ public class HrContractAction extends ActionSupport<HrContract> {
             if (StringUtils.isNotBlank(companyId)) {
                 selectorList.add(SelectorUtils.$alias("empId", "empId"));
                 selectorList.add(SelectorUtils.$eq("companyId", companyId));
+                if (userInfo.getOrgId()!=null) {
+                    selectorList.add(SelectorUtils.$eq("empId.orgId.id", userInfo.getOrgId()));
+                }
                 selectorList.add(SelectorUtils.$eq("renewalFlag", 0));
                 selectorList.add(SelectorUtils.$lt("endDate", endDate));
                 if (StringUtils.isNotBlank(word)) {
@@ -237,6 +245,25 @@ public class HrContractAction extends ActionSupport<HrContract> {
             }
         }
         return "success";
+    }
+
+    @PageFlow(result = {
+            @Result(name = "0", path = "/view/hr/employee/view/contractNews.ftl", type = Dispatcher.FreeMarker),
+            @Result(name = "1", path = "/view/hr/employee/view/contractRenewal.ftl", type = Dispatcher.FreeMarker)})
+    public String viewInfo() throws Exception {
+        String result=null;
+        UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
+        if (userInfo != null && id!=null) {
+            hrContract = hrContractService.getById(id);
+            if (hrContract != null) {
+                hrEmployee=hrContract.getEmpId();
+                if (hrEmployee != null) {
+                    user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
+                }
+                result=hrContract.getContractState()+"";
+            }
+        }
+        return result;
     }
 
     @PageFlow(result = {
@@ -466,10 +493,20 @@ public class HrContractAction extends ActionSupport<HrContract> {
                     user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
                     renewalDate = DateFormatUtil.addDay(hrContract.getEndDate(), 1);
                     hrContractType = hrContractTypeService.getByCompanyId(userInfo.getCompanyId());
+                    templateList = this.hrContractTemplateService.getListByCompanyId(userInfo.getCompanyId());
                     if (hrContractType != null && renewalDate != null) {
                         staticDueDate = DateFormatUtil.addMonth(renewalDate, hrContractType.getStaticValidMonth());
                         staticDueDate = DateFormatUtil.addDay(staticDueDate, -1);
                         dueDate = DateFormatUtil.parse("9999-12-31", DateFormatUtil.YEAR_MONTH_DAY_PATTERN);
+                    }
+                    if(StringUtils.isNotBlank(hrContract.getInsuranceType())){
+                        String insuranceTypes[]=hrContract.getInsuranceType().split(",");
+                        if(insuranceTypes!=null&&insuranceTypes.length>0){
+                            insuranceTypeList=new ArrayList<String>();
+                            for (int i=0;i<insuranceTypes.length;i++){
+                                insuranceTypeList.add(insuranceTypes[i]);
+                            }
+                        }
                     }
                 }
             }
@@ -495,7 +532,26 @@ public class HrContractAction extends ActionSupport<HrContract> {
             renewalContract.setEndDate(hrContract.getEndDate());
             renewalContract.setContractType(hrContract.getContractType());
             renewalContract.setRemarks(hrContract.getRemarks());
+            renewalContract.setWorkArea(hrContract.getWorkArea());
+            renewalContract.setWorkTime(hrContract.getWorkTime());
+            renewalContract.setPay(hrContract.getPay());
+            renewalContract.setInsuranceArea(hrContract.getInsuranceArea());
+            renewalContract.setTemplateId(hrContract.getTemplateId());
             renewalContract.setUseYn("Y");
+
+            String insuranceTypeList[] = getHttpServletRequest().getParameterValues("insuranceType");
+            String types = "";
+            if (insuranceTypeList != null && insuranceTypeList.length > 0) {
+                for (String insuranceType : insuranceTypeList) {
+                    types += insuranceType + ",";
+                }
+                if (StringUtils.isNotBlank(types)) {
+                    types = types.substring(0, types.length() - 1);
+                }
+            } else {
+                types = getParameter("insuranceType");
+            }
+            renewalContract.setInsuranceType(types);
             bind(renewalContract);
 
             contractList = new ArrayList<HrContract>();

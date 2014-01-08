@@ -160,7 +160,13 @@
                     <tr>
                         <th style="width: 60px;">公司：</th>
                         <td style="width: 100px;">
-                        ${(hrEmployee.orgId.name)?if_exists}
+                            <select class="edit" id="hrEmployee.orgId.id"  name="hrEmployee.orgId.id">
+                                <#if orgList?exists&&orgList?size gt 0>
+                                    <#list orgList as org>
+                                        <option value="${org.id?c}"> ${org.name?if_exists}</option>
+                                    </#list>
+                                </#if>
+                            </select>
                         </td>
                         <th style="width: 60px;">部门：</th>
                         <td >

@@ -89,7 +89,13 @@
 
         $('.icon-delete').off('click').on('click',function(){
             var uid=$(this).attr('uid');
-            if(uid){
+            var count=$(this).attr('count');
+            if(uid&&count){
+                count=parseInt(count);
+                if(count>0){
+                    WEBUTILS.msg.alertFail('该职位下还有员工存在,暂时无法删除!');
+                    return false;
+                }
                 var r=confirm("此操作将删除该职位,是否继续?");
                 if(r==true){
                     WEBUTILS.popMask.show();
@@ -134,7 +140,7 @@
                 <td>${job.count?c}</td>
                 <td>
                     <a href="##" uid="${job.id?c}" class="icon icon-edit" title="编辑"></a>
-                    <a href="##" uid="${job.id?c}" class="icon icon-delete" title="删除"></a>
+                    <a href="##" uid="${job.id?c}" count="${job.count?c}" class="icon icon-delete" title="删除"></a>
                 </td>
             </tr>
             </#list>

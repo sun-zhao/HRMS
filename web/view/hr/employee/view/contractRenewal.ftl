@@ -66,52 +66,81 @@
                     </tbody>
                 </table>
             </div>
-            <table width="100%" class="UserTbale nomar Info WorkStory">
-                <thead>
-                <tr>
-                    <th style="width: 70px;" class="alignleft">合同编号</th>
-                    <th >合同类别</th>
-                    <th style="width: 60px;">签订日期</th>
-                    <th style="width: 60px;">截止日期</th>
-                    <th style="width: 40px;">状态</th>
-                    <th style="width: 60px;">操作</th>
-                </tr>
-                </thead>
+            <table width="100%" class="UserTbale nomar Info mart5">
                 <tbody>
-                <#if contractList?exists&&contractList?size gt 0>
-                    <#list contractList as contract>
-                    <tr title="${contract.remarks?if_exists}">
-                        <td style="text-align: left;">${contract.contractNo?if_exists}</td>
-                        <td>
-                            <#if contract.contractType==0>
-                                无固定期劳动合同
-                            <#elseif contract.contractType==1>
-                                固定期劳动合同
-                            </#if>
-                        </td>
-                        <td>${contract.startDate?string("yyyy-MM-dd")}</td>
-                        <td>${contract.endDate?string("yyyy-MM-dd")}</td>
-                        <td>
-                            <#if contract.contractState==0>
-                                新签
-                            <#elseif contract.contractState==1>
-                                续签
-                            <#elseif contract.contractState==2>
-                                终止
-                            </#if>
-                        </td>
-                        <td>
-                            <a title="查看" class="icon icon-look" href="/hr/contract!viewInfo.dhtml?id=${contract.id?c}" uid="${contract.id?c}"></a>
-                            <a title="打印"  target="_blank" class="icon icon-print" href="/hr/contract!print.dhtml?id=${contract.id?c}" uid="${contract.id?c}"></a>
-                        </td>
-                    </tr>
-                    </#list>
-                </#if>
+                <tr>
+                    <th style="width: 75px;">合同编号：</th>
+                    <td style="width: 130px;">
+                        ${hrContract.contractNo?if_exists}
+                    </td>
+                    <th style="width: 75px;">合同类别：</th>
+                    <td>
+                       <#if hrContract.contractType?exists>
+                           <#if hrContract.contractType==0>
+                               无固定期劳动合同
+                           <#elseif hrContract.contractType==1>
+                               固定期劳动合同
+                           </#if>
+                        </#if>
+                    </td>
+                </tr>
+                <tr>
+                    <th >签订日期：</th>
+                    <td >
+                    ${hrContract.startDate?string("yyyy-MM-dd")}
+                    </td>
+                    <th >截止日期：</th>
+                    <td>
+                    ${hrContract.endDate?string("yyyy-MM-dd")}
+                    </td>
+                </tr>
+                <tr>
+                    <th >工作地点：</th>
+                    <td >
+                        ${hrContract.workArea?if_exists}
+                    </td>
+                    <th >工时制度：</th>
+                    <td>
+                        ${hrContract.workTime?if_exists}
+                    </td>
+                </tr>
+                <tr>
+                    <th >薪资：</th>
+                    <td colspan="3">
+                    ${hrContract.pay?c}
+                    </td>
+                </tr>
+                <tr>
+                    <th >保险缴纳地：</th>
+                    <td colspan="3">
+                        ${hrContract.insuranceArea?if_exists}
+                    </td>
+                </tr>
+                <tr>
+
+                    <th >保险种类：</th>
+                    <td colspan="3">
+                        ${hrContract.insuranceType?if_exists}
+                    </td>
+                </tr>
+                <tr>
+
+                    <th >合同模版：</th>
+                    <td colspan="3">
+                        ${(hrContract.templateId.name)?if_exists}
+                    </td>
+                </tr>
+                <tr>
+                    <th>备注：</th>
+                    <td colspan="3">
+                        ${hrContract.remarks?if_exists}
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>
 <!--右侧详细信息over-->
-<p class="alignright mart5"><a class="button" href="/hr/employeeJob!editJob.dhtml?id=${hrEmployee.id?c}" >修改信息</a></p>
+<p class="alignright mart5"><a class="button" href="/hr/contract!view.dhtml?empId=${hrEmployee.id?c}" >返回</a></p>
 </@common.html>
 
 

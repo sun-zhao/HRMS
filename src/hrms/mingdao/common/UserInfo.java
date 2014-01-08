@@ -70,6 +70,16 @@ public class UserInfo implements Serializable {
     private String avstar100;
     
     private String avstar;
+
+    private Long orgId;
+
+    private String orgName;
+
+    private Long jobId;
+
+    private Long dutyLevel;
+
+    private String dutyLevelName;
     
     private String logo;
 
@@ -394,5 +404,45 @@ public class UserInfo implements Serializable {
 
     public void setFlag(String flag) {
         this.flag = flag;
+    }
+
+    public Long getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
+    }
+
+    public String getOrgName() {
+        return orgName;
+    }
+
+    public void setOrgName(String orgName) {
+        this.orgName = orgName;
+    }
+
+    public Long getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(Long jobId) {
+        this.jobId = jobId;
+    }
+
+    public Long getDutyLevel() {
+        return dutyLevel;
+    }
+
+    public void setDutyLevel(Long dutyLevel) {
+        this.dutyLevel = dutyLevel;
+    }
+
+    public String getDutyLevelName() {
+        return dutyLevelName;
+    }
+
+    public void setDutyLevelName(String dutyLevelName) {
+        this.dutyLevelName = dutyLevelName;
     }
 }

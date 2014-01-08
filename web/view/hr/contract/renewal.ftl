@@ -23,6 +23,27 @@
                     pattern: [
                         {type: 'blank', exp: '!=', msg: '请输入截止日期'}
                     ]
+                },
+                {
+                    id: 'hrContract\\.workArea',
+                    required: true,
+                    pattern: [
+                        {type: 'blank', exp: '!=', msg: '请输入工作地点'}
+                    ]
+                },
+                {
+                    id: 'hrContract\\.pay',
+                    required: true,
+                    pattern: [
+                        {type: 'number', exp: '==', msg: '请输入转正后薪资'}
+                    ]
+                },
+                {
+                    id: 'hrContract\\.insuranceArea',
+                    required: true,
+                    pattern: [
+                        {type: 'blank', exp: '!=', msg: '请输入保险缴纳地'}
+                    ]
                 }
             ]
         }, true);
@@ -69,6 +90,11 @@
         $('#hrContract\\.contractType').off('change').on('change', function () {
             setEndDate();
         });
+        <#if insuranceTypeList?exists&&insuranceTypeList?size gt 0>
+            <#list insuranceTypeList as insuranceType>
+                $('input[type="checkbox"][value="${insuranceType?if_exists}"]').attr('checked','checked');
+            </#list>
+        </#if>
     });
 </script>
 <!--左侧类目begin-->
@@ -100,39 +126,31 @@
                         </td>
                     </tr>
                     <tr>
-                        <th width="60">部门：</th>
-                        <td colspan="3">
-                        ${hrEmployee.deptName}
+                        <th style="width: 60px;">公司：</th>
+                        <td style="width: 100px;">
+                        ${(hrEmployee.orgId.name)?if_exists}
+                        </td>
+                        <th style="width: 60px;">部门：</th>
+                        <td >
+                        ${hrEmployee.deptName?if_exists}
                         </td>
                     </tr>
                     <tr>
                         <th>职级：</th>
-                        <td width="130">
+                        <td >
                             <#if hrEmployee.dutyLevel?exists>
-                                <#if hrEmployee.dutyLevel==1>
-                                    总裁
-                                <#elseif hrEmployee.dutyLevel==2>
-                                    副总裁
-                                <#elseif hrEmployee.dutyLevel==3>
-                                    总监
-                                <#elseif hrEmployee.dutyLevel==4>
-                                    副总监
-                                <#elseif hrEmployee.dutyLevel==5>
-                                    经理
-                                <#elseif hrEmployee.dutyLevel==6>
-                                    主管
-                                <#elseif hrEmployee.dutyLevel==7>
-                                    职员
-                                <#else >
-                                    未设置
-                                </#if>
-                            <#else >
+                            ${(hrEmployee.dutyLevel.name)?if_exists}
+                            <#else>
                                 未设置
                             </#if>
                         </td>
-                        <th width="60">职位：</th>
+                        <th >职位：</th>
                         <td>
-                        ${(hrEmployee.jobId.name)?if_exists}
+                            <#if hrEmployee.jobId?exists>
+                            ${(hrEmployee.jobId.name)?if_exists}
+                            <#else>
+                                未设置
+                            </#if>
                         </td>
                     </tr>
                     </tbody>
@@ -156,12 +174,6 @@
                         </select>
                     </td>
                 </tr>
-                <tr style="line-height: 17px;">
-                    <th width="75">到期日期：</th>
-                    <td colspan="3">
-                    ${hrContract.endDate?string("yyyy-MM-dd")}
-                    </td>
-                </tr>
                 <tr>
                     <th width="75">签订日期：</th>
                     <td width="130">
@@ -174,6 +186,65 @@
                                    value="${staticDueDate?string("yyyy-MM-dd")}">
                             <label class="control-label"></label>
                         </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th >工作地点：</th>
+                    <td >
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrContract.workArea" name="hrContract.workArea">
+                            <label class="control-label"></label>
+                        </div>
+                    </td>
+                    <th >工时制度：</th>
+                    <td>
+                        <select class="edit" id="hrContract.workTime" name="hrContract.workTime">
+                            <option value="每周5天每天8小时">每周5天每天8小时</option>
+                            <option value="根据劳动行政部门批准，实行不定时工作制">根据劳动行政部门批准，实行不定时工作制</option>
+                            <option value="自行填写"> 实行按N计时的综合计算工作</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th >薪资：</th>
+                    <td colspan="3">
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrContract.pay" name="hrContract.pay">
+                            <label class="control-label"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th >保险缴纳地：</th>
+                    <td colspan="3">
+                        <div class="has-general">
+                            <input type="text" class="edit" id="hrContract.insuranceArea" name="hrContract.insuranceArea">
+                            <label class="control-label"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+
+                    <th >保险种类：</th>
+                    <td colspan="3">
+                        养老 <input type="checkbox" name="insuranceType" value="养老">
+                        医疗 <input type="checkbox" name="insuranceType" value="医疗">
+                        工伤 <input type="checkbox" name="insuranceType" value="工伤">
+                        失业 <input type="checkbox" name="insuranceType" value="失业">
+                        生育 <input type="checkbox" name="insuranceType" value="生育">
+                    </td>
+                </tr>
+                <tr>
+
+                    <th >合同模版：</th>
+                    <td colspan="3">
+                        <select class="edit" id="hrContract.templateId.id" name="hrContract.templateId.id">
+                            <#if templateList?exists&&templateList?size gt 0>
+                                <#list templateList as template>
+                                    <option value="${template.id?c}">${template.name?if_exists}</option>
+                                </#list>
+                            </#if>
+                        </select>
                     </td>
                 </tr>
                 <tr>

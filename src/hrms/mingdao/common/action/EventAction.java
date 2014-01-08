@@ -1,11 +1,16 @@
 package hrms.mingdao.common.action;
 
+import com.mingdao.api.entity.AppConfig;
+import com.mingdao.api.utils.AppConfigUtil;
 import com.mingdao.api.utils.SignatureUtil;
 import net.sf.json.JSONObject;
+import org.guiceside.commons.lang.DateFormatUtil;
 import org.guiceside.commons.lang.StringUtils;
 import org.guiceside.web.action.BaseAction;
 import org.guiceside.web.annotation.Action;
 import org.guiceside.web.annotation.ReqGet;
+
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -30,24 +35,19 @@ public class EventAction extends BaseAction {
 
     @ReqGet
     private String content;
-
     public String execute() throws Exception {
-        System.out.println("##############################");
-        System.out.println("###########signature###################"+signature);
-        System.out.println("###########timestamp###################"+timestamp);
-        System.out.println("###########nonce###################"+nonce);
-        System.out.println("###########content###################"+content);
-        if(StringUtils.isNotBlank(signature)&&StringUtils.isNotBlank(timestamp)
+        AppConfig appConfig = AppConfigUtil.create();
+        if(appConfig!=null&&StringUtils.isNotBlank(signature)&&StringUtils.isNotBlank(timestamp)
                 &&StringUtils.isNotBlank(nonce)&&StringUtils.isNotBlank(content)){
-            String laSignature=SignatureUtil.getSignature(timestamp,nonce,content,"289F758D5422B63944A331A5025CC5", "65A48A87C1D9F2B8860A036DCD71B14");
-            if(StringUtils.isNotBlank(laSignature)&&laSignature.equals(signature)){
+            String hrSignature=SignatureUtil.getSignature(timestamp,nonce,content,appConfig.getAppKey(), appConfig.getAppSecret());
+            if(StringUtils.isNotBlank(hrSignature)&&hrSignature.equals(signature)){
                 JSONObject eventJson=JSONObject.fromObject(content);
                 System.out.println(content);
                 if(eventJson!=null){
                     String event=eventJson.getString("event");
                     System.out.println("###########event###################"+event);
                     if(StringUtils.isNotBlank(event)){
-                        if(event.equals('1')){
+                        if(event.equals("1")){
                             initSysApply(eventJson);
                         }else if(event.equals("2")){
 
@@ -64,7 +64,13 @@ public class EventAction extends BaseAction {
     }
 
     private String initSysApply(JSONObject eventJson) throws Exception {
+        if(eventJson!=null){
+            String companyId=eventJson.getString("pid");
+            String userId=eventJson.getString("uid");
+            if (StringUtils.isNotBlank(companyId)&&StringUtils.isNotBlank(userId)) {
 
+            }
+        }
         return "success";
     }
 }

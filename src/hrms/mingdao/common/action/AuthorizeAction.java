@@ -1,5 +1,6 @@
 package hrms.mingdao.common.action;
 
+import com.google.inject.Inject;
 import com.mingdao.api.app.RequestApp;
 import com.mingdao.api.company.RequestCompany;
 import com.mingdao.api.entity.*;
@@ -9,6 +10,8 @@ import com.mingdao.api.user.RequestUser;
 import com.mingdao.api.utils.AppConfigUtil;
 import hrms.mingdao.common.UserInfo;
 import hrms.mingdao.common.UserSession;
+import hrms.mingdao.hr.entity.HrEmployee;
+import hrms.mingdao.hr.service.HrEmployeeService;
 import hrms.mingdao.util.HttpRequestDeviceUtils;
 import hrms.mingdao.util.HttpUtils;
 import net.sf.json.JSONObject;
@@ -29,6 +32,9 @@ import java.util.List;
  */
 @Action(name = "authorize", namespace = "/common")
 public class AuthorizeAction extends BaseAction {
+
+    @Inject
+    private HrEmployeeService hrEmployeeService;
 
     @ReqGet
     @ReqSet
@@ -79,6 +85,22 @@ public class AuthorizeAction extends BaseAction {
 
                     int admin = RequestApp.isAdmin(userInfo.getAccessToken(), userInfo.getUserId());
                     userInfo.setAdmin(admin == 1);
+
+                    HrEmployee employee=this.hrEmployeeService.getByUserId(userInfo.getCompanyId(),userInfo.getUserId());
+                    if(employee!=null){
+                        if(employee.getJobId()!=null){
+                            userInfo.setJobId(employee.getJobId().getId());
+                            userInfo.setJobNumber(employee.getJobId().getName());
+                        }
+                        if(employee.getDutyLevel()!=null){
+                            userInfo.setDutyLevel(employee.getDutyLevel().getId());
+                            userInfo.setDutyLevelName(employee.getDutyLevel().getName());
+                        }
+                        if(employee.getOrgId()!=null){
+                            userInfo.setOrgId(employee.getOrgId().getId());
+                            userInfo.setOrgName(employee.getOrgId().getName());
+                        }
+                    }
                 }
                 List<Department> departmentList = RequestUser.getUserDepartment(userInfo.getAccessToken());
                 if (departmentList != null && !departmentList.isEmpty()) {

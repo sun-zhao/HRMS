@@ -156,6 +156,9 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
             String companyId = userInfo.getCompanyId();
             if (StringUtils.isNotBlank(companyId)) {
                 selectorList.add(SelectorUtils.$eq("companyId", companyId));
+                if (userInfo.getOrgId()!=null) {
+                    selectorList.add(SelectorUtils.$eq("orgId.id", userInfo.getOrgId()));
+                }
                 selectorList.add(SelectorUtils.$eq("complete", 0));
                 if (StringUtils.isNotBlank(word)) {
                     selectorList.add(SelectorUtils.$eq("userFirstPy", word));
@@ -245,7 +248,6 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 }
             }
             if (userList != null && !userList.isEmpty()) {
-
                 List<String> jobNameList = this.hrJobService.getNameListByCompanyId(userInfo.getCompanyId());
                 Set<String> newJobNameList = new HashSet<String>();
                 if (jobNameList != null && !jobNameList.isEmpty()) {
@@ -340,7 +342,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     }
 
     @PageFlow(result = {
-            @Result(name = "success", path = "/hr/employee!news.dhtml", type = Dispatcher.Redirect)})
+            @Result(name = "success", path = "/hr/employee!entry.dhtml", type = Dispatcher.Redirect)})
     public String sendImproveAll() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null) {
@@ -500,6 +502,7 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 nationalityList = this.sysCodeService.getListByParentId("NATIONALITY");
                 politicsLevelList = this.sysCodeService.getListByParentId("POLITICS_LEVEL");
                 officeAddrList = this.hrOfficeAddrService.getListByCompanyId(userInfo.getCompanyId());
+                orgList=this.hrOrgService.getListByCompanyId(userInfo.getCompanyId());
                 provinceList = this.sysProvinceService.getList();
                 departmentList = userInfo.getDepartmentList();
                 if (provinceList != null && !provinceList.isEmpty()) {
@@ -527,6 +530,9 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 old.setOfficeAddress(hrEmployee.getOfficeAddress());
                 old.setBirthDay(hrEmployee.getBirthDay());
                 old.setUserSex(hrEmployee.getUserSex());
+                if (hrEmployee.getOrgId() != null && hrEmployee.getOrgId().getId() != null) {
+                    old.setOrgId(hrEmployee.getOrgId());
+                }
                 if (hrEmployee.getEduLevel() != null && hrEmployee.getEduLevel().getId() != null) {
                     old.setEduLevel(hrEmployee.getEduLevel());
                 }
@@ -613,13 +619,17 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
 
 
     @PageFlow(result = {
-            @Result(name = "success", path = "/view/hr/employee/info.ftl", type = Dispatcher.FreeMarker)})
+            @Result(name = "success", path = "/view/hr/employee/info.ftl", type = Dispatcher.FreeMarker),
+            @Result(name = "improve", path = "/hr/employee!improve.dhtml", type = Dispatcher.Redirect)})
     public String info() throws Exception {
         UserInfo userInfo = UserSession.getUserInfo(getHttpServletRequest());
         if (userInfo != null) {
             userInfo.setTopMenuCss("myEmployee");
             hrEmployee = this.hrEmployeeService.getByUserId(userInfo.getCompanyId(), userInfo.getUserId());
             if (hrEmployee != null) {
+                if(hrEmployee.getComplete().intValue()==3){
+                    return "improve";
+                }
                 user = RequestUser.getUserDetail(userInfo.getAccessToken(), hrEmployee.getUserId());
                 employeeEduList = this.hrEmployeeEduService.getListByEmpId(userInfo.getCompanyId(), hrEmployee.getId());
                 employeeJobList = this.hrEmployeeJobService.getListByEmpId(userInfo.getCompanyId(), hrEmployee.getId());

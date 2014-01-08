@@ -55,6 +55,10 @@
                 WEBUTILS.popWindow.offset('30%', false);
             }
         });
+        $('.nook').off('click').on('click', function () {
+           WEBUTILS.msg.alertInfo('抱歉，还没来得及处理');
+        });
+
     });
 </script>
 <!--排序搜索begin-->
@@ -133,7 +137,7 @@
                                 <div class="CarTime">
                                     <p class="clearfix">截止日期：${contract.endDate?string("yyyy-MM-dd")}</p>
                                     <p class="alignright mart5">
-                                        <a class="floatright marr10" href="##"><em class="icon icon icon-por"></em>归档</a>
+                                        <a class="floatright marr10 nook" href="##"><em class="icon icon icon-por"></em>归档</a>
                                         <a class="floatright marr10 renewal" href="##" uid="${contract.id?c}" uname="${(contract.empId.userName)?if_exists}"><em class="icon icon-renewed"></em>续签</a>
                                     </p>
                                 </div>

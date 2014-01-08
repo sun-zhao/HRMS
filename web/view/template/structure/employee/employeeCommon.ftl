@@ -14,6 +14,12 @@
                     $('.${userInfo['menuCss']?if_exists}', '.AppNavT').addClass('current');
                 </#if>
             </#if>
+            $('.positive').off('click').on('click',function(){
+               WEBUTILS.msg.alertInfo('该功能想和LA产生一些联系，暂时不开放');
+            });
+            $('.dimission').off('click').on('click',function(){
+                WEBUTILS.msg.alertInfo('该功能想和LA产生一些联系，暂时不开放');
+            });
         });
     </script>
     <div class="AppLayout border-solid">
@@ -41,8 +47,8 @@
             <ul class="font16 clearfix floatleft">
                 <li class="list"><a href="/hr/employee.dhtml">员工档案</a></li>
                 <li class="entry"><a href="/hr/employee!entry.dhtml">入职员工</a></li>
-                <li class="positive"><a href="/hr/employee!positive.dhtml">转正员工</a></li>
-                <li class="dimission"><a  href="/hr/employee!dimission.dhtml">离职员工</a></li>
+                <li class="positive"><a href="##">转正员工</a></li>
+                <li class="dimission"><a  href="##">离职员工</a></li>
             </ul>
         </div>
         <!--二级导航over-->
