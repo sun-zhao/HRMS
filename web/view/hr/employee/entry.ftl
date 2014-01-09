@@ -19,15 +19,10 @@
         document.location.href = searchUrl
     }
     $(document).ready(function () {
-       <#if pyList?exists&&pyList?size gt 0>
-           <#list pyList as py>
-           $('li[word="${py?if_exists}"]','.word-ser').removeClass('noname');
-       </#list>
-           <#if word?exists>
-               $('li','.word-ser').first().removeClass('current');
-               $('li[word="${word?if_exists}"]','.word-ser').removeClass('noname').addClass('current');
-           </#if>
-       </#if>
+        <#if word?exists>
+            $('li','.word-ser').first().removeClass('current');
+            $('li[word="${word?if_exists}"]','.word-ser').removeClass('noname').addClass('current');
+        </#if>
         $('a','.word-ser').off('click').on('click',function(){
            var li=$(this).parent();
             if(li){
@@ -48,7 +43,6 @@
             }
         });
         $('.sendImprove').off('click').on('click',function(){
-            var li=$(this).parent().parent();
             var uid=$(this).attr('uid');
             var aObj=$(this);
             if(uid&&aObj.hasClass('invite')){
@@ -117,33 +111,20 @@
 <!--排序搜索over-->
 <!--左侧字母检索begin-->
 <ul class="word-ser floatleft">
-    <li class="current"><a href="##">全部</a></li>
-    <li class="noname" word="A"><a href="##">A</a></li>
-    <li class="noname" word="B"><a href="##">B</a></li>
-    <li class="noname" word="C"><a  href="##">C</a></li>
-    <li class="noname" word="D"><a href="##">D</a></li>
-    <li class="noname" word="E"><a href="##">E</a></li>
-    <li class="noname" word="F"><a href="##">F</a></li>
-    <li class="noname" word="G"><a href="##">G</a></li>
-    <li class="noname" word="H"><a href="##">H</a></li>
-    <li class="noname" word="I"><a href="##">I</a></li>
-    <li class="noname" word="J"><a href="##">J</a></li>
-    <li class="noname" word="K"><a href="##">K</a></li>
-    <li class="noname" word="L"><a href="##">L</a></li>
-    <li class="noname" word="M"><a href="##">M</a></li>
-    <li class="noname" word="N"><a href="##">N</a></li>
-    <li class="noname" word="O"><a href="##">O</a></li>
-    <li class="noname" word="P"><a href="##">P</a></li>
-    <li class="noname" word="Q"><a href="##">Q</a></li>
-    <li class="noname" word="R"><a href="##">R</a></li>
-    <li class="noname" word="S"><a href="##">S</a></li>
-    <li class="noname" word="T"><a href="##">T</a></li>
-    <li class="noname" word="U"><a href="##">U</a></li>
-    <li class="noname" word="V"><a href="##">V</a></li>
-    <li class="noname" word="W"><a href="##">W</a></li>
-    <li class="noname" word="X"><a href="##">X</a></li>
-    <li class="noname" word="Y"><a href="##">Y</a></li>
-    <li class="noname" word="Z"><a href="##">Z</a></li>
+    <li class="current"><a href="/hr/employee!entry.dhtml">全部</a></li>
+    <#if allPyList?exists&&allPyList?size gt 0>
+        <#list allPyList as allPy>
+            <#if pyList?exists&&pyList?size gt 0>
+                <#if pyList?seq_contains(allPy)>
+                    <li  word="${allPy}"><a href="/hr/employee!entry.dhtml?word=${allPy?if_exists}">${allPy?if_exists}</a></li>
+                <#else >
+                    <li class="noname" word="${allPy}"><a href="##">${allPy?if_exists}</a></li>
+                </#if>
+            <#else >
+                <li class="noname" word="${allPy}"><a href="##">${allPy?if_exists}</a></li>
+            </#if>
+        </#list>
+    </#if>
 </ul>
 <!--左侧字母检索over-->
 <!--员工卡片begin-->
@@ -166,7 +147,7 @@
         <p class="alignright">
             <#if employee.complete==1>
                 <a class="font14 invite block sendImprove" href="##" uid="${employee.id?c}">邀请TA完善信息 <em class="icon icon-edit"></em></a>
-            <#elseif employee.complete==2>
+            <#elseif employee.complete==2||employee.complete==3>
                     <a class="font14  block sendImprove" href="##" uid="${employee.id?c}" style="cursor: default;color: #999999;">等待TA完善信息 </a>
             </#if>
         </p>

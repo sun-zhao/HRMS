@@ -217,7 +217,7 @@ a.close:hover{text-decoration: none;}
 .md-delect{*top:7px;right:5px;z-index: 999;cursor: pointer;}
 .md-delect:hover{background-position:-12px 0;}
 
-
+.nomain-txt{line-height:50px;color: #ccc;padding-top: 100px;}
 
 
 

@@ -48,6 +48,11 @@ public class HrContractService extends HQuery {
     public List<String> getListPyByCompanyEqContractFlag(String companyId, Date dueDate) {
         return $($alias("empId","empId"),$eq("companyId", companyId),$eq("renewalFlag", 0),$le("endDate",dueDate),$eq("useYn", "Y"), $distinct("empId.userFirstPy")).list(HrContract.class, String.class);
     }
+
+    @Transactional(type = TransactionType.READ_ONLY)
+    public List<String> getListPyByCompanyEqContractFlagOrg(String companyId, Long orgId,Date dueDate) {
+        return $($alias("empId","empId"),$eq("companyId", companyId),$eq("empId.orgId.id", orgId),$eq("renewalFlag", 0),$le("endDate",dueDate),$eq("useYn", "Y"), $distinct("empId.userFirstPy")).list(HrContract.class, String.class);
+    }
     /**
      * 保存对象
      */

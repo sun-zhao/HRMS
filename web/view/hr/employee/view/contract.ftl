@@ -111,7 +111,6 @@
             </table>
         </div>
 <!--右侧详细信息over-->
-<p class="alignright mart5"><a class="button" href="/hr/employeeJob!editJob.dhtml?id=${hrEmployee.id?c}" >修改信息</a></p>
 </@common.html>
 
 

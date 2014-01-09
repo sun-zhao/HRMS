@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Language" content="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
     <title>${title?html}</title>
     <link rel="shortcut icon" href="/view/favicon.ico"/>
     <link rel="stylesheet" href="/css/global.css" type="text/css">

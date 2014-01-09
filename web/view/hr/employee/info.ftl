@@ -8,6 +8,7 @@
 
     });
 </script>
+<#if user?exists&&hrEmployee?exists>
 <div class="UserInfo-top clearfix">
     <span class="PerImg floatleft">
         <img src="${user.avstar100?if_exists}">
@@ -18,8 +19,8 @@
         <tr>
             <th colspan="6">
                 <em class="icon icon-user"></em>
-                ${hrEmployee.userName?if_exists}(${(hrEmployee.orgId.name)?if_exists})
-                <#--<a class="a-link marl30" href="#">修改我的档案 <em class="icon icon-edit"></em></a>-->
+            ${hrEmployee.userName?if_exists}(${(hrEmployee.orgId.name)?if_exists})
+            <#--<a class="a-link marl30" href="#">修改我的档案 <em class="icon icon-edit"></em></a>-->
             </th>
         </tr>
         <tr>
@@ -28,7 +29,7 @@
             <th style="width: 80px;">职级：</th>
             <td style="width: 120px;">
                 <#if hrEmployee.dutyLevel?exists>
-                    ${(hrEmployee.dutyLevel.name)?if_exists}
+                ${(hrEmployee.dutyLevel.name)?if_exists}
                 <#else>
                     未设置
                 </#if>
@@ -36,7 +37,7 @@
             <th style="width: 80px;">职位：</th>
             <td>
                 <#if hrEmployee.jobId?exists>
-                    ${(hrEmployee.jobId.name)?if_exists}
+                ${(hrEmployee.jobId.name)?if_exists}
                 <#else>
                     未设置
                 </#if>
@@ -47,9 +48,9 @@
             <td >
                 <#if hrEmployee.empType?exists>
                     <#if hrEmployee.empType==1>
-                    劳务
+                        劳务
                     <#elseif hrEmployee.empType==0>
-                    实习
+                        实习
                     </#if>
                 <#else >
                     &nbsp;
@@ -69,7 +70,7 @@
             </td>
             <th >入职日期：</th>
             <td>
-            <#if hrEmployee.entryDate?exists>
+                <#if hrEmployee.entryDate?exists>
             ${hrEmployee.entryDate?string("yyyy-MM-dd")}
             </#if>
             </td>
@@ -100,10 +101,16 @@
     <tr>
         <th style="width: 70px;">性别：</th>
         <td style="width: 100px;">
-            <#if hrEmployee.userSex==1>
-                男
-            <#elseif hrEmployee.userSex==2>
-                女
+            <#if hrEmployee.userSex?exists>
+                <#if hrEmployee.userSex==1>
+                    男
+                <#elseif hrEmployee.userSex==2>
+                    女
+                <#else >
+                &nbsp;
+                </#if>
+            <#else >
+                &nbsp;
             </#if>
         </td>
         <th style="width: 70px;">学历：</th>
@@ -158,21 +165,21 @@
         <th style="width: 110px;">离职日期</th>
         <th style="width: auto;">描述</th>
     </tr>
-    <#if employeeJobList?exists&&employeeJobList?size gt 0>
-    <#list employeeJobList as job>
-    <tr>
-        <td>${job.name?if_exists}</td>
-        <td>${job.title?if_exists}</td>
-        <td>${job.startDate?string("yyyy-MM-dd")}</td>
-        <td>${job.endDate?string("yyyy-MM-dd")}</td>
-        <td>${job.description?if_exists}</td>
-    </tr>
-    </#list>
-    <#else >
-    <tr>
-        <td colspan="5">暂无</td>
-    </tr>
-    </#if>
+        <#if employeeJobList?exists&&employeeJobList?size gt 0>
+            <#list employeeJobList as job>
+            <tr>
+                <td>${job.name?if_exists}</td>
+                <td>${job.title?if_exists}</td>
+                <td>${job.startDate?string("yyyy-MM-dd")}</td>
+                <td>${job.endDate?string("yyyy-MM-dd")}</td>
+                <td>${job.description?if_exists}</td>
+            </tr>
+            </#list>
+        <#else >
+        <tr>
+            <td colspan="5">暂无</td>
+        </tr>
+        </#if>
     </tbody>
 </table>
 <table width="100%" class="UserTbale nomar Info mine mine-work mart5">
@@ -183,27 +190,30 @@
     <tr>
         <th style="width: 160px;">院校名称</th>
         <th style="width: 100px;">专业和学历</th>
-        <th style="width: auto;">核心课程</th>
         <th style="width: 110px;">入学日期</th>
         <th style="width: 110px;">毕业日期</th>
+        <th style="width: auto;">核心课程</th>
     </tr>
-    <#if employeeEduList?exists&&employeeEduList?size gt 0>
-        <#list employeeEduList as edu>
+        <#if employeeEduList?exists&&employeeEduList?size gt 0>
+            <#list employeeEduList as edu>
+            <tr>
+                <td>${edu.name?if_exists}</td>
+                <td>${edu.title?if_exists}</td>
+                <td>${edu.startDate?string("yyyy-MM-dd")}</td>
+                <td>${edu.endDate?string("yyyy-MM-dd")}</td>
+                <td>${edu.description?if_exists}</td>
+            </tr>
+            </#list>
+        <#else >
         <tr>
-            <td>${edu.name?if_exists}</td>
-            <td>${edu.title?if_exists}</td>
-            <td>${edu.description?if_exists}</td>
-            <td>${edu.startDate?string("yyyy-MM-dd")}</td>
-            <td>${edu.endDate?string("yyyy-MM-dd")}</td>
+            <td colspan="5">暂无</td>
         </tr>
-        </#list>
-    <#else >
-    <tr>
-        <td colspan="5">暂无</td>
-    </tr>
-    </#if>
+        </#if>
     </tbody>
 </table>
+<#else>
+<p class="aligncenter font20 nomain-txt">您的信息还没有被人力部初始化，暂时无法查看</p>
+</#if>
 </@common_common.common_common>
 
 

@@ -146,6 +146,9 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
     private  List<HrOrg> orgList;
 
     @ReqSet
+    private List<String> allPyList;
+
+    @ReqSet
     private Integer improveCount;
 
     private List<Selector> searchModeCallback() throws Exception {
@@ -194,9 +197,40 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                     if (userIdSet != null && !userIdSet.isEmpty()) {
                         userMapList = RequestUser.getMapUserList(userInfo.getAccessToken(), userIdSet);
                     }
-                    pyList = this.hrEmployeeService.getListPyByCompanyEqComplete(userInfo.getCompanyId(), 0);
+                    if (userInfo.getOrgId()!=null) {
+                        pyList = this.hrEmployeeService.getListPyByCompanyEqCompleteOrg(userInfo.getCompanyId(),userInfo.getOrgId(), 0);
+                    }else{
+                        pyList = this.hrEmployeeService.getListPyByCompanyEqComplete(userInfo.getCompanyId(), 0);
+                    }
                 }
             }
+            allPyList=new ArrayList<String>();
+            allPyList.add("A");
+            allPyList.add("B");
+            allPyList.add("C");
+            allPyList.add("D");
+            allPyList.add("E");
+            allPyList.add("F");
+            allPyList.add("G");
+            allPyList.add("H");
+            allPyList.add("I");
+            allPyList.add("J");
+            allPyList.add("K");
+            allPyList.add("L");
+            allPyList.add("M");
+            allPyList.add("N");
+            allPyList.add("O");
+            allPyList.add("P");
+            allPyList.add("Q");
+            allPyList.add("R");
+            allPyList.add("S");
+            allPyList.add("T");
+            allPyList.add("U");
+            allPyList.add("V");
+            allPyList.add("W");
+            allPyList.add("S");
+            allPyList.add("Y");
+            allPyList.add("Z");
         }
         return "success";
     }
@@ -338,6 +372,33 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 }
                 improveCount = hrEmployeeService.getCountByCompanyEqComplete(userInfo.getCompanyId(), 1);
             }
+            allPyList=new ArrayList<String>();
+            allPyList.add("A");
+            allPyList.add("B");
+            allPyList.add("C");
+            allPyList.add("D");
+            allPyList.add("E");
+            allPyList.add("F");
+            allPyList.add("G");
+            allPyList.add("H");
+            allPyList.add("I");
+            allPyList.add("J");
+            allPyList.add("K");
+            allPyList.add("L");
+            allPyList.add("M");
+            allPyList.add("N");
+            allPyList.add("O");
+            allPyList.add("P");
+            allPyList.add("Q");
+            allPyList.add("R");
+            allPyList.add("S");
+            allPyList.add("T");
+            allPyList.add("U");
+            allPyList.add("V");
+            allPyList.add("W");
+            allPyList.add("S");
+            allPyList.add("Y");
+            allPyList.add("Z");
         }
         return "success";
     }
@@ -356,8 +417,8 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
                 for (HrEmployee employee : employeeList) {
                     if (employee.getComplete().intValue() == 1) {
                         employee.setComplete(2);
-                        String msgContent = "#完善个人资料# " + employee.getUserName() + "邀请您完善个人资料，请您点击链接进行操作";
-                        msgContent += "<a target=\"_blank\" href=\"" + getMdURI() + "&action=improve\">完善个人资料</a>";
+                        String msgContent = "#完善个人资料# HR邀请您完善个人资料，请您点击链接进行操作";
+                        msgContent += "<a target=\"_blank\" href=\"" + getMdURI() + "&state=improve\">完善个人资料</a>";
                         String messageId = null;
                         try {
                             messageId = RequestMessage.createSys( employee.getUserId(), userInfo.getCompanyId(),
@@ -384,8 +445,8 @@ public class HrEmployeeAction extends ActionSupport<HrEmployee> {
             if (hrEmployee.getComplete().intValue() == 1) {
                 hrEmployee.setComplete(2);
 
-                String msgContent = "#完善个人资料# " + hrEmployee.getUserName() + "邀请您完善个人资料，请您点击链接进行操作";
-                msgContent += "<a target=\"_blank\" href=\"" + getMdURI() + "&action=improve\">完善个人资料</a>";
+                String msgContent = "#完善个人资料# HR邀请您完善个人资料，请您点击链接进行操作";
+                msgContent += "<a target=\"_blank\" href=\"" + getMdURI() + "&state=improve\">完善个人资料</a>";
                 String messageId = null;
                 try {
                     messageId = RequestMessage.createSys( hrEmployee.getUserId(), userInfo.getCompanyId(),

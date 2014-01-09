@@ -108,6 +108,10 @@ public class HrContractAction extends ActionSupport<HrContract> {
     @ReqSet
     private List<HrContract> contractList;
 
+    @ReqSet
+    private List<String> allPyList;
+
+
     public String execute() throws Exception {
         return "success";
     }
@@ -191,9 +195,40 @@ public class HrContractAction extends ActionSupport<HrContract> {
                     if (userIdSet != null && !userIdSet.isEmpty()) {
                         userMapList = RequestUser.getMapUserList(userInfo.getAccessToken(), userIdSet);
                     }
-                    pyList = this.hrEmployeeService.getListPyByCompanyEqContractFlag(userInfo.getCompanyId(), 0);
+                    if (userInfo.getOrgId()!=null) {
+                        pyList = this.hrEmployeeService.getListPyByCompanyEqContractFlagOrg(userInfo.getCompanyId(), userInfo.getOrgId(),0);
+                    }else{
+                        pyList = this.hrEmployeeService.getListPyByCompanyEqContractFlag(userInfo.getCompanyId(), 0);
+                    }
                 }
             }
+            allPyList=new ArrayList<String>();
+            allPyList.add("A");
+            allPyList.add("B");
+            allPyList.add("C");
+            allPyList.add("D");
+            allPyList.add("E");
+            allPyList.add("F");
+            allPyList.add("G");
+            allPyList.add("H");
+            allPyList.add("I");
+            allPyList.add("J");
+            allPyList.add("K");
+            allPyList.add("L");
+            allPyList.add("M");
+            allPyList.add("N");
+            allPyList.add("O");
+            allPyList.add("P");
+            allPyList.add("Q");
+            allPyList.add("R");
+            allPyList.add("S");
+            allPyList.add("T");
+            allPyList.add("U");
+            allPyList.add("V");
+            allPyList.add("W");
+            allPyList.add("S");
+            allPyList.add("Y");
+            allPyList.add("Z");
         }
         return "success";
     }
@@ -219,10 +254,42 @@ public class HrContractAction extends ActionSupport<HrContract> {
                         if (userIdSet != null && !userIdSet.isEmpty()) {
                             userMapList = RequestUser.getMapUserList(userInfo.getAccessToken(), userIdSet);
                         }
-                        pyList = this.hrContractService.getListPyByCompanyEqContractFlag(userInfo.getCompanyId(), cudDate);
+                        if (userInfo.getOrgId()!=null) {
+                            pyList = this.hrContractService.getListPyByCompanyEqContractFlagOrg(userInfo.getCompanyId(),userInfo.getOrgId(), cudDate);
+                        }else{
+                            pyList = this.hrContractService.getListPyByCompanyEqContractFlag(userInfo.getCompanyId(), cudDate);
+                        }
+
                     }
                 }
             }
+            allPyList=new ArrayList<String>();
+            allPyList.add("A");
+            allPyList.add("B");
+            allPyList.add("C");
+            allPyList.add("D");
+            allPyList.add("E");
+            allPyList.add("F");
+            allPyList.add("G");
+            allPyList.add("H");
+            allPyList.add("I");
+            allPyList.add("J");
+            allPyList.add("K");
+            allPyList.add("L");
+            allPyList.add("M");
+            allPyList.add("N");
+            allPyList.add("O");
+            allPyList.add("P");
+            allPyList.add("Q");
+            allPyList.add("R");
+            allPyList.add("S");
+            allPyList.add("T");
+            allPyList.add("U");
+            allPyList.add("V");
+            allPyList.add("W");
+            allPyList.add("S");
+            allPyList.add("Y");
+            allPyList.add("Z");
         }
         return "success";
     }

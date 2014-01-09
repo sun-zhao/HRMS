@@ -57,6 +57,10 @@ public class HrEmployeeService extends HQuery {
     public List<HrEmployee> getListByCompany(String companyId) {
         return $($eq("companyId", companyId), $eq("useYn", "Y")).list(HrEmployee.class);
     }
+    @Transactional(type = TransactionType.READ_ONLY)
+    public List<String> getListPyByCompanyEqContractFlagOrg(String companyId, Long orgId,Integer contractFlag) {
+        return $($eq("companyId", companyId),$eq("orgId.id", orgId),$eq("complete",0),$eq("contractFlag",contractFlag), $eq("useYn", "Y"), $distinct("userFirstPy")).list(HrEmployee.class, String.class);
+    }
 
     @Transactional(type = TransactionType.READ_ONLY)
     public List<String> getListPyByCompanyEqContractFlag(String companyId, Integer contractFlag) {
@@ -67,7 +71,10 @@ public class HrEmployeeService extends HQuery {
     public List<String> getListPyByCompanyEqContractFlag(String companyId, Integer contractFlag,Date dueDate) {
         return $($eq("companyId", companyId),$eq("complete",0),$eq("contractFlag",contractFlag), $le("endDate",dueDate),$eq("useYn", "Y"), $distinct("userFirstPy")).list(HrEmployee.class, String.class);
     }
-
+    @Transactional(type = TransactionType.READ_ONLY)
+    public List<String> getListPyByCompanyEqCompleteOrg(String companyId,Long orgId, Integer complete) {
+        return $($eq("companyId", companyId),$eq("orgId.id", orgId),$eq("complete",complete), $eq("useYn", "Y"), $distinct("userFirstPy")).list(HrEmployee.class, String.class);
+    }
 
     @Transactional(type = TransactionType.READ_ONLY)
     public List<String> getListPyByCompanyEqComplete(String companyId, Integer complete) {

@@ -42,9 +42,9 @@
             <th style="width: 80px;">职位：</th>
             <td>
                 <#if hrEmployee.jobId?exists>
-                ${(hrEmployee.jobId.name)?if_exists}
-                <#else>
-                    未设置
+                    ${(hrEmployee.jobId.name)?if_exists}
+                    <#else>
+                        未设置
                 </#if>
             </td>
         </tr>
@@ -56,6 +56,8 @@
                         劳务
                     <#elseif hrEmployee.empType==0>
                         实习
+                    <#else >
+                        &nbsp;
                     </#if>
                 <#else >
                     &nbsp;
@@ -68,6 +70,8 @@
                         在职
                     <#elseif hrEmployee.workState==1>
                         离职
+                    <#else >
+                        &nbsp;
                     </#if>
                 <#else >
                     &nbsp;
@@ -77,6 +81,8 @@
             <td>
                 <#if hrEmployee.entryDate?exists>
                     ${hrEmployee.entryDate?string("yyyy-MM-dd")}
+                    <#else >
+                        &nbsp;
                 </#if>
             </td>
         </tr>
@@ -106,10 +112,16 @@
     <tr>
         <th style="width: 70px;">性别：</th>
         <td style="width: 100px;">
-            <#if hrEmployee.userSex==1>
-                男
-            <#elseif hrEmployee.userSex==2>
-                女
+            <#if hrEmployee.userSex?exists>
+                <#if hrEmployee.userSex==1>
+                    男
+                <#elseif hrEmployee.userSex==2>
+                    女
+                <#else >
+                    &nbsp;
+                </#if>
+            <#else >
+               &nbsp;
             </#if>
         </td>
         <th style="width: 70px;">学历：</th>
@@ -189,18 +201,18 @@
     <tr>
         <th style="width: 160px;">院校名称</th>
         <th style="width: 100px;">专业和学历</th>
-        <th style="width: auto;">核心课程</th>
         <th style="width: 110px;">入学日期</th>
         <th style="width: 110px;">毕业日期</th>
+        <th style="width: auto;">核心课程</th>
     </tr>
         <#if employeeEduList?exists&&employeeEduList?size gt 0>
             <#list employeeEduList as edu>
             <tr>
                 <td>${edu.name?if_exists}</td>
                 <td>${edu.title?if_exists}</td>
-                <td>${edu.description?if_exists}</td>
                 <td>${edu.startDate?string("yyyy-MM-dd")}</td>
                 <td>${edu.endDate?string("yyyy-MM-dd")}</td>
+                <td>${edu.description?if_exists}</td>
             </tr>
             </#list>
         <#else >

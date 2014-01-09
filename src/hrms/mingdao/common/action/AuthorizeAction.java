@@ -49,9 +49,7 @@ public class AuthorizeAction extends BaseAction {
     @ReqSet
     private String url;
 
-    @ReqSet
-    @ReqGet
-    private String action;
+
 
     @ReqSet
     private String authorizeUrl;
@@ -161,8 +159,8 @@ public class AuthorizeAction extends BaseAction {
                     userInfo.setFooterHtml(footerHtml);
                 }
             }
-            if(StringUtils.isNotBlank(action)){
-                if(action.equals("improve")){
+            if(StringUtils.isNotBlank(state)){
+                if(state.equals("improve")){
                     return "improve";
                 }
             }
